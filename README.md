@@ -7,7 +7,7 @@ web-based game per day** to GitHub Pages under the `ben-gy` org — with
 Sibling to [`gh-site-factory`](https://github.com/ben-gy/gh-site-factory) (data
 sites) and [`gh-tool-factory`](https://github.com/ben-gy/gh-tool-factory)
 (browser tools). Every game appears automatically in the **Games** section of
-[hub.benrichardson.dev](https://hub.benrichardson.dev).
+[sites.benrichardson.dev](https://sites.benrichardson.dev).
 
 ## What it builds
 
@@ -30,7 +30,7 @@ daily at **13:10 local**. Each run:
 3. Writes Vitest tests (including the P2P-sync determinism test for multiplayer).
 4. Deploys to `ben-gy/<slug>` on GitHub Pages at `https://<slug>.benrichardson.dev`.
 5. Opens a review PR, updates `registry.json` + `index/games.json`, and writes a
-   build log. The hub picks it up on its next page load — no hub redeploy needed.
+   build log. The directory picks it up on its next page load — no redeploy needed.
 
 ## Layout
 
@@ -38,7 +38,7 @@ daily at **13:10 local**. Each run:
 IDEAS.md            # queue of game ideas (first one is built next)
 EXPANSION_IDEAS.md  # enhancements to existing games (manual review, not new builds)
 registry.json       # every game built — the dedupe source of truth
-index/games.json    # public index the hub fetches (type: "game")
+index/games.json    # public index the directory fetches (type: "game")
 index/games.txt     # human-readable mirror
 patterns/           # the shared P2P game engine — copied into each game
 logs/               # per-build logs

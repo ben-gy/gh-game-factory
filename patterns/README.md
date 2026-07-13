@@ -10,7 +10,7 @@ Every file is dependency-light vanilla TypeScript (the only npm dependency is
 | File | What it gives you | When to copy |
 |------|-------------------|--------------|
 | `net.ts` | Zero-backend P2P mesh (Trystero/WebRTC). Peer roster, deterministic host election, typed channels, latency ping. | Every multiplayer game. |
-| `lobby.ts` | Drop-in lobby UI: room code, invite link + Web Share, player roster, ready states, host-only Start, shared-seed broadcast. | Every multiplayer game. |
+| `lobby.ts` | Drop-in lobby UI: room code, invite link + Web Share, player roster, ready states, host-only Start, shared-seed broadcast, and an animated **connecting spinner** (`.spinner` + `.lobby-searching`) while waiting for peers — style these in your game's CSS. | Every multiplayer game. |
 | `rng.ts` | Seedable deterministic PRNG (mulberry32) + shuffle/pick/randInt. Keeps peers in sync. | Any game with shared randomness (decks, spawns, boards). |
 | `loop.ts` | Fixed-timestep loop with render interpolation. Frame-rate-independent physics, no spiral-of-death. | Any real-time / animated game. |
 | `input.ts` | Unified keyboard + touch (auto virtual D-pad) + pointer, polled + edge-triggered. | Every game (mobile support is mandatory). |

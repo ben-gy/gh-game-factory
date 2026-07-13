@@ -1,5 +1,20 @@
 {
   "last_updated": "2026-07-13",
   "description": "Registry of every web game built by gh-game-factory. Never duplicate an entry — check name, description, category, and genre before building.",
-  "games": []
+  "games": [
+    {
+      "name": "cipher-clash",
+      "repo": "ben-gy/cipher-clash",
+      "date": "2026-07-13",
+      "description": "Boggle-style word-grid race; drag touching letters to spell words, and in versus a word only scores for whoever claims it first.",
+      "genre": "word",
+      "stack": "vanilla-ts",
+      "render": "dom",
+      "multiplayer": "p2p",
+      "max_players": 6,
+      "status": "deployed",
+      "url": "https://cipher-clash.benrichardson.dev",
+      "pr_url": "https://github.com/ben-gy/cipher-clash/pull/1"
+    }
+  ]
 }

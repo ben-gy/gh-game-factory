@@ -1,4 +1,17 @@
 {
   "last_updated": "2026-07-13",
-  "games": []
+  "games": [
+    {
+      "name": "Cipher Clash",
+      "slug": "cipher-clash",
+      "icon": "grid-3x3",
+      "category": "word",
+      "description": "Trace words on a shared letter grid and race to claim them before your rival does.",
+      "url": "https://cipher-clash.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/cipher-clash",
+      "tags": ["word", "multiplayer", "versus", "mobile"],
+      "type": "game",
+      "date": "2026-07-13"
+    }
+  ]
 }

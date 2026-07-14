@@ -1,6 +1,18 @@
 {
-  "last_updated": "2026-07-13",
+  "last_updated": "2026-07-14",
   "games": [
+    {
+      "name": "Hexbloom",
+      "slug": "hexbloom",
+      "icon": "hexagon",
+      "category": "board",
+      "description": "Pick a colour to bloom your blob across the honeycomb and claim more tiles than your rivals.",
+      "url": "https://hexbloom.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/hexbloom",
+      "tags": ["board", "multiplayer", "versus", "mobile"],
+      "type": "game",
+      "date": "2026-07-14"
+    },
     {
       "name": "Cipher Clash",
       "slug": "cipher-clash",

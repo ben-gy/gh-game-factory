@@ -1,7 +1,21 @@
 {
-  "last_updated": "2026-07-13",
+  "last_updated": "2026-07-14",
   "description": "Registry of every web game built by gh-game-factory. Never duplicate an entry — check name, description, category, and genre before building.",
   "games": [
+    {
+      "name": "hexbloom",
+      "repo": "ben-gy/hexbloom",
+      "date": "2026-07-14",
+      "description": "Turn-based hex-grid area control: pick a colour to recolour your territory and absorb every touching tile of it; largest territory when the board fills wins.",
+      "genre": "board",
+      "stack": "vanilla-ts",
+      "render": "dom",
+      "multiplayer": "p2p",
+      "max_players": 4,
+      "status": "deployed",
+      "url": "https://hexbloom.benrichardson.dev",
+      "pr_url": "https://github.com/ben-gy/hexbloom/pull/2"
+    },
     {
       "name": "cipher-clash",
       "repo": "ben-gy/cipher-clash",

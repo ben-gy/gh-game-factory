@@ -1,4 +1,6 @@
 === Web Games ===
 
+Hexbloom — Pick a colour to bloom your blob across the honeycomb and claim more tiles than your rivals. [board, multiplayer] https://hexbloom.benrichardson.dev
+
 Cipher Clash — Trace words on a shared letter grid and race to claim them before your rival does. [word, multiplayer] https://cipher-clash.benrichardson.dev
 

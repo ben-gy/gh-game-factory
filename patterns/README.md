@@ -10,7 +10,7 @@ Every file is dependency-light vanilla TypeScript (the only npm dependency is
 | File | What it gives you | When to copy |
 |------|-------------------|--------------|
 | `net.ts` | Zero-backend P2P mesh (Trystero/WebRTC). Peer roster, deterministic host election, typed channels, latency ping. | Every multiplayer game. |
-| `lobby.ts` | Drop-in lobby UI: room code, invite link + Web Share, player roster, ready states, host-only Start, shared-seed broadcast, and an animated **connecting spinner** (`.spinner` + `.lobby-searching`) while waiting for peers — style these in your game's CSS. | Every multiplayer game. |
+| `lobby.ts` | Drop-in lobby UI: a **room-entry screen** (`createRoomEntry` — create a room *or* type a friend's code to join, so the invite link is never the only way in), room code, invite link + Web Share, player roster, ready states, host-only Start, shared-seed broadcast, an animated **connecting spinner** (`.spinner` + `.lobby-searching`), and a **host-transfer** flash when this peer is promoted after the host leaves — style `.lobby-*` + `.room-entry`/`.re-*` in your game's CSS. | Every multiplayer game. |
 | `rng.ts` | Seedable deterministic PRNG (mulberry32) + shuffle/pick/randInt. Keeps peers in sync. | Any game with shared randomness (decks, spawns, boards). |
 | `loop.ts` | Fixed-timestep loop with render interpolation. Frame-rate-independent physics, no spiral-of-death. | Any real-time / animated game. |
 | `input.ts` | Unified keyboard + touch (auto virtual D-pad) + pointer, polled + edge-triggered. | Every game (mobile support is mandatory). |
@@ -38,6 +38,38 @@ Every file is dependency-light vanilla TypeScript (the only npm dependency is
 For deterministic **lockstep** games (RTS-style, puzzle races), skip snapshots:
 every peer runs the same `rng.ts` seed + the same fixed `loop.ts` step and
 exchanges only inputs. Determinism does the rest.
+
+### Getting into a room (type a code, not just a link)
+
+`lobby.ts` ships `createRoomEntry(...)`: a **Create a room** button plus an
+**Enter room code → Join** field. Show it before the lobby so a friend can *type*
+the code (paste it from chat, read it aloud, open on another device) — the invite
+link is a shortcut, never the only door. Go straight to the lobby only when the
+URL already carries `?room=` (a deep-linked invite), and consume that once.
+`normalizeRoomCode` upper-cases and strips punctuation so a hand-typed code and
+the linked code resolve to the **same** Trystero room id — skip it and two players
+silently sit in different rooms wondering why nobody shows up.
+
+### The host left, now what
+
+`net.ts` re-elects the smallest remaining peer id the instant the host drops and
+fires `onHostChange` — **but election alone isn't enough**: the promoted peer has
+to *take over the authoritative simulation*, or the room keeps running with nobody
+driving it and can never end. Wire `onHostChange` to a takeover:
+
+- The new host adopts its last snapshot as canonical, re-broadcasts it, and
+  restarts any host-only timers (round clock, snapshot keepalive, auto-move for a
+  disconnected seat's turn). Use `setInterval` for those, not `rAF` (a backgrounded
+  host must still advance them).
+- A peer that had only been *rendering* host snapshots must flip to authoritative
+  (`hexbloom` `NetGame.onHostChanged`, `cipher-clash` `Session.setHost`).
+- In a **2-player co-op** where each peer drove one lane/role, the survivor takes
+  over *both* roles so the run is still playable and finishable
+  (`rhythm-relay` `Rhythm.takeOver`) — don't leave it half-dead waiting on a peer
+  that's gone.
+
+The lobby handles its own case: it watches for the transfer and flashes
+"you're the host now" so the promoted player knows the Start button is theirs.
 
 ### Channel budget
 

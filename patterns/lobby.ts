@@ -5,6 +5,8 @@
  * link, wait for friends, host starts" flow with zero backend:
  *   - a short human room code (also the ?room= param and the Trystero room id)
  *   - a one-tap invite link + copy button (+ Web Share on mobile)
+ *   - a "join by code" entry screen (createRoomEntry) so friends who can't open
+ *     the link can just TYPE the code — the link is a shortcut, never the only way in
  *   - a live player roster with names, ready toggles, and the host badge
  *   - host-only Start button, gated on min players + everyone ready
  *   - a shared RNG seed broadcast at start so all peers agree (see rng.ts)
@@ -13,12 +15,24 @@
  * peer broadcasts its {name,ready}; newcomers request a resync. On Start the
  * host broadcasts {seed}; every client resolves onStart with the same seed.
  *
- * COPY THIS FILE into src/ and style .lobby-* to match the game.
+ * HOST TRANSFER: net.ts re-elects the smallest remaining peer id the moment the
+ * host leaves, so the room never dies with its host. The lobby watches for this
+ * and flashes "you're the host now" when the baton passes to this peer; in-game,
+ * wire net's onHostChange so the promoted peer takes over the authoritative
+ * simulation (see patterns/README.md → "The host left, now what").
  *
- *   const code = getOrCreateRoomCode();           // from ?room= or fresh
- *   const net = createNet({ appId: 'my-slug', roomId: code });
- *   createLobby({ container, net, roomCode: code, playerName, minPlayers: 2,
- *     onStart: ({ seed, players, isHost }) => startGame(seed, players, isHost, net) });
+ * COPY THIS FILE into src/ and style .lobby-* + .room-entry/.re-* to match the game.
+ *
+ *   // Menu → "Play with friends": show the entry screen unless deep-linked.
+ *   const deep = new URL(location.href).searchParams.get('room');
+ *   if (deep) openRoom(normalizeRoomCode(deep));
+ *   else createRoomEntry({ container, onSubmit: (code) => openRoom(code), onCancel: toMenu });
+ *
+ *   function openRoom(code) {
+ *     const net = createNet({ appId: 'my-slug', roomId: code });
+ *     createLobby({ container, net, roomCode: code, playerName, minPlayers: 2,
+ *       onStart: ({ seed, players, isHost }) => startGame(seed, players, isHost, net) });
+ *   }
  */
 
 import type { Net, PeerId } from './net';
@@ -48,6 +62,8 @@ export interface LobbyConfig {
   maxPlayers?: number;
   /** Fired on every peer when the host starts. Same seed everywhere. */
   onStart: (info: LobbyStartInfo) => void;
+  /** Optional: render a "Leave room" button that calls this (back to menu). */
+  onCancel?: () => void;
 }
 
 interface Presence {
@@ -59,18 +75,37 @@ interface Presence {
 export function getOrCreateRoomCode(): string {
   const url = new URL(location.href);
   const existing = url.searchParams.get('room');
-  if (existing) return existing.toUpperCase().slice(0, 8);
+  if (existing) return normalizeRoomCode(existing);
   const code = mintCode();
   url.searchParams.set('room', code);
   history.replaceState(null, '', url.toString());
   return code;
 }
 
-function mintCode(): string {
+/** A fresh random room code. Same alphabet the entry screen accepts. */
+export function mintCode(): string {
   const alphabet = 'ABCDEFGHJKMNPQRSTUVWXYZ23456789'; // no I/O/0/1/L ambiguity
   let out = '';
   for (let i = 0; i < 4; i++) out += alphabet[Math.floor(Math.random() * alphabet.length)];
   return out;
+}
+
+/**
+ * Canonicalise a hand-typed (or link) code so every peer that means the same
+ * room lands on the same Trystero room id: upper-case, drop anything that isn't
+ * A–Z/0–9 (spaces, dashes, the ambiguous I/O/L/0/1 a user might mistype stay as
+ * typed if they're still alphanumerics), cap at 8.
+ */
+export function normalizeRoomCode(raw: string): string {
+  return raw.toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 8);
+}
+
+/** Push a chosen room code into the URL so the invite link + a refresh both work. */
+export function setRoomInUrl(roomCode: string): void {
+  const url = new URL(location.href);
+  url.searchParams.set('room', roomCode);
+  url.hash = '';
+  history.replaceState(null, '', url.toString());
 }
 
 export function inviteLink(roomCode: string): string {
@@ -78,6 +113,88 @@ export function inviteLink(roomCode: string): string {
   url.searchParams.set('room', roomCode);
   url.hash = '';
   return url.toString();
+}
+
+export interface RoomEntryConfig {
+  container: HTMLElement;
+  /**
+   * Chosen a room. `created` is true for a brand-new hosted room, false when the
+   * player typed/joined an existing code. Wire this to create the net + lobby.
+   */
+  onSubmit: (roomCode: string, created: boolean) => void;
+  /** Optional back handler (renders a "Back" button). */
+  onCancel?: () => void;
+  title?: string;
+  subtitle?: string;
+}
+
+/**
+ * The "create or join a room" screen shown before the lobby. Lets a player mint
+ * a fresh room OR type a friend's code directly, so the invite link is a
+ * convenience, never the only way in. Style .room-entry / .re-* in the game.
+ * Skip it (call onSubmit straight away) when the URL already carries ?room=.
+ */
+export function createRoomEntry(config: RoomEntryConfig): { destroy: () => void } {
+  const { container } = config;
+  const title = config.title ?? 'Play with friends';
+  const subtitle = config.subtitle ?? 'Start a new room, or enter a code to join a friend.';
+
+  container.innerHTML = `
+    <div class="room-entry">
+      <div class="re-head">
+        <h2 class="re-title">${escapeHtml(title)}</h2>
+        <p class="re-sub">${escapeHtml(subtitle)}</p>
+      </div>
+      <button class="lobby-btn re-create" type="button">Create a room</button>
+      <div class="re-divider"><span>or join a friend</span></div>
+      <form class="re-join" novalidate>
+        <input class="re-input" type="text" inputmode="latin" autocomplete="off"
+          autocapitalize="characters" spellcheck="false" maxlength="8"
+          placeholder="Enter room code" aria-label="Room code" />
+        <button class="lobby-btn re-go" type="submit">Join</button>
+      </form>
+      <p class="re-error" role="alert" aria-live="polite"></p>
+      ${config.onCancel ? '<button class="lobby-btn ghost re-cancel" type="button">Back</button>' : ''}
+    </div>`;
+
+  const input = container.querySelector<HTMLInputElement>('.re-input')!;
+  const errEl = container.querySelector<HTMLElement>('.re-error')!;
+  const showErr = (msg: string) => {
+    errEl.textContent = msg;
+  };
+
+  // Keep the field showing the canonical code as the player types.
+  input.addEventListener('input', () => {
+    const caretAtEnd = input.selectionStart === input.value.length;
+    input.value = normalizeRoomCode(input.value);
+    if (caretAtEnd) input.setSelectionRange(input.value.length, input.value.length);
+    if (errEl.textContent) showErr('');
+  });
+
+  container.querySelector('.re-create')?.addEventListener('click', () => {
+    config.onSubmit(mintCode(), true);
+  });
+
+  container.querySelector<HTMLFormElement>('.re-join')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const code = normalizeRoomCode(input.value);
+    if (code.length < 3) {
+      showErr('Enter the room code your host shared (e.g. K7QP).');
+      input.focus();
+      return;
+    }
+    config.onSubmit(code, false);
+  });
+
+  if (config.onCancel) {
+    container.querySelector('.re-cancel')?.addEventListener('click', () => config.onCancel!());
+  }
+
+  return {
+    destroy() {
+      container.innerHTML = '';
+    },
+  };
 }
 
 export function createLobby(config: LobbyConfig): { destroy: () => void } {
@@ -216,6 +333,7 @@ export function createLobby(config: LobbyConfig): { destroy: () => void } {
               : `<button class="lobby-btn lobby-ready" type="button">${self().ready ? 'Not ready' : "I'm ready"}</button>
                  <p class="lobby-wait"><span class="spinner sm" aria-hidden="true"></span> Waiting for the host to start…</p>`
           }
+          ${config.onCancel ? '<button class="lobby-btn ghost lobby-cancel" type="button">Leave room</button>' : ''}
         </div>
         <div class="lobby-flash" role="status" aria-live="polite"></div>
       </div>`;
@@ -223,6 +341,7 @@ export function createLobby(config: LobbyConfig): { destroy: () => void } {
     container.querySelector('.lobby-share')?.addEventListener('click', () => void share());
     container.querySelector('.lobby-ready')?.addEventListener('click', toggleReady);
     container.querySelector('.lobby-start')?.addEventListener('click', start);
+    container.querySelector('.lobby-cancel')?.addEventListener('click', () => config.onCancel?.());
     container.querySelector<HTMLInputElement>('.lobby-link')?.addEventListener('focus', (e) => {
       (e.target as HTMLInputElement).select();
     });
@@ -230,12 +349,19 @@ export function createLobby(config: LobbyConfig): { destroy: () => void } {
 
   // net.ts fires onPeers/onHostChange through the handlers passed to createNet;
   // to stay decoupled we also poll lightly on our own channels. Re-render when a
-  // peer's presence arrives (handled above) and on a short roster poll.
+  // peer's presence arrives (handled above) and on a short roster poll. The poll
+  // also spots a host transfer (net.ts re-elects when the host leaves) so a newly
+  // promoted peer gets a heads-up that the Start button is now theirs.
+  let lastHost = net.host();
   const poll = setInterval(() => {
-    if (!started) {
-      // Ask any silent peers to resync, then repaint (roster may have changed).
-      reqSync(null);
-      render();
+    if (started) return;
+    reqSync(null);
+    const host = net.host();
+    render();
+    if (host !== lastHost) {
+      const wasHost = lastHost === net.selfId;
+      lastHost = host;
+      if (net.isHost() && !wasHost) flash("The host left — you're the host now");
     }
   }, 1500);
 

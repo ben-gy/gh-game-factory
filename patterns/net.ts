@@ -107,7 +107,26 @@ export function createNet(config: NetConfig, handlers: NetHandlers = {}): Net {
   // on the very first frame without waiting for a peer event.
   handlers.onHostChange?.(currentHost, true);
 
+  // Dev-only tripwire for the rhythm-relay bug: a live-P2P game that wires no
+  // onHostChange handler CANNOT survive its host leaving (the room keeps running
+  // with nobody driving it). Fires once, the first time a real peer joins, and
+  // only in dev — Vite replaces `import.meta.env.DEV` with `false` in production
+  // builds, so this branch is dead-code-eliminated and nothing ships.
+  let warnedNoHostHandler = false;
+  function warnIfHostTransferUnwired(): void {
+    if (warnedNoHostHandler || handlers.onHostChange) return;
+    warnedNoHostHandler = true;
+    if ((import.meta as { env?: { DEV?: boolean } }).env?.DEV) {
+      console.warn(
+        '[net] a peer joined but createNet got no onHostChange handler — host ' +
+          'transfer is unhandled, so the game will freeze if the host leaves. ' +
+          'Wire onHostChange (route it into your session) for any live-P2P game.',
+      );
+    }
+  }
+
   room.onPeerJoin((id) => {
+    warnIfHostTransferUnwired();
     handlers.onPeerJoin?.(id);
     handlers.onPeers?.(roster(), selfId);
     recomputeHost();

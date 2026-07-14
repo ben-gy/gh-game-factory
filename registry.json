@@ -3,6 +3,20 @@
   "description": "Registry of every web game built by gh-game-factory. Never duplicate an entry — check name, description, category, and genre before building.",
   "games": [
     {
+      "name": "rhythm-relay",
+      "repo": "ben-gy/rhythm-relay",
+      "date": "2026-07-14",
+      "description": "Two-lane rhythm game: notes relay left↔right toward a hit line; tap in time to build a shared combo and score multiplier, misses drain energy; solo or take a lane each in live P2P co-op.",
+      "genre": "arcade",
+      "stack": "vanilla-ts",
+      "render": "canvas",
+      "multiplayer": "p2p",
+      "max_players": 2,
+      "status": "deployed",
+      "url": "https://rhythm-relay.benrichardson.dev",
+      "pr_url": "https://github.com/ben-gy/rhythm-relay/pull/1"
+    },
+    {
       "name": "hexbloom",
       "repo": "ben-gy/hexbloom",
       "date": "2026-07-14",

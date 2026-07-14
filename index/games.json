@@ -2,6 +2,18 @@
   "last_updated": "2026-07-14",
   "games": [
     {
+      "name": "Rhythm Relay",
+      "slug": "rhythm-relay",
+      "icon": "music",
+      "category": "arcade",
+      "description": "Relay the beat down two lanes, tap in time to keep a shared combo alive, and take a lane each with a friend.",
+      "url": "https://rhythm-relay.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/rhythm-relay",
+      "tags": ["arcade", "multiplayer", "co-op", "rhythm", "mobile"],
+      "type": "game",
+      "date": "2026-07-14"
+    },
+    {
       "name": "Hexbloom",
       "slug": "hexbloom",
       "icon": "hexagon",

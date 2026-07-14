@@ -1,5 +1,7 @@
 === Web Games ===
 
+Rhythm Relay — Relay the beat down two lanes, tap in time to keep a shared combo alive, and take a lane each with a friend. [arcade, co-op] https://rhythm-relay.benrichardson.dev
+
 Hexbloom — Pick a colour to bloom your blob across the honeycomb and claim more tiles than your rivals. [board, multiplayer] https://hexbloom.benrichardson.dev
 
 Cipher Clash — Trace words on a shared letter grid and race to claim them before your rival does. [word, multiplayer] https://cipher-clash.benrichardson.dev

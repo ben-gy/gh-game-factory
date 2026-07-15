@@ -1,5 +1,7 @@
 === Web Games ===
 
+Snake Royale — Classic snake in a shared arena — eat, grow and cut your rivals off; last snake slithering wins. [arcade, multiplayer] https://snake-royale.benrichardson.dev
+
 Rhythm Relay — Relay the beat down two lanes, tap in time to keep a shared combo alive, and take a lane each with a friend. [arcade, co-op] https://rhythm-relay.benrichardson.dev
 
 Hexbloom — Pick a colour to bloom your blob across the honeycomb and claim more tiles than your rivals. [board, multiplayer] https://hexbloom.benrichardson.dev

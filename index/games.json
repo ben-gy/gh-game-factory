@@ -1,6 +1,18 @@
 {
-  "last_updated": "2026-07-14",
+  "last_updated": "2026-07-15",
   "games": [
+    {
+      "name": "Snake Royale",
+      "slug": "snake-royale",
+      "icon": "worm",
+      "category": "arcade",
+      "description": "Classic snake in a shared arena — eat, grow and cut your rivals off; last snake slithering wins.",
+      "url": "https://snake-royale.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/snake-royale",
+      "tags": ["arcade", "multiplayer", "versus", "snake", "mobile"],
+      "type": "game",
+      "date": "2026-07-15"
+    },
     {
       "name": "Rhythm Relay",
       "slug": "rhythm-relay",

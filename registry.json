@@ -1,7 +1,21 @@
 {
-  "last_updated": "2026-07-14",
+  "last_updated": "2026-07-15",
   "description": "Registry of every web game built by gh-game-factory. Never duplicate an entry — check name, description, category, and genre before building.",
   "games": [
+    {
+      "name": "snake-royale",
+      "repo": "ben-gy/snake-royale",
+      "date": "2026-07-15",
+      "description": "Classic snake in a shared arena: eat pellets to grow and score, avoid walls/snakes/your own tail; solo Endless score-attack plus live P2P Royale where the last snake alive wins.",
+      "genre": "arcade",
+      "stack": "vanilla-ts",
+      "render": "canvas",
+      "multiplayer": "p2p",
+      "max_players": 6,
+      "status": "deployed",
+      "url": "https://snake-royale.benrichardson.dev",
+      "pr_url": "https://github.com/ben-gy/snake-royale/pull/1"
+    },
     {
       "name": "rhythm-relay",
       "repo": "ben-gy/rhythm-relay",

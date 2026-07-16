@@ -1,6 +1,18 @@
 {
-  "last_updated": "2026-07-15",
+  "last_updated": "2026-07-16",
   "games": [
+    {
+      "name": "Gravity Golf",
+      "slug": "gravity-golf",
+      "icon": "orbit",
+      "category": "arcade",
+      "description": "Slingshot your ball through a field of planets and bend it around gravity into the hole.",
+      "url": "https://gravity-golf.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/gravity-golf",
+      "tags": ["arcade", "multiplayer", "versus", "physics", "mobile"],
+      "type": "game",
+      "date": "2026-07-16"
+    },
     {
       "name": "Snake Royale",
       "slug": "snake-royale",

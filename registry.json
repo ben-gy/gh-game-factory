@@ -1,7 +1,21 @@
 {
-  "last_updated": "2026-07-15",
+  "last_updated": "2026-07-16",
   "description": "Registry of every web game built by gh-game-factory. Never duplicate an entry — check name, description, category, and genre before building.",
   "games": [
+    {
+      "name": "gravity-golf",
+      "repo": "ben-gy/gravity-golf",
+      "date": "2026-07-16",
+      "description": "Slingshot physics mini-golf: pull back to launch and bend your ball around gravity wells (attractors pull, repulsors push, black holes swallow) into the hole across 9 procedural holes; solo, async seed-share, or live P2P race up to 6 players.",
+      "genre": "arcade",
+      "stack": "vanilla-ts",
+      "render": "canvas",
+      "multiplayer": "p2p",
+      "max_players": 6,
+      "status": "deployed",
+      "url": "https://gravity-golf.benrichardson.dev",
+      "pr_url": "https://github.com/ben-gy/gravity-golf/pull/1"
+    },
     {
       "name": "snake-royale",
       "repo": "ben-gy/snake-royale",

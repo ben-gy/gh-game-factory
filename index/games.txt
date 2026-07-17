@@ -1,5 +1,7 @@
 === Web Games ===
 
+Driftlock — You never move a stone — you shift the row it stands on, and whatever slides into the rising Well is yours. [board, multiplayer] https://driftlock.benrichardson.dev
+
 Windup — Program three moves, wind it up, and watch it all go wrong as the bots shove each other off the ripening cogs. [strategy, multiplayer] https://windup.benrichardson.dev
 
 Bidstorm — Everyone holds the same thirteen cards; outbid your rivals for each prize, and never spend more than you had to. [card, multiplayer] https://bidstorm.benrichardson.dev
@@ -7,6 +9,8 @@ Bidstorm — Everyone holds the same thirteen cards; outbid your rivals for each
 Lumenlock — Flip mirrors to bend a beam through a prism, splitting white light into a rainbow, and lock every crystal in its own colour. [puzzle, daily] https://lumenlock.benrichardson.dev
 
 Nightwire — Hidden-role deduction where the clues are numbers: probe a seat to learn how many Ghosts sit in that window, and remember the Ghosts choose what they publish. [party, multiplayer] https://nightwire.benrichardson.dev
+
+Orbital Skirmish — Thrust and slingshot around a lethal star that pulls ships, bullets and rocks alike, and be the last ship flying — solo against waves, or live with friends. [arcade, multiplayer] https://orbital-skirmish.benrichardson.dev
 
 Gravity Golf — Slingshot your ball through a field of planets and bend it around gravity into the hole. [arcade, multiplayer] https://gravity-golf.benrichardson.dev
 

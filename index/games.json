@@ -1,6 +1,18 @@
 {
-  "last_updated": "2026-07-17",
+  "last_updated": "2026-07-18",
   "games": [
+    {
+      "name": "Driftlock",
+      "slug": "driftlock",
+      "icon": "grid-3x3",
+      "category": "board",
+      "description": "You never move a stone — you shift the row it stands on, and whatever slides into the rising Well is yours.",
+      "url": "https://driftlock.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/driftlock",
+      "tags": ["board", "multiplayer", "versus", "abstract", "mobile"],
+      "type": "game",
+      "date": "2026-07-18"
+    },
     {
       "name": "Windup",
       "slug": "windup",
@@ -46,6 +58,18 @@
       "url": "https://nightwire.benrichardson.dev",
       "repo": "https://github.com/ben-gy/nightwire",
       "tags": ["party", "multiplayer", "versus", "deduction", "mobile"],
+      "type": "game",
+      "date": "2026-07-17"
+    },
+    {
+      "name": "Orbital Skirmish",
+      "slug": "orbital-skirmish",
+      "icon": "rocket",
+      "category": "arcade",
+      "description": "Thrust and slingshot around a lethal star that pulls ships, bullets and rocks alike, and be the last ship flying — solo against waves, or live with 2–4 friends.",
+      "url": "https://orbital-skirmish.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/orbital-skirmish",
+      "tags": ["arcade", "multiplayer", "versus", "physics", "mobile"],
       "type": "game",
       "date": "2026-07-17"
     },

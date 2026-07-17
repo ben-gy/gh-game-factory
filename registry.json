@@ -3,6 +3,20 @@
   "description": "Registry of every web game built by gh-game-factory. Never duplicate an entry — check name, description, category, and genre before building.",
   "games": [
     {
+      "name": "driftlock",
+      "repo": "ben-gy/driftlock",
+      "date": "2026-07-18",
+      "description": "Abstract board game on a wrapping grid where you never touch a stone — you shift the whole row or column it stands on, everything slides and wraps, and any stone that lands in the central Well banks for whoever made the shift (stones are neutral, so there is no seat geometry to make unfair). The line you just shifted is locked for your opponent's next turn, so the game is about leaving them nothing to take. The Well rises as a pure function of the move number and stones are worth more the later they land, so an early lead is not a won game — a design the balance sim refereed and overruled repeatedly (documented in src/game.ts). Solo vs 3-strength bots, live P2P for 2, and async seed-share; three modes (Blitz 5-stone, Duel 9-stone, Deepwell 9x9).",
+      "genre": "board",
+      "stack": "vanilla-ts",
+      "render": "dom",
+      "multiplayer": "p2p",
+      "max_players": 2,
+      "status": "deployed",
+      "url": "https://driftlock.benrichardson.dev",
+      "pr_url": "PENDING"
+    },
+    {
       "name": "windup",
       "repo": "ben-gy/windup",
       "date": "2026-07-17",
@@ -58,6 +72,20 @@
       "status": "deployed",
       "url": "https://nightwire.benrichardson.dev",
       "pr_url": "https://github.com/ben-gy/nightwire/pull/1"
+    },
+    {
+      "name": "orbital-skirmish",
+      "repo": "ben-gy/orbital-skirmish",
+      "date": "2026-07-17",
+      "description": "Momentum dogfight in a circular arena with a lethal star at the centre that pulls ships, bullets AND rocks — so you never aim where a rival is, you aim where gravity will carry the shot, and a bullet inherits your velocity so charging is brutal and fleeing is feeble. Solo Survival (escalating AI waves, five lives, instant play) plus live P2P deathmatch for 2–4, host-authoritative snapshot star, rematch inside the room with a running tally. Three modes that change the spatial problem not a dial: Skirmish (open arena), Nova (the star flares on a nine-second clock), Belt (weak star, dense rock). Spawns sit on a rotationally symmetric ring so no seat starts ahead — a fairness the mandatory balance sim measured rather than assumed (it found two real bugs and refuted two confident diagnoses; see src/modes.ts and tests/balance.test.ts). Finishes the 2026-07-13 slot the original run abandoned after 70 seconds.",
+      "genre": "arcade",
+      "stack": "vanilla-ts",
+      "render": "canvas",
+      "multiplayer": "p2p",
+      "max_players": 4,
+      "status": "deployed",
+      "url": "https://orbital-skirmish.benrichardson.dev",
+      "pr_url": "https://github.com/ben-gy/orbital-skirmish/pull/4"
     },
     {
       "name": "gravity-golf",

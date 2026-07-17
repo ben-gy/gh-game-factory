@@ -9,8 +9,9 @@ Every file is dependency-light vanilla TypeScript (the only npm dependency is
 
 | File | What it gives you | When to copy |
 |------|-------------------|--------------|
-| `net.ts` | Zero-backend P2P mesh (Trystero/WebRTC). Peer roster, deterministic host election, typed channels, latency ping. | Every multiplayer game. |
-| `lobby.ts` | Drop-in lobby UI: room code, invite link + Web Share, player roster, ready states, host-only Start, shared-seed broadcast, and an animated **connecting spinner** (`.spinner` + `.lobby-searching`) while waiting for peers — style these in your game's CSS. | Every multiplayer game. |
+| `net.ts` | Zero-backend P2P mesh (Trystero/WebRTC). Peer roster, deterministic host election, typed channels with fan-out, latency ping, and a join registry that makes the leave/rejoin trap throw. | Every multiplayer game. |
+| `rematch.ts` | Multi-round sessions inside ONE living room: ready/play-again votes, quorum + auto-start, monotonic round numbers, and a host-frozen roster so player indices match on every peer. | Every multiplayer game. |
+| `lobby.ts` | Drop-in lobby **view** over `rematch.ts`: room code, invite link + Web Share, player roster, ready states, host-only Start, and an animated **connecting spinner** (`.spinner` + `.lobby-searching`) while waiting for peers — style these in your game's CSS. | Every multiplayer game. |
 | `rng.ts` | Seedable deterministic PRNG (mulberry32) + shuffle/pick/randInt. Keeps peers in sync. | Any game with shared randomness (decks, spawns, boards). |
 | `loop.ts` | Fixed-timestep loop with render interpolation. Frame-rate-independent physics, no spiral-of-death. | Any real-time / animated game. |
 | `input.ts` | Unified keyboard + touch (auto virtual D-pad) + pointer, polled + edge-triggered. | Every game (mobile support is mandatory). |
@@ -32,8 +33,30 @@ Every file is dependency-light vanilla TypeScript (the only npm dependency is
    snapshots on a channel (e.g. `'snap'`). **Clients send inputs** to the host
    (e.g. `'in'`) and render the snapshots they receive (interpolating with
    `loop.ts`'s `alpha`).
-4. Shared randomness comes from a **seed the host broadcasts at start** (the lobby
-   does this) fed into `rng.ts`, so no random outcome ever needs syncing.
+4. Shared randomness comes from a **seed the host broadcasts at start**
+   (`rematch.ts` does this, alongside the frozen roster) fed into `rng.ts`, so no
+   random outcome ever needs syncing.
+
+### The rule that outranks the rest: one room per session
+
+**Join the room once. Never leave and rejoin it to reset for a rematch.**
+
+It looks harmless and it is catastrophic. Trystero memoizes `joinRoom` on
+appId+roomId, but `room.leave()` is `async` and defers its real teardown behind a
+~99ms timer. So `net.leave(); createNet(...)` in the same tick hands you back the
+**room that is about to be destroyed**. Moments later its relay subscription and
+announce loop are torn down under you: the mesh never forms, `roster()` stays
+`[selfId]` forever, and every peer elects *itself* host. Both players sit in the
+right room code, alone, permanently. Two shipped games had this exact bug.
+
+So a rematch never touches the room — keep one `Net` for the room's whole life
+and version the rounds inside it with `rematch.ts`. `createNet` now throws if you
+re-join a room that is still tearing down; restructure rather than route around
+it. If you genuinely need to leave and come back (menu → room), `await
+net.leave()` first — it resolves only once Trystero has really let go.
+
+`netStats().joins` exists so a test can assert this directly: one join per
+session, no relay or browser required. Copy cipher-clash's `net-lifecycle.test.ts`.
 
 For deterministic **lockstep** games (RTS-style, puzzle races), skip snapshots:
 every peer runs the same `rng.ts` seed + the same fixed `loop.ts` step and

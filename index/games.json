@@ -1,6 +1,18 @@
 {
-  "last_updated": "2026-07-16",
+  "last_updated": "2026-07-17",
   "games": [
+    {
+      "name": "Nightwire",
+      "slug": "nightwire",
+      "icon": "zap",
+      "category": "party",
+      "description": "Hidden-role deduction where the clues are numbers: probe a seat to learn how many Ghosts sit in that window, and remember the Ghosts choose what they publish.",
+      "url": "https://nightwire.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/nightwire",
+      "tags": ["party", "multiplayer", "versus", "deduction", "mobile"],
+      "type": "game",
+      "date": "2026-07-17"
+    },
     {
       "name": "Gravity Golf",
       "slug": "gravity-golf",

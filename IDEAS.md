@@ -4,4 +4,3 @@ One idea per line, starting with `-`. The factory takes the **first** idea each 
 
 Format: `- Name or concept — one line of what it is and (if multiplayer) how peers interact.`
 
-- Deduction Table — social hidden-role deduction game (Werewolf/Mafia-style) for 4–10 players in a P2P room with a rotating narrator.

@@ -1,7 +1,21 @@
 {
-  "last_updated": "2026-07-16",
+  "last_updated": "2026-07-17",
   "description": "Registry of every web game built by gh-game-factory. Never duplicate an entry — check name, description, category, and genre before building.",
   "games": [
+    {
+      "name": "nightwire",
+      "repo": "ben-gy/nightwire",
+      "date": "2026-07-17",
+      "description": "Hidden-role social deduction on a ring of seats: each night you probe a seat and learn how many Ghosts sit in that 3-seat window, but while Crew readings publish automatically and truthfully, Ghosts choose what number to publish — eject every Ghost before the nightly wire cuts cause a blackout; solo vs solver bots or live P2P for 4-10 humans.",
+      "genre": "party",
+      "stack": "vanilla-ts",
+      "render": "dom",
+      "multiplayer": "p2p",
+      "max_players": 10,
+      "status": "deployed",
+      "url": "https://nightwire.benrichardson.dev",
+      "pr_url": "https://github.com/ben-gy/nightwire/pull/1"
+    },
     {
       "name": "gravity-golf",
       "repo": "ben-gy/gravity-golf",

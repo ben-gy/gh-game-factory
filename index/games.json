@@ -2,6 +2,18 @@
   "last_updated": "2026-07-17",
   "games": [
     {
+      "name": "Lumenlock",
+      "slug": "lumenlock",
+      "icon": "sparkles",
+      "category": "puzzle",
+      "description": "Flip mirrors to bend a beam through a prism, splitting white light into a rainbow, and lock every crystal in its own colour.",
+      "url": "https://lumenlock.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/lumenlock",
+      "tags": ["puzzle", "light", "daily", "mobile"],
+      "type": "game",
+      "date": "2026-07-17"
+    },
+    {
       "name": "Nightwire",
       "slug": "nightwire",
       "icon": "zap",

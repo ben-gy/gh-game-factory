@@ -3,6 +3,20 @@
   "description": "Registry of every web game built by gh-game-factory. Never duplicate an entry — check name, description, category, and genre before building.",
   "games": [
     {
+      "name": "lumenlock",
+      "repo": "ben-gy/lumenlock",
+      "date": "2026-07-17",
+      "description": "Light-routing puzzle: a white beam hits a prism and fans into a rainbow (red bends left, green straight, blue right); flip mirrors and half-silvered splitters to lock every crystal in its exact colour, where a crystal sums everything it receives so a stray beam spoils it and a white crystal takes either untouched white light or red+green+blue recombined. Solo, with an exhaustively-searched true par, a UTC Daily Lock and seeded share links.",
+      "genre": "puzzle",
+      "stack": "vanilla-ts",
+      "render": "canvas",
+      "multiplayer": "async-seed",
+      "max_players": 1,
+      "status": "deployed",
+      "url": "https://lumenlock.benrichardson.dev",
+      "pr_url": "https://github.com/ben-gy/lumenlock/pull/1"
+    },
+    {
       "name": "nightwire",
       "repo": "ben-gy/nightwire",
       "date": "2026-07-17",

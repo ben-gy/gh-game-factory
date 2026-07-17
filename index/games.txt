@@ -1,5 +1,7 @@
 === Web Games ===
 
+Lumenlock — Flip mirrors to bend a beam through a prism, splitting white light into a rainbow, and lock every crystal in its own colour. [puzzle, daily] https://lumenlock.benrichardson.dev
+
 Nightwire — Hidden-role deduction where the clues are numbers: probe a seat to learn how many Ghosts sit in that window, and remember the Ghosts choose what they publish. [party, multiplayer] https://nightwire.benrichardson.dev
 
 Gravity Golf — Slingshot your ball through a field of planets and bend it around gravity into the hole. [arcade, multiplayer] https://gravity-golf.benrichardson.dev

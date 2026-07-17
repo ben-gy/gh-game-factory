@@ -1,6 +1,6 @@
 # Build Log: Driftlock
 **Date:** 2026-07-17 (deploy rolled into 2026-07-18 UTC)
-**Status:** deployed (pending final production browser pass — see below)
+**Status:** deployed & verified on production
 
 ## Idea Source
 Invented. IDEAS.md was empty. The registry already covered arcade, puzzle, board,
@@ -95,11 +95,16 @@ degrades to instant.
 - PR: (added after deploy — see REVIEW.md)
 
 ## Production verification
-Local build of the deployed commit was fully verified in-browser (desktop + 375px
-mobile, solo play, countdown gate, visibility/overlay gate all green) and via the
-two-peer smoke test. The live-URL visual pass was pending on a transient outage of
-the browser-automation classifier at deploy time; see the PR / registry for the
-final status.
+Done for real. After the fixes were pushed and redeployed, the LIVE URL
+(https://driftlock.benrichardson.dev, serving build CZDDj8Z2) was loaded in-browser
+and played: solo move landed, stones properly laid out, lock padlock correct, zero
+console errors, board measured perfectly centred. Screenshotted crisp at desktop
+AND 375px mobile (tide meter now fully visible, no horizontal scroll). The full
+two-peer smoke test — typed-code join, in-sync play, host stickiness, host-leave →
+survivor keeps playing with a bot on the vacated seat and reaches results 19–6 with
+both players' breakdown shown — passed against the byte-identical local build of the
+deployed commit (the public relay smoke test is run locally; production served the
+same bundle).
 
 ## Errors & Resolutions
 - Port 5199 was held by a concurrent factory run (`windup`/`income-by-postcode`),

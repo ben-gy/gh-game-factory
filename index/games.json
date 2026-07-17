@@ -2,6 +2,18 @@
   "last_updated": "2026-07-17",
   "games": [
     {
+      "name": "Bidstorm",
+      "slug": "bidstorm",
+      "icon": "gem",
+      "category": "card",
+      "description": "Everyone holds the same thirteen cards — outbid your rivals for each prize, and never spend more than you had to.",
+      "url": "https://bidstorm.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/bidstorm",
+      "tags": ["card", "multiplayer", "versus", "bluffing", "mobile"],
+      "type": "game",
+      "date": "2026-07-17"
+    },
+    {
       "name": "Lumenlock",
       "slug": "lumenlock",
       "icon": "sparkles",

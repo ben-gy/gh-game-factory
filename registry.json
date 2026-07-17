@@ -3,6 +3,20 @@
   "description": "Registry of every web game built by gh-game-factory. Never duplicate an entry — check name, description, category, and genre before building.",
   "games": [
     {
+      "name": "bidstorm",
+      "repo": "ben-gy/bidstorm",
+      "date": "2026-07-17",
+      "description": "Bidding card game with no luck in the deal: every player holds the identical hand 1-13 and secretly commits one card per flipped prize, highest bid takes the pot and every card played is burned forever, while a tie for the lead wins nothing and carries the pot into the next round. Every hand is public, so it's a decision rather than a guess. Three modes (Classic, Foresight's two-prize lookahead, Blitz's seven cards where a tie burns the prize); solo vs bots, live P2P for 2-6, or an async seed-share challenge.",
+      "genre": "card",
+      "stack": "vanilla-ts",
+      "render": "dom",
+      "multiplayer": "p2p",
+      "max_players": 6,
+      "status": "deployed",
+      "url": "https://bidstorm.benrichardson.dev",
+      "pr_url": "https://github.com/ben-gy/bidstorm/pull/3"
+    },
+    {
       "name": "lumenlock",
       "repo": "ben-gy/lumenlock",
       "date": "2026-07-17",

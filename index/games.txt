@@ -1,5 +1,7 @@
 === Web Games ===
 
+Bidstorm — Everyone holds the same thirteen cards; outbid your rivals for each prize, and never spend more than you had to. [card, multiplayer] https://bidstorm.benrichardson.dev
+
 Lumenlock — Flip mirrors to bend a beam through a prism, splitting white light into a rainbow, and lock every crystal in its own colour. [puzzle, daily] https://lumenlock.benrichardson.dev
 
 Nightwire — Hidden-role deduction where the clues are numbers: probe a seat to learn how many Ghosts sit in that window, and remember the Ghosts choose what they publish. [party, multiplayer] https://nightwire.benrichardson.dev

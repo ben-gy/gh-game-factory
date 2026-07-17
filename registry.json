@@ -3,6 +3,21 @@
   "description": "Registry of every web game built by gh-game-factory. Never duplicate an entry — check name, description, category, and genre before building.",
   "games": [
     {
+      "name": "windup",
+      "repo": "ben-gy/windup",
+      "date": "2026-07-17",
+      "description": "Simultaneous-programming strategy: slot three movement cards into your wind-up bot, then every bot's program executes at once, one step at a time — and bots shove each other, so where you end up is rarely where you planned. Cogs ripen (+1 value a round, up to 5) so the board starts cheap and ends enormous, and everyone converges on the fat centre cog at the climax. Falling in a pit costs tempo, never elimination. Three modes (Skirmish 9x9/8 rounds, Clockwork 11x11/12, Gauntlet 13x13/16 with four program slots); solo vs bots, live P2P for 2-4, or an async seed-share challenge. Board is 90-degree rotationally symmetric with cogs spawning in symmetric orbits, so turn-0 is provably fair.",
+      "genre": "strategy",
+      "stack": "vanilla-ts",
+      "render": "canvas",
+      "multiplayer": "p2p",
+      "max_players": 4,
+      "status": "verify_production_pending",
+      "status_note": "Deploy succeeded and every production asset serves 200 (HTML, JS, CSS, manifest, all four icons), with the [hidden] guard confirmed in the shipped CSS. Full in-browser play + two-peer P2P smoke test (typed-code join, in-sync play, host stickiness, host-leave -> survivor finishes) all passed against the byte-identical local build of this commit. NOT marked deployed because the browser tooling (Chrome extension + in-app pane) went down before a visual pass against the live URL and a ~375px mobile screenshot could be taken.",
+      "url": "https://windup.benrichardson.dev",
+      "pr_url": "https://github.com/ben-gy/windup/pull/4"
+    },
+    {
       "name": "bidstorm",
       "repo": "ben-gy/bidstorm",
       "date": "2026-07-17",

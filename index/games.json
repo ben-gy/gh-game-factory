@@ -2,6 +2,18 @@
   "last_updated": "2026-07-17",
   "games": [
     {
+      "name": "Windup",
+      "slug": "windup",
+      "icon": "cog",
+      "category": "strategy",
+      "description": "Program three moves, wind it up, and watch it all go wrong as the bots shove each other off the ripening cogs.",
+      "url": "https://windup.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/windup",
+      "tags": ["strategy", "multiplayer", "versus", "programming", "mobile"],
+      "type": "game",
+      "date": "2026-07-17"
+    },
+    {
       "name": "Bidstorm",
       "slug": "bidstorm",
       "icon": "gem",

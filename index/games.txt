@@ -1,5 +1,7 @@
 === Web Games ===
 
+Windup — Program three moves, wind it up, and watch it all go wrong as the bots shove each other off the ripening cogs. [strategy, multiplayer] https://windup.benrichardson.dev
+
 Bidstorm — Everyone holds the same thirteen cards; outbid your rivals for each prize, and never spend more than you had to. [card, multiplayer] https://bidstorm.benrichardson.dev
 
 Lumenlock — Flip mirrors to bend a beam through a prism, splitting white light into a rainbow, and lock every crystal in its own colour. [puzzle, daily] https://lumenlock.benrichardson.dev

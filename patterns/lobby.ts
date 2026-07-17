@@ -9,14 +9,6 @@
  * run its own 'pres'/'preq'/'go' channels, which meant two ways to start a game
  * and a 'go' that carried a seed but no roster — leaving peers free to disagree
  * about who player 0 was.
- *
- * COPY THIS FILE into src/engine/ with net.ts + rematch.ts, and style .lobby-*
- * to match the game.
- *
- *   const net = createNet({ appId: 'my-slug', roomId: code });
- *   const rounds = createRounds({ net, playerName, minPlayers: 2,
- *     onRound: ({ seed, players, isHost }) => startGame(seed, players, isHost, net) });
- *   createLobby({ container, net, rounds, roomCode: code, minPlayers: 2 });
  */
 
 import type { Net, PeerId } from './net';
@@ -68,6 +60,20 @@ export function normalizeRoomCode(raw: string): string {
 export function setRoomInUrl(roomCode: string): void {
   const url = new URL(location.href);
   url.searchParams.set('room', roomCode);
+  url.hash = '';
+  history.replaceState(null, '', url.toString());
+}
+
+/**
+ * Drop ?room= on the way out of a room. Without this the code outlives the
+ * session: reopen the page — from history, or a home-screen icon — and the stale
+ * parameter drags you straight back into a room you have left, with no way to
+ * start a fresh one. "It always spawns the same game room no matter what."
+ */
+export function clearRoomInUrl(): void {
+  const url = new URL(location.href);
+  if (!url.searchParams.has('room')) return;
+  url.searchParams.delete('room');
   url.hash = '';
   history.replaceState(null, '', url.toString());
 }
@@ -165,7 +171,9 @@ export function createLobby(config: LobbyConfig): { destroy: () => void } {
   // player indices identical on every peer.
   function players(): LobbyPlayer[] {
     const s = rounds.state();
-    const host = net.host();
+    // Null until the room settles. Painting a host badge before then is how both
+    // players ended up looking like the host of a room that never connected.
+    const host = net.hostSettled() ? net.host() : null;
     const ready = new Set(s.votes.map((v) => v.id));
     return s.present
       .map((p) => ({
@@ -214,7 +222,7 @@ export function createLobby(config: LobbyConfig): { destroy: () => void } {
     const s = rounds.state();
     if (s.phase === 'playing') return;
     const ps = players();
-    const key = JSON.stringify([ps, s.canStart, s.voted]);
+    const key = JSON.stringify([ps, s.canStart, s.voted, net.hostSettled()]);
     if (key === painted) return;
     painted = key;
 
@@ -242,13 +250,16 @@ export function createLobby(config: LobbyConfig): { destroy: () => void } {
             .join('')}
         </ul>
         ${
-          ps.length < minPlayers
+          !net.hostSettled()
             ? `<div class="lobby-searching"><span class="spinner" aria-hidden="true"></span>
+                 <span>Connecting to the room…</span></div>`
+            : ps.length < minPlayers
+              ? `<div class="lobby-searching"><span class="spinner" aria-hidden="true"></span>
                  <span>Looking for ${minPlayers - ps.length} more player${minPlayers - ps.length === 1 ? '' : 's'}… share the invite link</span></div>`
-            : ''
+              : ''
         }
         <div class="lobby-actions">
-          <button class="lobby-btn primary lobby-ready" type="button">${s.voted ? 'Not ready' : "I'm ready"}</button>
+          <button class="lobby-btn primary lobby-ready" type="button" ${net.hostSettled() ? '' : 'disabled'}>${s.voted ? 'Not ready' : "I'm ready"}</button>
           ${
             net.isHost()
               ? `<button class="lobby-btn lobby-start" type="button" ${s.canStart ? '' : 'disabled'}>

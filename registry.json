@@ -3,6 +3,20 @@
   "description": "Registry of every web game built by gh-game-factory. Never duplicate an entry — check name, description, category, and genre before building.",
   "games": [
     {
+      "name": "morsel",
+      "repo": "ben-gy/morsel",
+      "date": "2026-07-18",
+      "description": "Petri-dish free-for-all: eat pellets to grow, swallow any smaller blob whole, run from bigger ones. Big blobs are slow, so the only way to catch anyone is to DASH — and a dash costs 15% of your mass, sprayed out behind you as food for whoever you're chasing, so the only way to grow your lead is to spend it. Pellets ramp in value over the round (the bloom) so an early lead banks nothing and the last stretch decides it; being swallowed just costs 1.5s and nobody is ever out. Three modes (Skirmish tiny/6/110s, Petri medium/6/150s, Famine big/8/180s with a third of the food); solo vs bots, live P2P free-for-all for 2-8, or an async seed-share. Split authority: each peer owns its own blob's motion and death, the host owns the pellet field, bots, clock and mass ledger; host transfer promotes a survivor who keeps the round finishable. Balance simulated AI-vs-AI (P(leader wins) flat early then spikes, every seat within a few points of chance) — the design doc predicted a snowball; the sim proved the opposite and drove the fix.",
+      "genre": "arcade",
+      "stack": "vanilla-ts",
+      "render": "canvas",
+      "multiplayer": "p2p",
+      "max_players": 8,
+      "status": "deployed",
+      "url": "https://morsel.benrichardson.dev",
+      "pr_url": "https://github.com/ben-gy/morsel/pull/4"
+    },
+    {
       "name": "driftlock",
       "repo": "ben-gy/driftlock",
       "date": "2026-07-18",

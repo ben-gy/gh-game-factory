@@ -2,6 +2,18 @@
   "last_updated": "2026-07-18",
   "games": [
     {
+      "name": "Morsel",
+      "slug": "morsel",
+      "icon": "circle",
+      "category": "arcade",
+      "description": "Eat the small ones, outrun the big ones — but catching anyone costs you the very mass you were winning with.",
+      "url": "https://morsel.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/morsel",
+      "tags": ["arcade", "multiplayer", "versus", "io", "mobile"],
+      "type": "game",
+      "date": "2026-07-18"
+    },
+    {
       "name": "Driftlock",
       "slug": "driftlock",
       "icon": "grid-3x3",

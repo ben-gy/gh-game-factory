@@ -1,5 +1,7 @@
 === Web Games ===
 
+Morsel — Eat the small ones, outrun the big ones — but catching anyone costs you the very mass you were winning with. [arcade, multiplayer] https://morsel.benrichardson.dev
+
 Driftlock — You never move a stone — you shift the row it stands on, and whatever slides into the rising Well is yours. [board, multiplayer] https://driftlock.benrichardson.dev
 
 Windup — Program three moves, wind it up, and watch it all go wrong as the bots shove each other off the ripening cogs. [strategy, multiplayer] https://windup.benrichardson.dev

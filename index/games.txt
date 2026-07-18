@@ -1,5 +1,7 @@
 === Web Games ===
 
+Scrapwall — Build a fort from scrap, then hold it: a co-op siege where the horde pathfinds to your Core and digs through whatever wall you left weakest. Feed your guns the ammo you harvest, patch breaches, survive. Solo, or hold the line with friends. [strategy, co-op] https://scrapwall.benrichardson.dev
+
 Tiny Tanks — Bank ricochet shots around the walls, steal the enemy flag, and race it home: a top-down capture-the-flag tank duel. Solo with bots or peer-to-peer with friends. [arcade, multiplayer] https://tiny-tanks.benrichardson.dev
 
 Grainfall — Rule a city-state one year at a time: split the grain, sow the fields, feed your people, and survive the harvests, rats and plagues that decide your reign. [strategy, daily] https://grainfall.benrichardson.dev

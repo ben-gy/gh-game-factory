@@ -2,6 +2,18 @@
   "last_updated": "2026-07-18",
   "games": [
     {
+      "name": "Scrapwall",
+      "slug": "scrapwall",
+      "icon": "castle",
+      "category": "strategy",
+      "description": "Build a fort from scrap, then hold it — a co-op siege where the horde digs toward whatever wall you left weakest.",
+      "url": "https://scrapwall.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/scrapwall",
+      "tags": ["strategy", "multiplayer", "co-op", "tower-defense", "mobile"],
+      "type": "game",
+      "date": "2026-07-18"
+    },
+    {
       "name": "Tiny Tanks",
       "slug": "tiny-tanks",
       "icon": "crosshair",

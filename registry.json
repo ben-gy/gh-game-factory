@@ -3,6 +3,20 @@
   "description": "Registry of every web game built by gh-game-factory. Never duplicate an entry — check name, description, category, and genre before building.",
   "games": [
     {
+      "name": "scrapwall",
+      "repo": "ben-gy/scrapwall",
+      "date": "2026-07-18",
+      "description": "Co-op grid base-defence: wall a central Core from shared scrap, feed auto-turrets the ammo you harvest from renewable salvage nodes, and hold an ever-worsening horde that pathfinds to the Core along the path of LEAST RESISTANCE — a weighted-Dijkstra flow-field routes husks around strong walls and digs through your weakest one (a real routing bug was found here — the flow-field weighted the source cell instead of the entered cell, luring husks INTO walls — and mutation-guarded). Over-fortifying starves the guns of the shared ammo pool, so the fort is a budget not a wish-list. Tap-to-build, drag-to-paint a wall run, tap-to-harvest — a board-game control scheme, no D-pad. Solo-first; live P2P co-op for 2-4 (host-authoritative snapshot star, actions on 'act', full grid+horde snapshot at 10Hz); host transfer promotes a survivor who rebuilds the deterministic spawn queue and keeps the run finishable. Three modes that change the SPACE not a dial: Outpost 9x9/two edges, Depot 11x11/four edges, Sprawl 13x13/four edges. Co-op scaling is honest — the horde and the scrap income both scale with party count (peer leaving shrinks the horde), refereed by a mandatory balance sim (AI-vs-the-horde over hundreds of seeds): a smooth wave ramp with a contested middle, every run terminates (the immortal-turret-carpet trap was caught + fixed), party playable at every size, RAMP_EXP pinned as the load-bearing termination constant. Full two-peer smoke test passed on live production: typed-code join, in-sync co-op play, host-leave -> survivor keeps playing, rematch into a fresh shared round.",
+      "genre": "strategy",
+      "stack": "vanilla-ts",
+      "render": "canvas",
+      "multiplayer": "p2p",
+      "max_players": 4,
+      "status": "deployed",
+      "url": "https://scrapwall.benrichardson.dev",
+      "pr_url": "https://github.com/ben-gy/scrapwall/pull/1"
+    },
+    {
       "name": "tiny-tanks",
       "repo": "ben-gy/tiny-tanks",
       "date": "2026-07-18",

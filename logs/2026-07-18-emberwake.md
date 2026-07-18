@@ -1,6 +1,6 @@
 # Build Log: Emberwake
 **Date:** 2026-07-18
-**Status:** deployed
+**Status:** verify_production_pending (see Deployment — the build is live, the TLS cert lagged)
 
 ## Idea Source
 IDEAS.md, second entry. The **first** entry (zombie horde base defence) was already being
@@ -119,6 +119,20 @@ at most one hazard exists at any point and a safe lane ALWAYS exists. Pinned by 
   z26 (below modals at z40) and pinned with a source-level CSS invariant test, mutation-verified.
 - **Balance mis-tunings** — see above; two full retunes, both driven by measurement rather
   than argument.
-- **TLS cert lag on first deploy.** DNS + Pages were correct and the site served over HTTP
-  immediately, but GitHub's cert for the custom domain took a while; the browser pane refuses
-  plain HTTP, so production browser verification waited on issuance.
+- **TLS cert lag blocked the production browser pass (status: verify_production_pending).**
+  DNS resolves to the Pages IPs, the deploy workflow is green, and production serves over
+  HTTP with every asset returning 200. But GitHub's cert sat in state `new`
+  ("certificate request process will begin shortly") for 70+ minutes. Likely cause: the
+  skill's step-4/5 CNAME cycling, run several times in quick succession, re-adds the domain
+  each time and requeues issuance — worth doing **once** and then leaving alone. Both browser
+  surfaces refuse plain HTTP (the in-app pane denies it outright; Chrome force-upgrades to
+  HTTPS and lands on an error page), so no visual pass against the live HTTPS URL was
+  possible.
+
+  **What that does and does not leave verified.** The deployed bundle is a byte-for-byte
+  SHA256 match (JS *and* CSS) for the exact local build that WAS fully play-verified
+  in-browser at 375px across all three modes, and the shipped CSS contains the `[hidden]`
+  guard. So the artifact is known-good; what is missing is specifically the "look at it on
+  the live URL" step. Per the factory rule, that is not enough to claim deployed — flip the
+  registry to `deployed` once `https://emberwake.benrichardson.dev` returns 200 and a
+  ~375px per-mode screenshot has been taken.

@@ -12,7 +12,8 @@
       "render": "canvas",
       "multiplayer": "async-seed",
       "max_players": 1,
-      "status": "deployed",
+      "status": "verify_production_pending",
+      "status_note": "Deploy succeeded and production serves correctly over HTTP: every asset 200 (HTML, JS, CSS, manifest, all four icons, og, robots, sitemap), and the shipped JS+CSS are a byte-for-byte SHA256 match for the exact local build that was fully play-verified in-browser at 375px across all three modes. NOT marked deployed because GitHub's TLS cert for the custom domain was still stuck in state 'new' after ~70min (early CNAME cycling likely requeued it), and both browser surfaces refuse plain HTTP, so a visual pass against the LIVE https URL could not be taken. Flip to deployed once https://emberwake.benrichardson.dev serves 200 and a ~375px per-mode screenshot is taken.",
       "url": "https://emberwake.benrichardson.dev",
       "pr_url": "https://github.com/ben-gy/emberwake/pull/1"
     },

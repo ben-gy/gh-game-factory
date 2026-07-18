@@ -14,10 +14,27 @@ Every file is dependency-light vanilla TypeScript (the only npm dependency is
 | `lobby.ts` | Drop-in lobby **view** over `rematch.ts`: room code, invite link + Web Share, player roster, ready states, host-only Start, and an animated **connecting spinner** (`.spinner` + `.lobby-searching`) while waiting for peers — style these in your game's CSS. | Every multiplayer game. |
 | `rng.ts` | Seedable deterministic PRNG (mulberry32) + shuffle/pick/randInt. Keeps peers in sync. | Any game with shared randomness (decks, spawns, boards). |
 | `loop.ts` | Fixed-timestep loop with render interpolation. Frame-rate-independent physics, no spiral-of-death. | Any real-time / animated game. |
-| `input.ts` | Unified keyboard + touch (auto virtual D-pad) + pointer, polled + edge-triggered. | Every game (mobile support is mandatory). |
+| `input.ts` | Unified keyboard + touch (auto virtual D-pad) + pointer, polled + edge-triggered. | Games that step in 4/8 directions or need a D-pad. |
+| `joystick.ts` | **Floating analog thumbstick** for touch — spawns under the thumb, radial dead-zone + scaled magnitude, `setPointerCapture`, snaps back. Desktop keeps its own scheme. | Any game where the avatar is steered continuously (a d-pad or "tap where to go" feels wrong). |
+| `drag.ts` | **Pointer gesture classifier** for DOM cards/tiles/handles: tap vs drag vs swipe off one Pointer Events stream, verified thresholds. Tap stays first-class. | Card / board / tile games that want drag-to-play + slide gestures. |
+| `noticeboard.ts` | Serverless list of open **public rooms** — opt-in, hosts advertise, entries expire on silence. | Games offering public matchmaking. |
+| `presence.ts` | Serverless **live head-count** ("3 playing · 5 online") via a heartbeat room + TTL prune. Opt-in only. | Drop-in public games wanting social-proof counts. |
 | `sound.ts` | Procedural Web Audio SFX — zero asset files, works offline. | Any game wanting juice. |
 | `storage.ts` | Namespaced, quota-safe localStorage for settings + local high-score boards. | Most games. |
 | `tests/rng.test.ts` | Template proving the P2P-sync determinism invariant. | Copy + extend for any game with shared randomness. |
+
+## Mobile controls — read `MOBILE_CONTROLS.md`
+
+[`MOBILE_CONTROLS.md`](./MOBILE_CONTROLS.md) is the verified, cited best-practice
+spec behind `joystick.ts`, `drag.ts` and `presence.ts` — exact numbers for the
+floating joystick, card drag/swipe thresholds, twin-stick/auto-fire, thumb
+ergonomics (44px targets, safe-area insets, anti-occlusion) and drop-in public
+play. Its §6 checklist is the non-negotiable bar; follow it for every game.
+
+**Footer convention:** the attribution `.site-footer` shows on every screen
+*except* the live game. Add `playing` to `<body>` when a round starts and remove
+it on the menu / results — `mobile.css` hides `body.playing .site-footer`. Nobody
+wants a "more games" backlink mid-round, and on a phone it steals play area.
 
 ## The netcode model (read before building multiplayer)
 

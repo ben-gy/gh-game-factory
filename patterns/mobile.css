@@ -119,6 +119,38 @@ canvas,
   touch-action: none;
 }
 
+/* While a round is actually being played, the attribution footer is noise — a
+   backlink to the rest of the site is the last thing a player wants mid-game,
+   and on a phone it steals a strip of the play area. Games add `playing` to
+   <body> when a round starts and remove it on the menu / results, so the footer
+   is present on every screen EXCEPT the live game. */
+body.playing .site-footer {
+  display: none !important;
+}
+
+/* A full-screen touch control layer (floating joystick surface, fire button
+   holder). Sits above the canvas, owns its own gestures, and keeps its buttons
+   in the thumb-reachable lower-outer corners clear of the notch / home bar. */
+.control-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  pointer-events: none; /* only its children (buttons) take taps */
+  touch-action: none;
+}
+
+.control-layer > * {
+  pointer-events: auto;
+}
+
+/* Insets so a HUD or a control layer never hides under the notch, the Dynamic
+   Island or the home-indicator swipe strip. Needs `viewport-fit=cover` in the
+   viewport meta, or env() resolves to 0. */
+.safe-inset {
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+    env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

@@ -2,6 +2,18 @@
   "last_updated": "2026-07-18",
   "games": [
     {
+      "name": "Frostward",
+      "slug": "frostward",
+      "icon": "snowflake",
+      "category": "board",
+      "description": "A cone of frost sweeps the board like a searchlight — bend the wind away from your hearths and it points at someone else.",
+      "url": "https://frostward.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/frostward",
+      "tags": ["board", "multiplayer", "versus", "strategy", "mobile"],
+      "type": "game",
+      "date": "2026-07-18"
+    },
+    {
       "name": "Deepwatch",
       "slug": "deepwatch",
       "icon": "waves",

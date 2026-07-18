@@ -3,6 +3,20 @@
   "description": "Registry of every web game built by gh-game-factory. Never duplicate an entry — check name, description, category, and genre before building.",
   "games": [
     {
+      "name": "frostward",
+      "repo": "ben-gy/frostward",
+      "date": "2026-07-18",
+      "description": "Simultaneous-commit board game for 2-4 built on one legible rule: the Rime spreads ONLY into the Gale's forward arc, so it grows as a cone that sweeps like a searchlight as the wind swings. Each turn everyone secretly plays one card — Veer (everyone's veers that turn SUM, so the wind is a tug-of-war), Ridge, Thaw, or Ember (plant a brand-new cone anywhere) — then the Rime steps and any hearth it reaches beats it back once before going dark for good. The tension is structural: the only way to get the cone off your hearths is to point it at somebody else's, and a turn spent bending the wind is a turn not spent walling. Live P2P where NO board state is ever transmitted — a round is a pure function of (seed, mode, roster, commits), so peers exchange only commits, which makes host transfer a state-wise no-op (the promoted peer already ran the identical sim) and a late joiner a few kB of replay. The mandatory balance sim OVERRULED the design repeatedly: the first build's full 135deg arc was nine cells wide against a three-cell hearth cluster, so median games ran 3-10 turns, leader-at-turn-2 held 70-81%, and the winner finished untouched >50% of the time. Fixes that MEASURED: a flank rule (frost advances straight down the wind but only creeps sideways into a cell already half-surrounded — small early, big late, with zero new state), a hearth guard + rime delay (which flattened 4P seats from 20/22/23/35 to 26/24/26/24 — the seat bias was NOT geometric, which is what everyone would have guessed), and fanning hearths across the sector (2P blowouts 57%->34%). Refuted: hearthGuard 2 (longer games, worse blowouts), rimeDelay 2, and lowering Whiteout's turn cap (converted kills into shrugs; stepping every 2nd turn instead is what shortened it). Most instructive, driftHunt was written into the plan as THE anti-snowball lever and measured as barely moving the leader curve at all — it is a pacing lever, and the test now pins that description so nobody re-derives the original story. Three modes that change the round (Drift 11x11, Whiteout 13x13 double-stepping, Emberfall 9x9 ember-heavy hand of 4). Two real defects were found by the in-browser two-tab pass rather than any unit test: a guest could see nobody ready ever (only the host receives commits) and 'Change my card' never told the host, so it would resolve the withdrawn card.",
+      "genre": "board",
+      "stack": "vanilla-ts",
+      "render": "dom",
+      "multiplayer": "p2p",
+      "max_players": 4,
+      "status": "deployed",
+      "url": "https://frostward.benrichardson.dev",
+      "pr_url": "https://github.com/ben-gy/frostward/pull/1"
+    },
+    {
       "name": "deepwatch",
       "repo": "ben-gy/deepwatch",
       "date": "2026-07-18",

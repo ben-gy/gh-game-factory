@@ -2,6 +2,18 @@
   "last_updated": "2026-07-18",
   "games": [
     {
+      "name": "Gloamrun",
+      "slug": "gloamrun",
+      "icon": "skull",
+      "category": "arcade",
+      "description": "Descend the gloam together — a co-op dungeon crawl where you fight deeper floor by floor, revive each other, and see how far the dark lets you go.",
+      "url": "https://gloamrun.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/gloamrun",
+      "tags": ["arcade", "multiplayer", "co-op", "roguelite", "mobile"],
+      "type": "game",
+      "date": "2026-07-18"
+    },
+    {
       "name": "Morsel",
       "slug": "morsel",
       "icon": "circle",

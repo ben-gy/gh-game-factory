@@ -1,7 +1,21 @@
 {
-  "last_updated": "2026-07-17",
+  "last_updated": "2026-07-18",
   "description": "Registry of every web game built by gh-game-factory. Never duplicate an entry — check name, description, category, and genre before building.",
   "games": [
+    {
+      "name": "gloamrun",
+      "repo": "ben-gy/gloamrun",
+      "date": "2026-07-18",
+      "description": "Endless co-op dungeon crawler: descend procedurally generated floors against an ever-worsening swarm — you auto-fire at the nearest monster so the game is all in your feet (position, kite, dash with i-frames), clear the floor, step on the stair, draft one of three upgrades, go deeper. Downed players are revivable by a teammate, never eliminated; the run ends only on a party wipe, and clearing a floor revives the party (floors are checkpoints). Fully playable solo; live P2P co-op for 2-4 over a shared room code. Host-authoritative star (host runs monster sim + floor machine and broadcasts a full snapshot, clients send input and predict their own hero); host transfer promotes a survivor who keeps the run finishable. Three modes with real spread (Delve roomy, Onslaught crowds, Gauntlet tight elites), boss every few floors. The difficulty curve is the opponent: a mandatory sim (tests/balance.test.ts) refereed the ramp and caught a 4-player immortal-party bug (out-DPSing a polynomial ramp forever) — fixed with a geometric HP term past floor 5 that guarantees termination. Also back-ported the stale rematch `cur` catch-up fix into patterns/.",
+      "genre": "arcade",
+      "stack": "vanilla-ts",
+      "render": "canvas",
+      "multiplayer": "p2p",
+      "max_players": 4,
+      "status": "deployed",
+      "url": "https://gloamrun.benrichardson.dev",
+      "pr_url": "https://github.com/ben-gy/gloamrun/pull/1"
+    },
     {
       "name": "morsel",
       "repo": "ben-gy/morsel",

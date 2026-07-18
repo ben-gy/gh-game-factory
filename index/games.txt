@@ -1,5 +1,7 @@
 === Web Games ===
 
+Deepwatch — A co-op game of nerve played in total silence: surface a hand of deep-sea creatures onto one line, shallowest first, with no numbers anywhere and no chat. A card's height on the depth gauge is its depth, and the only thing you know about anyone else is how long they've been holding. [card, co-op] https://deepwatch.benrichardson.dev
+
 Emberwake — Outrun a rising wall of dark. Your momentum is your speed, your life and your score all at once, so clipping a hazard doesn't kill you — it slows you, and the dark closes. Thread hazards for a refill, and spend it on a surge to clear the chasms. [arcade, daily] https://emberwake.benrichardson.dev
 
 Scrapwall — Build a fort from scrap, then hold it: a co-op siege where the horde pathfinds to your Core and digs through whatever wall you left weakest. Feed your guns the ammo you harvest, patch breaches, survive. Solo, or hold the line with friends. [strategy, co-op] https://scrapwall.benrichardson.dev

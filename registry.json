@@ -3,6 +3,21 @@
   "description": "Registry of every web game built by gh-game-factory. Never duplicate an entry — check name, description, category, and genre before building.",
   "games": [
     {
+      "name": "deepwatch",
+      "repo": "ben-gy/deepwatch",
+      "date": "2026-07-18",
+      "description": "Silent co-op card game of nerve for 2-4 divers: surface a hand of deep-sea creatures onto one shared line from shallowest to deepest, where NO number appears anywhere (a card's height on the depth gauge IS its depth) and there is no chat channel by design — the only information is who hasn't played yet and how long they've been not-playing. A misplay dredges up every shallower card and burns one of a few SHARED air tanks. The signature twist is the sonar ping, spendable only when every diver holds their card at once. One card, two gestures (tap to surface, press-and-hold to signal) — and a hold can never resolve as a tap, or every signal would surface a card. Live P2P co-op; hands are NEVER transmitted, only derived from (seed, level) minus what has left play, which makes host transfer a no-op state-wise (proven by tests/takeover.test.ts). Three modes: Shallows, Trench, Abyss (crowded deck + you only ever see your next card). A mandatory co-op balance sim OVERRULED five confident diagnoses: the rising tide never fired at all; sonar was WORSE than not having it (7% vs 8%) until divers learned to JOIN each other's signals (+5.35 sigma over 6,300 paired runs); widening the deck did nothing (proportional-only jitter makes every absolute scale cancel); scaling air tanks didn't rescue big crews even at +3/diver; and a broken control arm hid it all (sonar:false zeroed pings once, but modes grant bonus charges at pingAt levels). The real fixes were structural: a tide budget PER CARD, and a dive whose depth scales DOWN as the crew grows so every party faces the same total cards. Crucially the sim also certified a level 1 that ran in 6.3s — a real human got ZERO taps in before the tide surfaced their cards, because the sim's diver judges instantly; the tide was slowed to human speed and JITTER raised until the curve returned. Also found and mutation-guarded a lingering countdown-overlay leak on the live site.",
+      "genre": "card",
+      "stack": "vanilla-ts",
+      "render": "dom",
+      "multiplayer": "p2p",
+      "max_players": 4,
+      "status": "deployed",
+      "status_note": "Verified in-browser on the LIVE production URL at true 375x812 for EVERY mode (Shallows/4 -> 5 levels, Trench/4 -> 7, Abyss/4 -> 8): zero horizontal overflow, card fully on-screen and >=44px, four crew chips with no overlap, footer hidden mid-round, no stray [hidden] layer, zero console errors. Two-peer P2P smoke test NOT run against a second live browser context; host transfer is covered by 13 automated takeover tests including 'can still reach game over'.",
+      "url": "https://deepwatch.benrichardson.dev",
+      "pr_url": "https://github.com/ben-gy/deepwatch/pull/1"
+    },
+    {
       "name": "emberwake",
       "repo": "ben-gy/emberwake",
       "date": "2026-07-18",

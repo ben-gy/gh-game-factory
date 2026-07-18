@@ -2,6 +2,18 @@
   "last_updated": "2026-07-18",
   "games": [
     {
+      "name": "Deepwatch",
+      "slug": "deepwatch",
+      "icon": "waves",
+      "category": "card",
+      "description": "A silent co-op dive: surface a hand of deep-sea creatures in order with no numbers and no talking — all you know is who hasn't played yet.",
+      "url": "https://deepwatch.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/deepwatch",
+      "tags": ["card", "multiplayer", "co-op", "mobile"],
+      "type": "game",
+      "date": "2026-07-18"
+    },
+    {
       "name": "Emberwake",
       "slug": "emberwake",
       "icon": "flame",

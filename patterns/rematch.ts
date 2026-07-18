@@ -139,6 +139,15 @@ interface VoteMsg {
   name: string;
   in: boolean;
   /**
+   * The sender's CURRENT round number. Only the host's is trusted, and it lets a
+   * peer that fell behind catch up to the host's timeline. Without it, a peer
+   * that joined late — or left, was promoted away from, and rejoined — starts at
+   * round 0 while the incumbent is several rounds in, so its votes are all "for"
+   * the wrong round and silently dropped: it can never ready up, a soft-deadlock
+   * reachable via host-transfer-then-rejoin. See the 'rv' handler.
+   */
+  cur?: number;
+  /**
    * The sender's current game settings. Only the HOST's are ever used — this
    * rides the presence gossip so a lobby can show everyone what they are about
    * to play. Without it a guest can only render its OWN setting and call it the
@@ -220,6 +229,27 @@ export function createRounds(config: RoundsConfig): Rounds {
   const sendVote = net.channel<VoteMsg>('rv', (msg, from) => {
     names.set(from, msg.name);
     if (msg.opts !== undefined) opts.set(from, msg.opts);
+
+    // Catch up to the host's round timeline. The host is authoritative for the
+    // round number (only it calls go()), so if it reports a higher current round
+    // than ours, we are the one that fell behind — adopt it. This is what heals
+    // the host-transfer-then-rejoin deadlock: the returning peer would otherwise
+    // sit at round 0, voting for a round the room finished long ago, and never
+    // count toward quorum however many times it readies up. Only catch up while
+    // waiting — never yank a peer out of a round it is playing.
+    if (from === net.host() && phase !== 'playing' && msg.cur != null && msg.cur > round) {
+      const mine = votes.get(net.selfId)?.in ?? false;
+      round = msg.cur;
+      votes.clear();
+      // Preserve our own readiness across the jump and re-announce it, or the
+      // catch-up would silently un-ready us and we'd have to tap again.
+      if (mine) {
+        votes.set(net.selfId, { name: config.playerName, in: true });
+        sendVote({ round: next(), name: config.playerName, in: true, cur: round, opts: config.roundOpts?.() });
+      }
+      changed();
+    }
+
     // A vote for a round we have already started is noise from a slow peer.
     if (msg.round !== next()) return;
     votes.set(from, { name: msg.name, in: msg.in });
@@ -238,7 +268,10 @@ export function createRounds(config: RoundsConfig): Rounds {
     // unconditionally — a peer that has NOT voted is exactly what a host needs
     // to know before it decides everyone is ready.
     const mine = votes.get(net.selfId);
-    sendVote({ round: next(), name: config.playerName, in: mine?.in ?? false, opts: config.roundOpts?.() }, from);
+    sendVote(
+      { round: next(), name: config.playerName, in: mine?.in ?? false, cur: round, opts: config.roundOpts?.() },
+      from,
+    );
   });
 
   function begin(msg: StartMsg): void {
@@ -314,21 +347,21 @@ export function createRounds(config: RoundsConfig): Rounds {
 
   // Announce ourselves immediately and ask the room to do the same.
   votes.set(net.selfId, { name: config.playerName, in: false });
-  sendVote({ round: next(), name: config.playerName, in: false, opts: config.roundOpts?.() });
+  sendVote({ round: next(), name: config.playerName, in: false, cur: round, opts: config.roundOpts?.() });
   sendResync(null);
 
   return {
     vote() {
       if (phase === 'playing') return;
       votes.set(net.selfId, { name: config.playerName, in: true });
-      sendVote({ round: next(), name: config.playerName, in: true, opts: config.roundOpts?.() });
+      sendVote({ round: next(), name: config.playerName, in: true, cur: round, opts: config.roundOpts?.() });
       changed();
       maybeAutoStart();
     },
 
     unvote() {
       votes.set(net.selfId, { name: config.playerName, in: false });
-      sendVote({ round: next(), name: config.playerName, in: false, opts: config.roundOpts?.() });
+      sendVote({ round: next(), name: config.playerName, in: false, cur: round, opts: config.roundOpts?.() });
       changed();
     },
 

@@ -2,6 +2,18 @@
   "last_updated": "2026-07-18",
   "games": [
     {
+      "name": "Grainfall",
+      "slug": "grainfall",
+      "icon": "wheat",
+      "category": "strategy",
+      "description": "Rule a city-state one year at a time — split the grain, sow the fields, feed your people, and survive the harvests, rats and plagues that decide your reign.",
+      "url": "https://grainfall.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/grainfall",
+      "tags": ["strategy", "economy", "management", "daily", "mobile"],
+      "type": "game",
+      "date": "2026-07-18"
+    },
+    {
       "name": "Delvepack",
       "slug": "delvepack",
       "icon": "flame",

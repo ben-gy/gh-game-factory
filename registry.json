@@ -3,6 +3,20 @@
   "description": "Registry of every web game built by gh-game-factory. Never duplicate an entry — check name, description, category, and genre before building.",
   "games": [
     {
+      "name": "grainfall",
+      "repo": "ben-gy/grainfall",
+      "date": "2026-07-18",
+      "description": "Hammurabi-style micro-civilisation economy sim: rule a city-state one year at a time, splitting your grain three ways — trade land at a price that swings each year, sow the fields (a bushel of seed per acre, a farmer works 10), and feed your people (20 bushels each) — then the year rolls: harvest (weather sets bushels/acre), rats, plague, and settlers. Lose >45% of your people to starvation in a year and you're deposed. Solo-first with async seed-share (Daily Reign + challenge links replay a byte-identical deterministic decade; results screen shows a masterful-steward benchmark on your exact seed). Three genuinely different reigns: Steward (10y balanced), Famine (11y defensive attrition, break-even economy), Dynasty (18y boom + land speculation). The economy IS the game: a balance sim (cautious vs greedy bots, 400 seeds/mode) OVERRULED the design twice — Famine was mathematically unwinnable (net food per farmed person < feed need) and Dynasty's blind auto-growth swelled the city past its land's feeding capacity; fixed with break-even tuning + a settler land-cap (mutation-verified). A ~375px mobile HUD number-clipping bug was caught in the per-mode browser pass and pinned with a CSS-invariant guard.",
+      "genre": "strategy",
+      "stack": "vanilla-ts",
+      "render": "dom",
+      "multiplayer": "async-seed",
+      "max_players": 1,
+      "status": "deployed",
+      "url": "https://grainfall.benrichardson.dev",
+      "pr_url": "https://github.com/ben-gy/grainfall/pull/1"
+    },
+    {
       "name": "gloamrun",
       "repo": "ben-gy/gloamrun",
       "date": "2026-07-18",

@@ -17,6 +17,20 @@
       "pr_url": "https://github.com/ben-gy/gloamrun/pull/1"
     },
     {
+      "name": "delvepack",
+      "repo": "ben-gy/delvepack",
+      "date": "2026-07-18",
+      "description": "Co-op top-down dungeon crawler: descend procedurally-generated floors, auto-fire at the nearest monster, dash to dodge (i-frames), clear a floor to drop upgrade orbs and light the exit rune, then stand on it to descend — the ramp is the whole difficulty. Solo score-attack (deepest floor) plus live P2P for 2-4 delvers in the SAME deterministic dungeon against the dungeon, reviving downed teammates over a bleed-out window (all-down = wipe; a dropped peer just makes the run harder). Host-authoritative snapshot star: host owns monsters/bolts/HP/floor/rune, each peer owns only its own delver's motion; host transfer promotes a survivor who rebuilds combat stats from the deterministic formula and keeps the run finishable. Three modes that change the SPACE not a dial (Delve mid-hall, Warren wide crowd-cavern, Crypt tight knife-fight). NOTE: built concurrently with (and independent of) ben-gy/gloamrun from the same IDEAS.md line — a shared-queue race; both shipped. The co-op difficulty curve is refereed by an AI-vs-the-dungeon balance sim that OVERRULED the design (crowds+revive-cascades made co-op a tax, not deeper) and surfaced two real softlocks (a monster unkillable behind a pillar; an orb-fixation stall), both fixed and mutation-guarded.",
+      "genre": "arcade",
+      "stack": "vanilla-ts",
+      "render": "canvas",
+      "multiplayer": "p2p",
+      "max_players": 4,
+      "status": "verify_production_pending",
+      "url": "https://delvepack.benrichardson.dev",
+      "pr_url": "https://github.com/ben-gy/delvepack/pull/1"
+    },
+    {
       "name": "morsel",
       "repo": "ben-gy/morsel",
       "date": "2026-07-18",

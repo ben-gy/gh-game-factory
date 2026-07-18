@@ -2,6 +2,18 @@
   "last_updated": "2026-07-18",
   "games": [
     {
+      "name": "Delvepack",
+      "slug": "delvepack",
+      "icon": "flame",
+      "category": "arcade",
+      "description": "Descend a monster-choked dungeon — clear each floor, grab an upgrade, dash to dodge, go deeper. Solo, or drop in a friend and revive each other.",
+      "url": "https://delvepack.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/delvepack",
+      "tags": ["arcade", "multiplayer", "co-op", "roguelite", "mobile"],
+      "type": "game",
+      "date": "2026-07-18"
+    },
+    {
       "name": "Gloamrun",
       "slug": "gloamrun",
       "icon": "skull",

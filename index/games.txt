@@ -1,5 +1,7 @@
 === Web Games ===
 
+Delvepack — Descend a monster-choked dungeon: clear each floor, grab an upgrade, dash to dodge, go deeper. Solo, or drop in a friend and revive each other. [arcade, co-op] https://delvepack.benrichardson.dev
+
 Gloamrun — Descend the gloam together: a co-op dungeon crawl where you fight deeper floor by floor, revive each other, and see how far the dark lets you go. [arcade, co-op] https://gloamrun.benrichardson.dev
 
 Morsel — Eat the small ones, outrun the big ones — but catching anyone costs you the very mass you were winning with. [arcade, multiplayer] https://morsel.benrichardson.dev

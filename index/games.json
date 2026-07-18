@@ -2,6 +2,18 @@
   "last_updated": "2026-07-18",
   "games": [
     {
+      "name": "Changeling",
+      "slug": "changeling",
+      "icon": "crown",
+      "category": "board",
+      "description": "Real chess with one rule bolted on: capture a piece and yours turns into it, so your queen taking a pawn becomes a pawn.",
+      "url": "https://changeling.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/changeling",
+      "tags": ["board", "multiplayer", "versus", "chess", "mobile"],
+      "type": "game",
+      "date": "2026-07-18"
+    },
+    {
       "name": "Frostward",
       "slug": "frostward",
       "icon": "snowflake",

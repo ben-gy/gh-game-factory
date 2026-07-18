@@ -2,6 +2,18 @@
   "last_updated": "2026-07-18",
   "games": [
     {
+      "name": "Tiny Tanks",
+      "slug": "tiny-tanks",
+      "icon": "crosshair",
+      "category": "arcade",
+      "description": "Bank ricochet shots around the walls, steal the enemy flag, and race it home — a top-down capture-the-flag tank duel. Solo with bots or peer-to-peer with friends.",
+      "url": "https://tiny-tanks.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/tiny-tanks",
+      "tags": ["arcade", "multiplayer", "versus", "capture-the-flag", "mobile"],
+      "type": "game",
+      "date": "2026-07-18"
+    },
+    {
       "name": "Grainfall",
       "slug": "grainfall",
       "icon": "wheat",

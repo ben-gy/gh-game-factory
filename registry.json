@@ -3,6 +3,20 @@
   "description": "Registry of every web game built by gh-game-factory. Never duplicate an entry — check name, description, category, and genre before building.",
   "games": [
     {
+      "name": "tiny-tanks",
+      "repo": "ben-gy/tiny-tanks",
+      "date": "2026-07-18",
+      "description": "Top-down two-team capture-the-flag tank duel: your shots RICOCHET off the walls (bank them around corners; your own rebound can kill you), steal the enemy flag and race it home, first team to 3 wins. Two-hit tanks + a grab-invuln make a flag run a real, winnable race; nobody is eliminated (respawn); power-ups drop mid-field (spread, rapid, speed, shield, extra ricochet). Always a 2v2 with bots backfilling empty seats, so solo (you + a bot ally vs two bots) and 2-player both feel full. Live P2P versus (2-4 humans), host-authoritative snapshot star, host transfer promotes a survivor, rematch inside the room with a running match tally. Twin floating analog sticks on touch (left drives, right aims + auto-fires); WASD + mouse on desktop. PORTRAIT arena (bases top/bottom) so it fills a phone. Three modes that change the SPATIAL problem (Clash open, Labyrinth dense cover, Rampart structured chokes). The sim is PROVABLY point-symmetric (a mirror-input fairness test keeps seats exactly mirrored) so team fairness is by construction; the mandatory balance sim (48-55% team rate, P(lead@1) 66-72%) OVERRULED the design repeatedly — one-shot kills gave ZERO bot captures, fixed with two-hit tanks + grab-invuln + return-path cover, and it caught a self-symmetric centre pickup the lower seat always won (removed).",
+      "genre": "arcade",
+      "stack": "vanilla-ts",
+      "render": "canvas",
+      "multiplayer": "p2p",
+      "max_players": 4,
+      "status": "deployed",
+      "url": "https://tiny-tanks.benrichardson.dev",
+      "pr_url": "https://github.com/ben-gy/tiny-tanks/pull/1"
+    },
+    {
       "name": "grainfall",
       "repo": "ben-gy/grainfall",
       "date": "2026-07-18",

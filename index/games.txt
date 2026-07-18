@@ -1,5 +1,7 @@
 === Web Games ===
 
+Tiny Tanks — Bank ricochet shots around the walls, steal the enemy flag, and race it home: a top-down capture-the-flag tank duel. Solo with bots or peer-to-peer with friends. [arcade, multiplayer] https://tiny-tanks.benrichardson.dev
+
 Grainfall — Rule a city-state one year at a time: split the grain, sow the fields, feed your people, and survive the harvests, rats and plagues that decide your reign. [strategy, daily] https://grainfall.benrichardson.dev
 
 Delvepack — Descend a monster-choked dungeon: clear each floor, grab an upgrade, dash to dodge, go deeper. Solo, or drop in a friend and revive each other. [arcade, co-op] https://delvepack.benrichardson.dev

@@ -12,7 +12,8 @@
       "render": "dom",
       "multiplayer": "p2p",
       "max_players": 2,
-      "status": "deployed",
+      "status": "verify_production_pending",
+      "status_note": "Both deploys succeeded and production serves correctly over HTTP (200, correct <title>), with the shipped JS and CSS a byte-for-byte SHA256 match for the exact local build that was fully play-verified in a real browser at a true 375x812 across ALL THREE modes (Classic 8x8 44px cells, Skirmish 6x6 59px cells, Wildcourt 8x8 with the shuffled back rank confirmed identical for both sides in the live DOM) — zero horizontal overflow, play surface top-most at the board centre, no stray [hidden] layer, zero console errors. The full two-peer P2P smoke test also passed against that build: typed lower-case code join, in-sync play both ways, host stickiness, the host's mode travelling to a guest who had picked a different one locally, host-leave -> survivor promoted and reaching the summary, and rematch -> both peers in a fresh round with colours swapped and the mesh still live. NOT marked deployed because GitHub had not issued the TLS cert for the custom domain after ~35 minutes (the Pages API reports no https_certificate object at all; DNS resolves correctly and matches a working sibling), and both browser surfaces refuse plain HTTP, so a visual pass against the live https URL could not be taken. The Pages CNAME was set ONCE and deliberately NOT cycled, per the emberwake lesson that cycling requeues issuance. Flip to deployed once https://changeling.benrichardson.dev serves 200 and a ~375px per-mode screenshot is taken.",
       "url": "https://changeling.benrichardson.dev",
       "pr_url": "https://github.com/ben-gy/changeling/pull/1"
     },

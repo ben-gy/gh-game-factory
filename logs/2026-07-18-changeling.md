@@ -1,6 +1,7 @@
 # Build Log: Changeling
 **Date:** 2026-07-18
-**Status:** deployed *(pending final TLS confirmation — see Deployment)*
+**Status:** verify_production_pending *(see Deployment — the build is verified, the
+live https URL is not, because GitHub has not issued the certificate yet)*
 
 ## Idea Source
 IDEAS.md, first entry (removed from the queue on pick):
@@ -157,6 +158,26 @@ mutation-verified (fix reverted, test seen RED, restored, seen green):
 - **The Pages CNAME was set ONCE and deliberately not cycled.** A previous run
   (emberwake) left TLS issuance stuck in state "new" for 70+ minutes by cycling
   it repeatedly; the routine's cycle step is what causes that, so it was skipped.
-- Production serves correctly over HTTP (200, correct `<title>`) while the TLS
-  certificate finishes issuing. Both browser surfaces refuse plain HTTP, so the
-  final production visual pass is gated on the cert.
+- Production serves correctly over HTTP: 200, correct `<title>`, and the shipped
+  `assets/*.js` and `assets/*.css` are a **byte-for-byte SHA256 match** for the
+  exact local build that was play-verified in a real browser across all three
+  modes at 375×812.
+- **Not marked `deployed`.** After ~35 minutes GitHub had still not issued the TLS
+  certificate for the custom domain — the Pages API reports no `https_certificate`
+  object at all, while DNS resolves correctly and matches a working sibling
+  (`scrapwall`). Both browser surfaces refuse plain HTTP, so a visual pass against
+  the live `https://` URL could not be taken, and a curl 200 is not proof a game
+  works. Status is `verify_production_pending` rather than a claim I cannot back.
+- **To finish:** once `https://changeling.benrichardson.dev` returns 200, load it,
+  play each mode, take a ~375px screenshot per mode, and flip the registry entry
+  to `deployed`.
+
+## What is and is not verified
+**Verified:** all 160 tests; a clean production build; full solo play of every mode
+in a real browser at a true 375×812 with the overflow/overlap/visibility probes;
+the complete two-peer P2P contract (typed-code join, in-sync play, host stickiness,
+host's-mode-travels, host-leave takeover into the summary, rematch into a fresh
+shared round); and that production serves those exact bytes.
+
+**Not verified:** the live `https://` origin rendering in a browser. Everything
+above was done against the byte-identical local build.

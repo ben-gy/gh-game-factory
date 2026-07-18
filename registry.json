@@ -3,6 +3,20 @@
   "description": "Registry of every web game built by gh-game-factory. Never duplicate an entry — check name, description, category, and genre before building.",
   "games": [
     {
+      "name": "changeling",
+      "repo": "ben-gy/changeling",
+      "date": "2026-07-18",
+      "description": "Real chess — standard pieces, castling, en passant, promotion, win by checkmate — with ONE rule bolted on: the instant a piece captures, it becomes the TYPE of what it captured. The king is immune, so checkmate still means what it always meant. Promotion COMPOSES with the morph rather than being special-cased (a rook that eats a pawn on the last rank becomes a pawn AND promotes, so the generator offers the choice), and the base generator is pinned against published chess perft (20/400/8902 for the first three plies, which the morph provably cannot change). The design consequence is that recapture math inverts: capturing with your best piece downgrades it, so whoever recaptures LAST holds the good shape and initiating an exchange is a commitment. Material stops accumulating and starts CIRCULATING, which the material 'tide' bar makes the primary feedback. Solo vs a 3-strength alpha-beta engine; live 2-player P2P that is LOCKSTEP rather than a snapshot star — zero randomness and zero hidden info mean peers exchange only {from,to,promo} and the boards structurally cannot desync, leaving the CLOCK as the single host-authoritative thing (which is what host transfer actually takes over). Three modes: Classic 8x8, Skirmish 6x6 knife-fight (no castling, pawns walk), Wildcourt 8x8 with a seeded back-rank shuffle IDENTICAL for both sides so the opening is fair by construction. The mandatory balance sim OVERRULED the design twice: (1) the first measurement LIED — raw material said an early leader wins only ~27%, an artifact of reading material mid-exchange, which systematically favours the side about to be recaptured; resolving pending captures first (quietEval) made the question real, and believing the raw number would have aimed a fix at a snowball that does not exist. (2) White's first-move edge does NOT survive the morph — 260 paired games of Classic give White 46.5% where chess gives ~55%, because moving first means more often INITIATING the exchange you then get punished for — so no compensation was added. Three real bugs were caught by gates that unit tests could not see: both peers were ejected to the menu the instant the second joined (the net handlers' repaint fell back to showMenu with no live round — multiplayer 100% broken while solo play, tsc and 130 tests were all green); the host leaving stranded the survivor on a dead board (peer-leave ended the round and showed the summary, then the same handler repainted the board over it); and pieces were stranded a cell off their square in a backgrounded tab (the slide released its offset in a requestAnimationFrame, which a hidden tab never fires). All three mutation-verified.",
+      "genre": "board",
+      "stack": "vanilla-ts",
+      "render": "dom",
+      "multiplayer": "p2p",
+      "max_players": 2,
+      "status": "deployed",
+      "url": "https://changeling.benrichardson.dev",
+      "pr_url": "https://github.com/ben-gy/changeling/pull/1"
+    },
+    {
       "name": "frostward",
       "repo": "ben-gy/frostward",
       "date": "2026-07-18",

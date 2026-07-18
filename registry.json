@@ -3,6 +3,20 @@
   "description": "Registry of every web game built by gh-game-factory. Never duplicate an entry — check name, description, category, and genre before building.",
   "games": [
     {
+      "name": "emberwake",
+      "repo": "ben-gy/emberwake",
+      "date": "2026-07-18",
+      "description": "Neon lane-runner built on one legible rule: momentum is your speed, your health AND your score at once. A wall of dark chases at a floor speed that rises with distance, so clipping a hazard never kills you outright — it bleeds momentum, you slow, and the dark closes. The design consequence is the whole game: sidestepping into an empty lane is always safe and pays nothing, while THREADING a hazard in-lane (jump the pit you're standing in, slide under the bar) pays the refill you need to afford the next chasm. Chasms are crossable only while SURGING, and surging spends the very momentum keeping you ahead. Swipe controls (lane/jump/slide) + a held SURGE pad — no D-pad. Solo score-attack; async-seed multiplayer via a worldwide UTC daily seed, share links carrying seed+mode+distance, and a translucent ghost of your own best run on that track — all byte-exact because the sim is a pure function of (seed, mode, inputs). Results show a deterministic bot's 'clean line' distance on your exact seed so you know what you left on the table. Three modes with real spread: Ember (3 lanes, balanced), Nightfall (3 lanes, dark starts close and gains fast, mote-sparse), Latticework (5 lanes, denser hazards, gentler dark, longest runs). The mandatory balance sim OVERRULED the design twice — with no momentum decay the bot pinned momentum at max and cruised 6-9 minutes to a fixed wall with a 3% spread and zero skill differentiation; over-correcting with heavy decay ended every run by starvation BEFORE the first chasm, making the signature surge mechanic irrelevant in 2 of 3 modes and scoring all policies identically. Shipped economy is the third attempt: mixed surge beats pure-hoarding 3.3-4.3x and surge-spam 4.8-7.3x, <=3% chasm fumbles, zero unfair early deaths. Fairness is structural (strictly-increasing event distances => a safe lane always exists, pinned by a test).",
+      "genre": "arcade",
+      "stack": "vanilla-ts",
+      "render": "canvas",
+      "multiplayer": "async-seed",
+      "max_players": 1,
+      "status": "deployed",
+      "url": "https://emberwake.benrichardson.dev",
+      "pr_url": "https://github.com/ben-gy/emberwake/pull/1"
+    },
+    {
       "name": "scrapwall",
       "repo": "ben-gy/scrapwall",
       "date": "2026-07-18",

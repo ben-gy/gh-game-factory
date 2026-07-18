@@ -1,5 +1,7 @@
 === Web Games ===
 
+Emberwake — Outrun a rising wall of dark. Your momentum is your speed, your life and your score all at once, so clipping a hazard doesn't kill you — it slows you, and the dark closes. Thread hazards for a refill, and spend it on a surge to clear the chasms. [arcade, daily] https://emberwake.benrichardson.dev
+
 Scrapwall — Build a fort from scrap, then hold it: a co-op siege where the horde pathfinds to your Core and digs through whatever wall you left weakest. Feed your guns the ammo you harvest, patch breaches, survive. Solo, or hold the line with friends. [strategy, co-op] https://scrapwall.benrichardson.dev
 
 Tiny Tanks — Bank ricochet shots around the walls, steal the enemy flag, and race it home: a top-down capture-the-flag tank duel. Solo with bots or peer-to-peer with friends. [arcade, multiplayer] https://tiny-tanks.benrichardson.dev

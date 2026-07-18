@@ -2,6 +2,18 @@
   "last_updated": "2026-07-18",
   "games": [
     {
+      "name": "Emberwake",
+      "slug": "emberwake",
+      "icon": "flame",
+      "category": "arcade",
+      "description": "Outrun a rising wall of dark in a neon lane-runner where your momentum is your speed, your life and your score all at once.",
+      "url": "https://emberwake.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/emberwake",
+      "tags": ["arcade", "runner", "daily-seed", "mobile"],
+      "type": "game",
+      "date": "2026-07-18"
+    },
+    {
       "name": "Scrapwall",
       "slug": "scrapwall",
       "icon": "castle",

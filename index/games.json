@@ -2,6 +2,18 @@
   "last_updated": "2026-07-19",
   "games": [
     {
+      "name": "Lastlight",
+      "slug": "lastlight",
+      "icon": "flame",
+      "category": "strategy",
+      "description": "One generator holds back the cold — every building only works inside its shrinking ring of warmth.",
+      "url": "https://lastlight.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/lastlight",
+      "tags": ["strategy", "multiplayer", "versus", "survival", "mobile"],
+      "type": "game",
+      "date": "2026-07-19"
+    },
+    {
       "name": "Turntide",
       "slug": "turntide",
       "icon": "refresh-cw",

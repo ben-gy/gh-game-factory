@@ -40,3 +40,24 @@ means the fork can be deleted and that game rejoins the shared engine.
   `RoundOpts = Record<string, unknown>` locally. The engine's generic
   `RoundInfo<O>` covers it, but the ergonomics are poor — `createRounds` does not
   thread `O` through from `roundOpts()` to `onRound()`, so games cast.
+
+- **`DEFAULT_RELAYS` has three impaired entries, and a write-restricted relay is
+  indistinguishable from a healthy one by any connection check.** Measured during
+  the `turntide` build (2026-07-19), two peers on the same machine could not
+  discover each other at all: `wss://nostr.wine` accepts connections and answers
+  READS but rejects WRITES ("restricted: sign up at https://nostr.wine to write
+  events"), `wss://relay.damus.io` was rate-limiting announces ("you are noting
+  too much" — plausibly aggravated by concurrent factory sessions sharing one IP),
+  and `wss://relay.nostr.band` did not answer within 6s. Peers ANNOUNCE over these,
+  so a write-restricted relay is a dead relay that still passes a liveness probe;
+  with half the curated list dead the two peers settled on non-overlapping working
+  subsets and never met. `turntide` works around it with a game-side `relayUrls`
+  override (`src/main.ts`, `RELAYS`) — exactly the fork-per-game outcome the
+  package exists to prevent. **Proposed:** (a) refresh the curated list to
+  write-open relays (`nos.lol`, `relay.primal.net`, `relay.snort.social`,
+  `offchain.pub`, `nostr.mom`, `nostr-pub.wellorder.net` were all write-open at
+  time of writing); (b) treat a relay's first write rejection as a demotion and
+  re-dial elsewhere, rather than counting it toward redundancy; (c) surface
+  per-relay WRITE state (not just socket state) in `netDiag()`/`?netdebug=1`, since
+  the overlay currently shows a restricted relay as connected. Then remove the
+  turntide override.

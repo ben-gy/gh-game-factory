@@ -1,5 +1,7 @@
 === Web Games ===
 
+Turntide — Draughts with one rule replaced: a jump never kills. Leap an adjacent enemy and it flips to your colour and stays exactly where it is, so all 24 stones remain on the board and every capture swings two at once. Material circulates instead of accumulating, which means an early lead is not a won game. Kings can't be farmed (a flipped king loses its crown) and controlling 18 of the 24 stones wins instantly. Solo against a three-strength engine, or peer-to-peer with a friend. [board, versus] https://turntide.benrichardson.dev
+
 Changeling — Real chess, all the normal rules, win by checkmate — with one rule bolted on: the instant your piece captures, it turns into whatever it just captured. Take a pawn with your queen and your queen becomes a pawn; ram a pawn into their queen and that pawn is a queen. Only the king is immune. Solo against an engine, or peer-to-peer with a friend. [board, versus] https://changeling.benrichardson.dev
 
 Frostward — A creeping frost spreads only into the wind's forward arc, so it grows as a cone that sweeps the board like a searchlight. Everyone secretly plays one card a turn and every Veer adds up, which means the only way to get the cone off your own hearths is to point it at somebody else's. Last hearth still lit wins. [board, versus] https://frostward.benrichardson.dev

@@ -1,6 +1,18 @@
 {
-  "last_updated": "2026-07-18",
+  "last_updated": "2026-07-19",
   "games": [
+    {
+      "name": "Turntide",
+      "slug": "turntide",
+      "icon": "refresh-cw",
+      "category": "board",
+      "description": "Draughts where a jump never kills — leap an enemy and it flips to your colour, so all 24 stones stay on the board.",
+      "url": "https://turntide.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/turntide",
+      "tags": ["board", "multiplayer", "versus", "draughts", "mobile"],
+      "type": "game",
+      "date": "2026-07-19"
+    },
     {
       "name": "Changeling",
       "slug": "changeling",

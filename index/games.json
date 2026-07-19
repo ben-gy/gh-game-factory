@@ -2,6 +2,18 @@
   "last_updated": "2026-07-19",
   "games": [
     {
+      "name": "Sporeline",
+      "slug": "sporeline",
+      "icon": "git-branch",
+      "category": "strategy",
+      "description": "Maze tower-defence where your towers are the walls — fold the road longer to kill more, then send spores into a rival's field.",
+      "url": "https://sporeline.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/sporeline",
+      "tags": ["strategy", "multiplayer", "versus", "tower-defence", "maze", "mobile"],
+      "type": "game",
+      "date": "2026-07-19"
+    },
+    {
       "name": "Lastlight",
       "slug": "lastlight",
       "icon": "flame",

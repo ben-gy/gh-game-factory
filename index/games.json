@@ -1,6 +1,18 @@
 {
-  "last_updated": "2026-07-19",
+  "last_updated": "2026-07-20",
   "games": [
+    {
+      "name": "Rootbound",
+      "slug": "rootbound",
+      "icon": "hexagon",
+      "category": "board",
+      "description": "A boardless hex duel: grow one shared colony that must never split, and ring your rival's Heartroot before they ring yours.",
+      "url": "https://rootbound.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/rootbound",
+      "tags": ["board", "multiplayer", "versus", "abstract", "hex", "mobile"],
+      "type": "game",
+      "date": "2026-07-20"
+    },
     {
       "name": "Sporeline",
       "slug": "sporeline",

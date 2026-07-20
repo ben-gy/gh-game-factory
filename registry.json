@@ -1,7 +1,21 @@
 {
-  "last_updated": "2026-07-19",
+  "last_updated": "2026-07-20",
   "description": "Registry of every web game built by gh-game-factory. Never duplicate an entry — check name, description, category, and genre before building.",
   "games": [
+    {
+      "name": "rootbound",
+      "repo": "ben-gy/rootbound",
+      "date": "2026-07-20",
+      "description": "A boardless hex duel built on one rule: every piece from both players forms ONE colony that may never split. You win by filling every cell around the enemy Heartroot — with pieces of EITHER colour, so the rival walling themselves in does half your work and your last attacker is a piece you would rather have kept free. The signature mechanic is POLARITY: range is not a property of a piece but of where it stands — a piece among mostly its own colour is nested and moves exactly one cell, a piece outnumbered by the enemy is reaching and moves its full range, so retreating is slow and overextending is fast. Six piece types (Burrower squeezes gaps nothing else fits, Spindle leaps a line, Warden pins what it touches, Sporeling converts an enemy where it lands). Lockstep P2P for 2, not a snapshot star: zero randomness and zero hidden info mean peers exchange only {from,to,piece} and NO board state ever crosses the wire, so the desync surface does not exist and host transfer is a display concern (the promoted peer already holds a byte-identical board and just picks up the clock). THE BALANCE SIM OVERRULED THE DESIGN SEVEN TIMES across thirteen sweep rounds. Baseline was 52.5%/17.5% with 30% draws — one seat winning 3x as often, behind a green suite and a playable game. (1) The leading hypothesis, written down before testing so it could be scored, was WRONG AND INVERTED: bigger hands took thicket's draws from 29% to 92%. (2) A `heartrootBy` rule swept at 1/2/3/4 returned BYTE-IDENTICAL results at every setting because the search never delays its Heartroot — the rule never fired, so the sweep measured nothing; deleted rather than shipped unmeasured (sporeline's exact failure mode). (3) `witherSkew` measured FLAT on two modes of three, mechanistically: a skew can only compensate THROUGH the wither, and thicket's decided too few games to have purchase. (4) `openingBonus` overshoots by >2x — ~60 points of seat swing against a ~25 point problem, turning 62/38 into 32/68. (5) A FINDING TAKEN UNDER AN OLD RULE SET HAD TO BE RE-TAKEN: wider hands were rejected in round 1, but re-tested after the draw rule changed the same change took bramble's blowout rate from 47.9% to 2.1% — the single biggest quality win. (6) Bramble's wither is a PARITY CLIFF not a dial (83/17 at skew -2, 24/76 at skew 0, and firing it earlier made the cliff STEEPER, refuting the mechanism proposed one round before); it ships with no wither. (7) `tieToSecond` was not correcting bramble's bias, it WAS the bias — bramble splits 36/32/32 on its own and handing those draws to a seat manufactured a 36/64 rout out of a fair game; replaced by a seat-neutral countback on commitment. What worked: doubleRing 'mover' (draws to 0%), the wither (ring finishes 40%->76%, zero new state — a pure function of the ply counter so P2P sync was untouched), and deadwood reaching five VIA the wither instead of starting there (leader-at-move-8 67-80% -> 35%). Final at n=600 across three independent seed families: thicket 51.5/48.5 with a leader curve of 50/50/74, deadwood 48.5/51.5, bramble 55.3/44.7 of decided. Two real defects were caught by gates unit tests could not see: the CONTRAST TEST caught the two player colours at 1.07:1 luminance — the same shade of grey, while the plan beside them claimed a lightness split, i.e. turntide's shipped bug reproduced from scratch and caught on the first run; and the IN-BROWSER PASS caught a total hang where the solo bot never moved, because clearTimeout+setTimeout poked by a faster poll cancelled the think-timer ~120ms before it could ever fire — the clock counted down, the board froze, and the HUD said 'Thinking...', with zero console errors behind 202 green tests. Both mutation-verified, as is host-transfer promotion.",
+      "genre": "board",
+      "stack": "vanilla-ts",
+      "render": "canvas",
+      "multiplayer": "p2p",
+      "max_players": 2,
+      "status": "deployed",
+      "url": "https://rootbound.benrichardson.dev",
+      "pr_url": "https://github.com/ben-gy/rootbound/pull/1"
+    },
     {
       "name": "sporeline",
       "repo": "ben-gy/sporeline",

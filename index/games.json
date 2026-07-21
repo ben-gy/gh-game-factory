@@ -2,6 +2,18 @@
   "last_updated": "2026-07-21",
   "games": [
     {
+      "name": "Undercut",
+      "slug": "undercut",
+      "icon": "timer",
+      "category": "strategy",
+      "description": "Race strategy with no driving — call the pit windows, read the weather, and beat the field on a decision.",
+      "url": "https://undercut.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/undercut",
+      "tags": ["strategy", "multiplayer", "versus", "motorsport", "weather", "mobile"],
+      "type": "game",
+      "date": "2026-07-21"
+    },
+    {
       "name": "Boxbox",
       "slug": "boxbox",
       "icon": "gauge",

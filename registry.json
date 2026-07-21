@@ -1,7 +1,21 @@
 {
-  "last_updated": "2026-07-20",
+  "last_updated": "2026-07-21",
   "description": "Registry of every web game built by gh-game-factory. Never duplicate an entry — check name, description, category, and genre before building.",
   "games": [
+    {
+      "name": "boxbox",
+      "repo": "ben-gy/boxbox",
+      "date": "2026-07-21",
+      "description": "A pit-stop TRIAGE game where the decision is the game and the tapping is only the execution: a car comes in every stop with partial telemetry across four systems (tyres, fuel, wing, brakes) and a subjective, sometimes-wrong driver radio, and you choose which jobs the crew does — every job costs seconds NOW (a longer stop), every fault left costs seconds across the stint (a car carrying a problem is slow), and a system sent out CRITICAL blows up (puncture/brake failure/running dry) for a big fixed penalty, so a full service is never right and neither is the minimum. Then you run the stop: a dependency-ordered tap sequence (jack up before wheels off, wheels on before jack down, GO only when clear; an unsafe release is a penalty not a loss). Lowest total time wins; the results show the retrospectively PERFECT line on your exact seed (a per-system exact search, since the cost model decomposes per system). Live P2P VERSUS 2-6 on one shared seed + async seed-share + solo-vs-AI-field: each peer runs the identical deterministic race and exchanges only a status ping + a final result, so there is no shared continuous state to desync and host transfer is a display concern (the promoted survivor already holds every result and publishes the ladder). Chose versus over the idea's crew-roles co-op because cross-player physical dependencies deadlock the whole crew the instant one peer drops mid-stop; the co-op shape is logged in EXPANSION_IDEAS with the peer-leave reassignment + watchdog it would need. THE BALANCE SIM PROVED BOTH IDEA GATES (n=300/mode, mutation-verified): (1) triage beats raw 'do everything' tapping by ~15s Sprint / ~24s Enduro / ~13s Monsoon, winning >70% of paired races — without this it is a twitch test with a story painted on it; (2) the radio is worth hearing — weighing it halves catastrophes and saves ~1.5s in Monsoon where sensors go dark, while staying neutral where telemetry is reliable, because the radio bump scales with telemetry UNCERTAINTY (tiny when the gauge is live, large when the sensor is dark) rather than blindly obeying a driver who is wrong ~1 in 4. A first radio bot that obeyed the driver even against a live gauge was NET NEGATIVE in Sprint/Enduro (over-fixing on false alarms); the fix was the uncertainty-scaled weight. THE MECHANISM AUDIT (principle #21) re-derives every cost rule from its OWN independent constants, not the game's penaltyFor — the first version imported penaltyFor and compared the game's arithmetic against itself, a tautology that stayed GREEN when the penalty formula was mutated; the independent audit catches it (mutating penalty by +0.01 turns 3 audits red). Three modes with real spread: Sprint 4/clear-data, Enduro 7/compounding, Monsoon 5/sensors-dark. DOM-rendered (dashboard + tappable stations, no D-pad). 115 tests. Full live two-peer P2P smoke test passed against the byte-identical local build: mesh formed, host stickiness (creator kept HOST when guest joined; guest never showed a host badge), host's mode (Monsoon) travelled frozen, in-sync progress pings, and HOST-LEAVE -> survivor promoted -> kept playing to the finish -> published the ladder showing the departed host as 'left', match tally incremented.",
+      "genre": "strategy",
+      "stack": "vanilla-ts",
+      "render": "dom",
+      "multiplayer": "p2p",
+      "max_players": 6,
+      "status": "deployed",
+      "url": "https://boxbox.benrichardson.dev",
+      "pr_url": "https://github.com/ben-gy/boxbox/pull/1"
+    },
     {
       "name": "rootbound",
       "repo": "ben-gy/rootbound",

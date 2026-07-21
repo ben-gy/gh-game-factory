@@ -4,7 +4,19 @@ Enhancements to **existing** games (new modes, more players, better juice, a fre
 
 Format: `- **existing-repo-name**: Description of the enhancement or new mode. Include any library/spec URLs.`
 
-_(no game enhancements yet)_
+- **boxbox**: crew-roles CO-OP mode. The original idea floated a co-op where each
+  player owns a crew role (front jack / left side / right side / fuel & wing) with
+  cross-player physical dependencies — one pair of hands can't hold the jack AND
+  gun a wheel — sharing one clock, so nobody can solo the stop. Boxbox shipped
+  versus-on-same-seed instead because that shape is desync-proof and survives a
+  peer dropping, whereas cross-player physical dependencies deadlock the whole
+  crew the instant one peer's tab closes mid-stop. To do co-op safely it needs: a
+  per-role reassignment on peer-leave (a dropped role's stations fall to the
+  survivors, never freeze), a stop-level watchdog that force-completes an
+  abandoned station after a grace window, and a co-op summary that leads with the
+  shared stop time and shows each player's CONTRIBUTION (stations completed,
+  fumbles) rather than ranking them. The triage layer would become a shared vote
+  (host adjudicates) so two players can't call different job sets on one car.
 
 ## Engine
 

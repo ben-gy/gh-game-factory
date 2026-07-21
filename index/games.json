@@ -1,6 +1,18 @@
 {
-  "last_updated": "2026-07-20",
+  "last_updated": "2026-07-21",
   "games": [
+    {
+      "name": "Boxbox",
+      "slug": "boxbox",
+      "icon": "gauge",
+      "category": "strategy",
+      "description": "Call the pit stop — read the telemetry and the driver's radio, fix what's broken, skip what isn't, and beat the clock.",
+      "url": "https://boxbox.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/boxbox",
+      "tags": ["strategy", "multiplayer", "versus", "motorsport", "triage", "mobile"],
+      "type": "game",
+      "date": "2026-07-21"
+    },
     {
       "name": "Rootbound",
       "slug": "rootbound",

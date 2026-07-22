@@ -23,6 +23,28 @@ Format: `- **existing-repo-name**: Description of the enhancement or new mode. I
 Gaps in `@ben-gy/game-engine` that forced a game to keep a local fork. Closing one
 means the fork can be deleted and that game rejoins the shared engine.
 
+- **`drag.ts` has no STEPPED RAIL axis.** It classifies tap / drag / swipe off one Pointer
+  Events stream, which is right for cards and tiles, but it emits a *gesture*, not a stream of
+  discrete axis steps. A falling-block game (and anything else that moves a piece column by
+  column) needs "one step per N px of travel along an axis, with the grab offset preserved and
+  a running emitted-step count so a slow drag back and forth nets out correctly". `ballast`
+  implements it game-side in `src/touch.ts` per MOBILE_CONTROLS §6 — Pointer Events only,
+  `setPointerCapture`, per-`pointerId` state, `pointercancel` as an abort,
+  `clientX − getBoundingClientRect()`, intents queued and drained by the rAF step.
+  **Proposed:** `makeRail(el, { stepPx, axis, onStep })` alongside `makeDraggable`, sharing the
+  same promote/tap/swipe thresholds so tap-to-rotate and swipe-to-drop stay first-class.
+
+- **`lobby.ts`'s `qrOpen` state is defeated by a caller that rebuilds the lobby.** The engine
+  correctly keeps `qrOpen` in its own 600ms repaint key so the QR is not closed under a player
+  mid-scan — but a game whose net handlers call `createLobby` again on every roster/vote change
+  destroys and recreates the whole lobby, and the fresh one starts closed. `ballast` hit this
+  and the QR vanished about a second after every tap; the fix was game-side (repaint in place,
+  never rebuild a mounted lobby). It is a sharp edge worth blunting in the engine, because
+  "repaint the lobby when something changes" is the obvious thing for a game to do.
+  **Proposed:** either return a `repaint()` on the lobby handle (so games have an in-place
+  option that is easier to reach for than rebuilding), or have `createLobby` detect that it is
+  being mounted into a container it already owns and preserve its view state across the call.
+
 - **`sound.ts` cannot be extended with game-specific patches.** This is the
   single biggest cause of surviving forks: `bidstorm`, `cipher-clash`,
   `gravity-golf`, `hexbloom`, `nightwire`, `rhythm-relay`, `snake-royale` and

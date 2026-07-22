@@ -2,6 +2,18 @@
   "last_updated": "2026-07-22",
   "games": [
     {
+      "name": "Ballast",
+      "slug": "ballast",
+      "icon": "scale",
+      "category": "puzzle",
+      "description": "Stack the falling pieces and clear rows — but the well hangs from a pivot, so pile up on one side and it lists, pieces slide downhill, and the far side goes out of reach.",
+      "url": "https://ballast.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/ballast",
+      "tags": ["puzzle", "multiplayer", "versus", "stacker", "mobile"],
+      "type": "game",
+      "date": "2026-07-22"
+    },
+    {
       "name": "Unstrung",
       "slug": "unstrung",
       "icon": "scissors",

@@ -7,7 +7,7 @@ web-based game per day** to GitHub Pages under the `ben-gy` org — with
 Sibling to [`gh-site-factory`](https://github.com/ben-gy/gh-site-factory) (data
 sites) and [`gh-tool-factory`](https://github.com/ben-gy/gh-tool-factory)
 (browser tools). Every game appears automatically in the **Games** section of
-[hub.benrichardson.dev](https://hub.benrichardson.dev).
+[lab.benrichardson.dev](https://lab.benrichardson.dev).
 
 ## What it builds
 

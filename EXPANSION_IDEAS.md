@@ -73,3 +73,25 @@ means the fork can be deleted and that game rejoins the shared engine.
   per-relay WRITE state (not just socket state) in `netDiag()`/`?netdebug=1`, since
   the overlay currently shows a restricted relay as connected. Then remove the
   turntide override.
+
+- **unstrung**: a **co-op** shape for the seam mechanic, deliberately not built in the first run
+  (versus was chosen because the strand is a shrinking shared resource and *what you leave behind* is
+  the entire strategic content — co-op on one strand with a shared score collapses to alternating
+  solitaire where nobody has a reason not to take the biggest word, and one strong player calls every
+  move). The version that would work has to give the players *different information*: each diver can
+  only cut words that **start with a letter from their own private hand**, against a shared target
+  score and a turn clock. Now "I take the small word so the seam lands where *you* can reach it" is a
+  cooperative act, the party's total is genuinely a joint product, and no one player can solo it
+  because half the board is unreachable to them. Needs: per-seat letter hands dealt from the round
+  seed (still zero board state on the wire), a shared target curve tuned by a co-op sim measuring the
+  *difficulty* curve rather than seat fairness, and a mechanism invariant asserting every seat can
+  always reach at least one legal cut (the co-op equivalent of the dry-board check).
+- **unstrung**: a **ring** strand — the two ends of the strand stitched into a loop, so a cut can wrap
+  around the join and the board has no privileged head or tail. Cut from the first design for
+  rendering risk (a wrapping selection across a visual line break needs its own hit-testing story),
+  but it is a genuine fourth mode shape rather than a dial: on a ring *every* cut is interior, so
+  every cut makes two seams and the seam economy roughly doubles. Would need its own balance pass —
+  `SEAM_MULT` is tuned against a line, and on a ring x3 will almost certainly be too generous.
+- **unstrung**: show the join QR on the **results screen** as well as the lobby, via `qrPanelHtml()`,
+  so a third player can be pulled into a live room between rounds without anyone navigating back.
+  Currently "Back to lobby" is one tap away, which satisfies the requirement but costs a screen.

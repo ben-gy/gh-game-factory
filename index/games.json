@@ -1,6 +1,18 @@
 {
-  "last_updated": "2026-07-22",
+  "last_updated": "2026-07-23",
   "games": [
+    {
+      "name": "Uproar",
+      "slug": "uproar",
+      "icon": "megaphone",
+      "category": "party",
+      "description": "Pass the phone and get louder than the last person — the mic keeps score, the bar keeps climbing, and your nerve runs out first.",
+      "url": "https://uproar.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/uproar",
+      "tags": ["party", "microphone", "voice", "mobile"],
+      "type": "game",
+      "date": "2026-07-23"
+    },
     {
       "name": "Ballast",
       "slug": "ballast",

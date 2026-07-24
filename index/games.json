@@ -1,6 +1,18 @@
 {
-  "last_updated": "2026-07-23",
+  "last_updated": "2026-07-24",
   "games": [
+    {
+      "name": "Kilter",
+      "slug": "kilter",
+      "icon": "blocks",
+      "category": "arcade",
+      "description": "Stack bricks that really fall — no grid, real physics, so the tower leans and teeters and you lose by toppling. Race a friend to the height line, or balance a spire on a plinth barely a brick wide.",
+      "url": "https://kilter.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/kilter",
+      "tags": ["arcade", "multiplayer", "versus", "physics", "mobile"],
+      "type": "game",
+      "date": "2026-07-24"
+    },
     {
       "name": "Uproar",
       "slug": "uproar",

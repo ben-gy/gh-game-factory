@@ -1,6 +1,18 @@
 {
-  "last_updated": "2026-07-24",
+  "last_updated": "2026-07-25",
   "games": [
+    {
+      "name": "Amble",
+      "slug": "amble",
+      "icon": "footprints",
+      "category": "board",
+      "description": "An unhurried journey down one road — but the traveller furthest behind always goes next, so every stop you race to is a turn you hand your rivals. Solo or 2–5 over a link.",
+      "url": "https://amble.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/amble",
+      "tags": ["board", "multiplayer", "versus", "strategy", "mobile"],
+      "type": "game",
+      "date": "2026-07-25"
+    },
     {
       "name": "Kilter",
       "slug": "kilter",

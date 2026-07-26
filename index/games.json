@@ -1,6 +1,18 @@
 {
-  "last_updated": "2026-07-25",
+  "last_updated": "2026-07-26",
   "games": [
+    {
+      "name": "Beeline",
+      "slug": "beeline",
+      "icon": "globe",
+      "category": "puzzle",
+      "description": "Home in on a hidden country. Each guess tells you how far it is, which way it lies and how warm you're getting — solve it in as few as you can, on a shared daily or racing friends.",
+      "url": "https://beeline.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/beeline",
+      "tags": ["puzzle", "geography", "multiplayer", "versus", "daily", "mobile"],
+      "type": "game",
+      "date": "2026-07-26"
+    },
     {
       "name": "Amble",
       "slug": "amble",

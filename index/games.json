@@ -2,6 +2,18 @@
   "last_updated": "2026-07-27",
   "games": [
     {
+      "name": "Outsize",
+      "slug": "outsize",
+      "icon": "scaling",
+      "category": "puzzle",
+      "description": "Which country is bigger? Tap the one with more people, more land, or more crowding — build a streak as the gap between them tightens every round. Solo, a daily, or race a friend.",
+      "url": "https://outsize.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/outsize",
+      "tags": ["puzzle", "geography", "trivia", "multiplayer", "versus", "daily", "mobile"],
+      "type": "game",
+      "date": "2026-07-27"
+    },
+    {
       "name": "Landbridge",
       "slug": "landbridge",
       "icon": "route",

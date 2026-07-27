@@ -79,22 +79,5 @@ Format: `- Name or concept — one line of what it is and (if multiplayer) how p
   globally spread (not 60% Europe) or it rewards guessing the same continent every time — measure the
   answer-location distribution and cap per-country; and every photo needs a verifiable PD/CC0 source
   recorded in the generator.
-- **Geography higher-or-lower** (the endlessly-addictive "which is bigger?" format applied to country
-  stats — an original take, no source to credit). Two countries are shown; you pick which has the
-  greater **population** (or area / GDP-per-capita / coastline / highest peak, one stat per mode);
-  right, and one card slides away and a new challenger slides in — how long a **streak** can you keep?
-  Pure factual public-domain stats + flags/outlines, tiny bundle, snackable in the first 3 seconds.
-  **Single-player first**: endless streak with a persisted best (`storage.ts`), and a **UTC daily
-  gauntlet** (the same 15-pair sequence for everyone, one life, share your score). **Live P2P versus
-  2–6**, parallel same-seed: everyone plays the **identical sequence** from the frozen seed
-  simultaneously; you're out when you miss; last standing (or highest streak when a timer ends) wins,
-  results show **everyone's streak** (principle #9). Three modes = three stats with genuinely different
-  feel (Population — intuition-heavy; Area — often counter-intuitive vs population; a "Mixed" gauntlet
-  that switches stat each round and tells you which). Controls: two big tap targets (left/right or
-  higher/lower), swipe optional; trivially one-handed at 375px. Quality flags: the stat data must be
-  sourced from a public-domain dataset and dated in the About (stats drift); pairs must avoid
-  near-ties that are effectively coin-flips (enforce a minimum ratio between the two values so a
-  "correct" answer is knowable); and the daily sequence must be identical worldwide (UTC-date seed).
-
 - Face-to-face bluffing game in the shape of **Cockroach Poker** (Jacques Zeimet) — take the mechanic, not the identity (see the note above: original name, original creature/critter art, original flavour, no reference to the source). **The signature act, and the whole reason it is multiplayer: you slide a face-down card to another player and DECLARE what it is ("this is a spider") — and the declaration is free to be a lie.** The receiver must resolve it three ways, which is the entire game: call **"true"** or **"bluff"**, or — the twist that makes it social rather than a coin-flip — PEEK at the card and pass it on to a third player with a claim of their own (truthful or not). Whoever guesses wrong when a card is finally challenged takes it face-up in front of them; **you LOSE the moment you collect four of any one creature type** (an alternative loss: you must pass but have no legal target left). So the pressure is read-the-person, not read-the-board: the same card can travel the whole table, and the danger is targeted — everyone piles claims on the player already sitting on three spiders. Suited to this factory but genuinely hidden-information, so netcode is **host-authoritative** (the host holds the deck and each card's true identity; only the host learns a peek, and it gossips just the public trail — who passed to whom, the spoken claim, and the final challenge outcome — never the hidden face until reveal); the whole board is a handful of face-up "menagerie" rows plus the one card in flight, which renders cleanly on a phone. Needs 3+ players to work (with two it collapses to a straight lie-detector), so gate the lobby at 3 and make **solo-vs-bots** carry the single-player mode — which means the bot needs a real bluffing model (a tunable lie frequency, a memory of who has been caught, and a tell it sometimes leaks) or the game is dead solo. **Balance flags for the sim (principle #18):** (a) seat fairness — the player to the passer's left / the start-seat should not eat disproportionately many cards; (b) that no single creature type is statistically a death sentence (deck composition even across types); (c) that "always call bluff" or "always peek-and-pass" is not a dominant script — if one rote strategy wins, the bluff is fake, so measure win-rate spread across bot policies. Content warning to design around: the theme is unpleasant-critters-you-dodge; keep the art stylised and charming (cute-grotesque, not photoreal insects) so it reads as playful, and offer a friendlier reskin (mischievous woodland critters, say) as a mode.
 

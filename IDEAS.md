@@ -79,42 +79,6 @@ Format: `- Name or concept — one line of what it is and (if multiplayer) how p
   globally spread (not 60% Europe) or it rewards guessing the same continent every time — measure the
   answer-location distribution and cap per-country; and every photo needs a verifiable PD/CC0 source
   recorded in the generator.
-- **Mystery-country proximity guesser** (in the shape of a Worldle/Globle-style daily deduction game
-  — take the mechanic, original name/art). Each round hides one **mystery country**; you name a
-  country as a guess and it turns into a clue: the great-circle **distance** to the mystery country, a
-  **compass-arrow direction** toward it, and a **proximity %** (100% = solved), with the mystery
-  country's **silhouette** shown from the start in one mode. Solve in as few guesses as possible. Pure
-  factual + Natural Earth outlines, fully bundled — no photos, tiny payload. **Single-player first**
-  with a **UTC daily** everyone shares (spoiler-free emoji-grid result to copy, like the Wordle share)
-  and endless random rounds; **async seed-share**; and **live P2P race 2–6** — every peer works the
-  same mystery country from the frozen seed and the host gossips only guess-count/solved, so first-to-
-  solve (or fewest guesses when the timer ends) wins, the results screen showing **everyone's guess
-  count and the answer** (principle #9). Three modes with spread: Silhouette (outline shown — a shape
-  puzzle), Blind (no outline, distance+direction only — a pure geography-mental-map puzzle), and a
-  hard **Territories** variant including dependencies/small states. Controls: type-to-search a country
-  with an autocomplete list, tap to guess; works one-handed at 375px. Quality flags: the distance/
-  direction maths must be exact and deterministic (unit-tested — it is the whole game and the P2P
-  sync); the answer set must be curated so obscure micro-states are opt-in (the word-game "curated
-  list" lesson applied to countries); and a daily must be identical for every player worldwide (seed
-  from the UTC date only).
-- **Border-hop routing puzzle** (in the shape of a Travle-style connection game — take the mechanic,
-  original name/art). Given a **start** country and a **destination** country, build a chain of
-  countries where each is a **land-border neighbour** of the last, from start to destination — and try
-  to do it in as **few countries as possible** (the game knows the true shortest path via BFS on the
-  bundled adjacency graph and scores you against it: perfect / +1 / +2…). Wrong hops (not actually
-  bordering, or a dead-end that can't reach the destination) cost a life. It is a pure graph puzzle on
-  the **world border-adjacency graph** — trivially bundled, tiny, and deterministic, so it is a
-  perfect factory fit. A vector map highlights your growing chain so it reads spatially. **Single-
-  player first**: a **UTC daily** pair everyone gets (with the spoiler-free "solved in N, best M"
-  share), endless random pairs with a difficulty knob (continents apart = longer minimum path), and an
-  **endless "border chain" mode** (name any country bordering the last, don't repeat, how long a chain
-  before you're stuck — a solitaire streak). **Live P2P race 2–6**, parallel same-seed: everyone gets
-  the same start/destination and races to connect it, host gossips path-length/solved, results show
-  **everyone's route and the optimal one** (principle #9, "what everyone missed"). Controls: type-to-
-  search + tap to add a country; undo the last hop; one-handed at 375px. Quality flags: the adjacency
-  data must be correct (unit-test known borders and known NON-borders — the "curated data" lesson),
-  island nations with no land borders must be handled (excluded as endpoints, or given a "ferry"
-  rule), and every generated pair must be provably solvable (BFS reachable) before it is served.
 - **Geography higher-or-lower** (the endlessly-addictive "which is bigger?" format applied to country
   stats — an original take, no source to credit). Two countries are shown; you pick which has the
   greater **population** (or area / GDP-per-capita / coastline / highest peak, one stat per mode);

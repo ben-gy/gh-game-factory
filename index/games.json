@@ -1,6 +1,18 @@
 {
-  "last_updated": "2026-07-26",
+  "last_updated": "2026-07-27",
   "games": [
+    {
+      "name": "Landbridge",
+      "slug": "landbridge",
+      "icon": "route",
+      "category": "puzzle",
+      "description": "Hop country to country along shared land borders — from here to there in the fewest steps. The game knows the shortest route; can you beat it? Solo, a daily, or racing friends.",
+      "url": "https://landbridge.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/landbridge",
+      "tags": ["puzzle", "geography", "multiplayer", "versus", "daily", "mobile"],
+      "type": "game",
+      "date": "2026-07-27"
+    },
     {
       "name": "Beeline",
       "slug": "beeline",

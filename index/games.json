@@ -1,6 +1,18 @@
 {
-  "last_updated": "2026-07-27",
+  "last_updated": "2026-07-28",
   "games": [
+    {
+      "name": "Teeter",
+      "slug": "teeter",
+      "icon": "grid-3x3",
+      "category": "arcade",
+      "description": "Tilt your phone to roll a marble through a maze to the exit — dodge the pits, grab the gems, beat the clock. Fastest time wins. No sensor? Drag or use the arrow keys. Solo, a daily, or race a friend on the same maze.",
+      "url": "https://teeter.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/teeter",
+      "tags": ["arcade", "tilt", "sensor", "maze", "multiplayer", "versus", "mobile"],
+      "type": "game",
+      "date": "2026-07-28"
+    },
     {
       "name": "Outsize",
       "slug": "outsize",

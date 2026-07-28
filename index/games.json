@@ -2,6 +2,18 @@
   "last_updated": "2026-07-28",
   "games": [
     {
+      "name": "Wordloom",
+      "slug": "wordloom",
+      "icon": "grid-3x3",
+      "category": "word",
+      "description": "Letters arrive one at a time — drop each into a grid, and when it's full every row and column scores its best word. You can't move a letter once it's down, so each square is a bet on two words at once. Solo, a daily grid, or race a friend on the same letters peer-to-peer.",
+      "url": "https://wordloom.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/wordloom",
+      "tags": ["word", "puzzle", "multiplayer", "versus", "mobile"],
+      "type": "game",
+      "date": "2026-07-28"
+    },
+    {
       "name": "Squirm",
       "slug": "squirm",
       "icon": "bug",

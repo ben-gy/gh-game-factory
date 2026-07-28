@@ -2,6 +2,18 @@
   "last_updated": "2026-07-28",
   "games": [
     {
+      "name": "Squirm",
+      "slug": "squirm",
+      "icon": "bug",
+      "category": "card",
+      "description": "Slide a critter face-down, name it — the truth, or a lie. Your rival must believe you, call your bluff, or peek and pass it on with a lie of their own. Collect four of a kind and you're out. Solo vs bots, or peer-to-peer with friends.",
+      "url": "https://squirm.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/squirm",
+      "tags": ["card", "bluffing", "party", "multiplayer", "versus", "mobile"],
+      "type": "game",
+      "date": "2026-07-28"
+    },
+    {
       "name": "Teeter",
       "slug": "teeter",
       "icon": "grid-3x3",

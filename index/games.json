@@ -2,6 +2,18 @@
   "last_updated": "2026-07-28",
   "games": [
     {
+      "name": "Waft",
+      "slug": "waft",
+      "icon": "sparkles",
+      "category": "arcade",
+      "description": "Wave your hand in front of the camera to catch drifting fireflies before they fade — clean catches build a combo, wasps break it. No camera? Just tap. Solo, a daily swarm, or race a friend on the very same fireflies peer-to-peer.",
+      "url": "https://waft.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/waft",
+      "tags": ["arcade", "camera", "reflex", "multiplayer", "versus", "mobile"],
+      "type": "game",
+      "date": "2026-07-28"
+    },
+    {
       "name": "Wordloom",
       "slug": "wordloom",
       "icon": "grid-3x3",

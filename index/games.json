@@ -1,6 +1,18 @@
 {
-  "last_updated": "2026-07-29",
+  "last_updated": "2026-07-30",
   "games": [
+    {
+      "name": "Hatch",
+      "slug": "hatch",
+      "icon": "grid-3x3",
+      "category": "puzzle",
+      "description": "A picross puzzle: the numbers count the filled squares in each row and column, and reading them reveals a hidden picture. Filling a square that's really empty is a mistake, so it rewards deduction over guessing. Play a calm 10×10, a 90-second stream of small pictures, or a three-strikes 8×8 — solo, a daily board, or a peer-to-peer race on the same board.",
+      "url": "https://hatch.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/hatch",
+      "tags": ["puzzle", "logic", "nonogram", "multiplayer", "versus", "mobile"],
+      "type": "game",
+      "date": "2026-07-30"
+    },
     {
       "name": "Glint",
       "slug": "glint",

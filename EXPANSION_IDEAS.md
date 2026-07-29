@@ -129,3 +129,19 @@ existed for is gone, so these stay open until each one is deleted.
 - **unstrung**: show the join QR on the **results screen** as well as the lobby, via `qrPanelHtml()`,
   so a third player can be pulled into a live room between rounds without anyone navigating back.
   Currently "Back to lobby" is one tap away, which satisfies the requirement but costs a screen.
+- **hatch**: hand-authored **picture packs**. Boards are currently random line-solvable bitmaps, so
+  the revealed image is abstract — solving is satisfying but the reveal isn't a recognisable *thing*.
+  A curated set of small pixel-art pictures (each stored as a tiny bitmap, verified line-solvable at
+  build time by the existing line solver, rejected if not) would make the reveal a payoff ("it's a
+  cat!"). Keep the random generator as the daily/endless source; use a pack as a themed campaign or a
+  special daily. The verify-solvable-or-reject gate already exists (`lineSolve(...).solved`), so the
+  work is authoring + a `gen-pictures.mjs` that emits only the line-solvable ones. Watch the balance
+  sim: a hand-authored picture may have a different difficulty distribution than the density-tuned
+  random boards, so re-run the reader-vs-masher gap over the pack.
+- **hatch**: a **colour** nonogram mode (each filled square is one of a few colours, clues carry a
+  colour per run). A genuinely different puzzle — colour adjacency changes the deduction rules — but
+  it needs a colour-blind-safe palette that still clears the contrast gate for *every* pair of
+  adjacent colours, and the line solver + mistake model both need extending to a per-colour state, so
+  it is a real build, not a dial. Flag: the fill-vs-empty lightness cue that makes the mono game
+  colour-blind legible does not survive to a multi-colour board, so shape/pattern fills would be the
+  honest accessibility answer.

@@ -2,6 +2,18 @@
   "last_updated": "2026-07-29",
   "games": [
     {
+      "name": "Brim",
+      "slug": "brim",
+      "icon": "flame",
+      "category": "party",
+      "description": "Hold the phone dead still while an orb of light swells — the fuller it gets, the more it's worth. Release before it overflows, and don't let a jolt make you flinch and spill it. No motion sensor? Just hold your nerve. Three modes, a daily, and a peer-to-peer race on the very same orbs.",
+      "url": "https://brim.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/brim",
+      "tags": ["party", "motion", "nerve", "multiplayer", "versus", "mobile"],
+      "type": "game",
+      "date": "2026-07-29"
+    },
+    {
       "name": "Facet",
       "slug": "facet",
       "icon": "dices",

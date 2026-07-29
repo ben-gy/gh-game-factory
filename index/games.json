@@ -1,6 +1,18 @@
 {
-  "last_updated": "2026-07-28",
+  "last_updated": "2026-07-29",
   "games": [
+    {
+      "name": "Facet",
+      "slug": "facet",
+      "icon": "dices",
+      "category": "puzzle",
+      "description": "Roll a die around a grid so the right number lands face-up on each rune, then reach the vault in as few rolls as you can. Opposite faces add up to 7, so the short path is rarely the smart one. Three modes, a daily board, and a peer-to-peer race on the very same board.",
+      "url": "https://facet.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/facet",
+      "tags": ["puzzle", "logic", "multiplayer", "versus", "mobile"],
+      "type": "game",
+      "date": "2026-07-29"
+    },
     {
       "name": "Waft",
       "slug": "waft",

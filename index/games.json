@@ -2,6 +2,18 @@
   "last_updated": "2026-07-29",
   "games": [
     {
+      "name": "Glint",
+      "slug": "glint",
+      "icon": "sparkles",
+      "category": "party",
+      "description": "Two cards always share exactly one symbol — never none, never two. Spot it, tap it, and a fresh card deals the instant you do. Clear the deck, race a 90-second clock, or push a one-life streak. Play solo, chase the daily deck, or race friends peer-to-peer on the very same deck.",
+      "url": "https://glint.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/glint",
+      "tags": ["party", "reflex", "perception", "multiplayer", "versus", "mobile"],
+      "type": "game",
+      "date": "2026-07-29"
+    },
+    {
       "name": "Brim",
       "slug": "brim",
       "icon": "flame",

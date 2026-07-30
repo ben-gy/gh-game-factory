@@ -2,6 +2,18 @@
   "last_updated": "2026-07-30",
   "games": [
     {
+      "name": "Warble",
+      "slug": "warble",
+      "icon": "audio-lines",
+      "category": "arcade",
+      "description": "Your voice is the controller — hum low to fly low, whistle or sing high to fly high, and keep the glowing mote on a ribbon of light to score. No mic? Slide a finger up and down to fly instead, the same game. Track a forgiving ribbon, hold a staircase of notes, or thread a narrow gauntlet where one missed gap ends the run. Solo, a daily ribbon, or a peer-to-peer race on the same course.",
+      "url": "https://warble.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/warble",
+      "tags": ["arcade", "voice", "microphone", "rhythm", "multiplayer", "versus", "mobile"],
+      "type": "game",
+      "date": "2026-07-30"
+    },
+    {
       "name": "Hatch",
       "slug": "hatch",
       "icon": "grid-3x3",

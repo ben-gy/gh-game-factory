@@ -33,8 +33,16 @@ existed for is gone, so these stay open until each one is deleted.
   `makeRail`; `rematch.ts` opts generic. Migrated already: **turntide** (relay
   override deleted), **scrapwall** (forked `sound.ts` deleted, cue table kept
   as `src/cues.ts`), and **snake-royale** (forked `sound.ts` deleted 2026-07-25,
-  cues in `src/cues.ts` — see the sound-migration entry below). See the engine
-  CHANGELOG for the relay measurements.
+  cues in `src/cues.ts` — see the sound-migration entry below; its forked
+  `lobby.ts` deleted 2026-08-01, engine pin `#v1.3.2`, PR
+  https://github.com/ben-gy/snake-royale/pull/7). See the engine CHANGELOG for
+  the relay measurements.
+
+  **No forked `lobby.ts` survives anywhere in the fleet** — checked across all 45
+  games on 2026-08-01, not inferred from this file. What remains under this
+  heading is the `sound.ts` work (five games: `morsel`, `deepwatch`, `delvepack`,
+  `frostward`, `gloamrun` — four of them blocked on engine synthesis gaps) and
+  the `ballast` `touch.ts` port, whose fork is confirmed still present.
 
 - **Fleet migration: delete the remaining forked `sound.ts`** — the old "each is
   mechanical, just lift the table" claim here was WRONG and it took a run
@@ -94,12 +102,15 @@ existed for is gone, so these stay open until each one is deleted.
   `frostward`'s texture. Discovered while migrating `snake-royale` 2026-07-25;
   verified against each game's actual `sound.ts`, not assumed.
 
-- **Fleet migration: delete `snake-royale`'s forked `lobby.ts`** — the engine now
-  carries the public-rooms surface it was forked for, verbatim, including the
-  `P2P_IP_NOTE` / `BROWSE_IP_NOTE` wording. Its `modeSlot` / `onModeMount` /
-  `repaint()` are first-class lobby options now. This is the single highest-value
-  migration left, because that fork was a strict superset that stopped receiving
-  every engine lobby fix.
+- **Engine `lobby.ts`: an optional `shareTitle`.** The Web Share sheet is
+  hard-coded to `title: 'Join my game'`, so a game that wants its own name in the
+  share sheet has to fork the whole lobby for one string — which is exactly what
+  `snake-royale` was doing ("Join my Snake Royale game"), and what its migration
+  on 2026-08-01 had to give up to delete the fork. Add
+  `shareTitle?: string` to `LobbyConfig`, defaulting to the current wording, and
+  re-point snake-royale at it. Small, but it removes the only real reason left to
+  fork the lobby, and every game on the engine lobby currently shares an
+  anonymous title. Found while doing that migration, not assumed.
 
 - **ballast: delete `src/touch.ts` in favour of `makeRail`** — the engine's
   `makeRail(el, { stepPx, axis, onStep })` is a direct port of it, with the same

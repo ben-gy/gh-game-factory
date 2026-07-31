@@ -1,6 +1,18 @@
 {
-  "last_updated": "2026-07-30",
+  "last_updated": "2026-07-31",
   "games": [
+    {
+      "name": "Skein",
+      "slug": "skein",
+      "icon": "spline",
+      "category": "puzzle",
+      "description": "Drag the glowing beads until no threads cross. A crossed thread glows coral with an X where it cuts; a clean one glows cyan — move the beads until nothing crosses and the web settles green. Every web is guaranteed to have a tangle-free solution, so you are never stuck. Untangle one calm web, race a stream of small webs against a clock, or crack one big tangle on a limited number of moves. Solo, a daily web, or a peer-to-peer race on the same web.",
+      "url": "https://skein.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/skein",
+      "tags": ["puzzle", "untangle", "logic", "multiplayer", "versus", "mobile"],
+      "type": "game",
+      "date": "2026-07-31"
+    },
     {
       "name": "Warble",
       "slug": "warble",

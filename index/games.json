@@ -1,6 +1,18 @@
 {
-  "last_updated": "2026-07-31",
+  "last_updated": "2026-08-01",
   "games": [
+    {
+      "name": "Cairn",
+      "slug": "cairn",
+      "icon": "layers",
+      "category": "card",
+      "description": "A chain-clearing solitaire: a cairn is a pyramid of runed stones (a full A–K ladder). Take any exposed stone one rune above or below your hand — aces wrap to kings — and it becomes your new hand, uncovering the stones beneath. Long unbroken chains build a heat multiplier; when stuck, draw from the scree, which resets your heat and spends one of a limited number of draws. Every cairn is guaranteed to have a full-clear solution, so you are never dealt an impossible board. Clear one cairn at your pace, bank a stream of small cairns against a clock, or survive a big cairn on a hard draw budget. Solo, a daily cairn, or a peer-to-peer race on the same deal.",
+      "url": "https://cairn.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/cairn",
+      "tags": ["card", "solitaire", "chain", "multiplayer", "versus", "mobile"],
+      "type": "game",
+      "date": "2026-08-01"
+    },
     {
       "name": "Skein",
       "slug": "skein",

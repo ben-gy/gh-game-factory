@@ -2,6 +2,18 @@
   "last_updated": "2026-08-02",
   "games": [
     {
+      "name": "Tithe",
+      "slug": "tithe",
+      "icon": "repeat",
+      "category": "board",
+      "description": "A 5×5 duel where the only moves that exist are the two tolls in your hand — and the one you spend is handed straight to your opponent.",
+      "url": "https://tithe.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/tithe",
+      "tags": ["board", "multiplayer", "versus", "abstract", "hand-management", "mobile"],
+      "type": "game",
+      "date": "2026-08-02"
+    },
+    {
       "name": "Skyhold",
       "slug": "skyhold",
       "icon": "layers",

@@ -42,10 +42,6 @@ Format: `- Name or concept — one line of what it is and (if multiplayer) how p
 > is **out of scope** — cut it down to its one legible core loop or pick another. Order is roughly
 > best-fit-and-deepest first; the factory still applies the Step-2 criteria and may reorder.
 
-- **Sensei's Gambit** (Onitama-shaped) — a 5×5 duel where the only moves available are the four
-  animal cards in play; use one to move a stone, then that card slides to your opponent and theirs
-  slides to you, so the toolkit constantly rotates; capture the master or reach the far throne. vs 2,
-  lockstep + bot; different fixed card-sets = modes.
 - **Cosmoscrew** (The Crew-shaped) — CO-OP trick-taking in space: each mission assigns hidden "win
   this exact card / win it in this order" tasks and you must fulfil them together with almost no
   talking (one limited signal token); a 30-mission escalating campaign is the mode ladder. co-op 2-5,

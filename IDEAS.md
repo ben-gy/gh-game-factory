@@ -42,10 +42,6 @@ Format: `- Name or concept — one line of what it is and (if multiplayer) how p
 > is **out of scope** — cut it down to its one legible core loop or pick another. Order is roughly
 > best-fit-and-deepest first; the factory still applies the Step-2 criteria and may reorder.
 
-- **Skyhold** (Santorini-shaped) — on a small grid, each turn MOVE one of your two builders up to one
-  height then BUILD a block (or dome) on an adjacent square; first to step a builder onto a
-  third-level tower wins, and drafted "power" tiles (an extra build, a push, a swap) are the three
-  modes. vs 2 (3-4 variant), lockstep + minimax bot; procedural isometric towers.
 - **Sensei's Gambit** (Onitama-shaped) — a 5×5 duel where the only moves available are the four
   animal cards in play; use one to move a stone, then that card slides to your opponent and theirs
   slides to you, so the toolkit constantly rotates; capture the master or reach the far throne. vs 2,

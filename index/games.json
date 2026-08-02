@@ -1,15 +1,40 @@
 {
-  "last_updated": "2026-08-01",
+  "last_updated": "2026-08-02",
   "games": [
+    {
+      "name": "Skyhold",
+      "slug": "skyhold",
+      "icon": "layers",
+      "category": "board",
+      "description": "Move one builder, raise one block \u2014 first to stand three storeys high wins the sky.",
+      "url": "https://skyhold.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/skyhold",
+      "tags": [
+        "board",
+        "multiplayer",
+        "versus",
+        "abstract",
+        "mobile"
+      ],
+      "type": "game",
+      "date": "2026-08-02"
+    },
     {
       "name": "Cairn",
       "slug": "cairn",
       "icon": "layers",
       "category": "card",
-      "description": "A chain-clearing solitaire: a cairn is a pyramid of runed stones (a full A–K ladder). Take any exposed stone one rune above or below your hand — aces wrap to kings — and it becomes your new hand, uncovering the stones beneath. Long unbroken chains build a heat multiplier; when stuck, draw from the scree, which resets your heat and spends one of a limited number of draws. Every cairn is guaranteed to have a full-clear solution, so you are never dealt an impossible board. Clear one cairn at your pace, bank a stream of small cairns against a clock, or survive a big cairn on a hard draw budget. Solo, a daily cairn, or a peer-to-peer race on the same deal.",
+      "description": "A chain-clearing solitaire: a cairn is a pyramid of runed stones (a full A\u2013K ladder). Take any exposed stone one rune above or below your hand \u2014 aces wrap to kings \u2014 and it becomes your new hand, uncovering the stones beneath. Long unbroken chains build a heat multiplier; when stuck, draw from the scree, which resets your heat and spends one of a limited number of draws. Every cairn is guaranteed to have a full-clear solution, so you are never dealt an impossible board. Clear one cairn at your pace, bank a stream of small cairns against a clock, or survive a big cairn on a hard draw budget. Solo, a daily cairn, or a peer-to-peer race on the same deal.",
       "url": "https://cairn.benrichardson.dev",
       "repo": "https://github.com/ben-gy/cairn",
-      "tags": ["card", "solitaire", "chain", "multiplayer", "versus", "mobile"],
+      "tags": [
+        "card",
+        "solitaire",
+        "chain",
+        "multiplayer",
+        "versus",
+        "mobile"
+      ],
       "type": "game",
       "date": "2026-08-01"
     },
@@ -18,10 +43,17 @@
       "slug": "skein",
       "icon": "spline",
       "category": "puzzle",
-      "description": "Drag the glowing beads until no threads cross. A crossed thread glows coral with an X where it cuts; a clean one glows cyan — move the beads until nothing crosses and the web settles green. Every web is guaranteed to have a tangle-free solution, so you are never stuck. Untangle one calm web, race a stream of small webs against a clock, or crack one big tangle on a limited number of moves. Solo, a daily web, or a peer-to-peer race on the same web.",
+      "description": "Drag the glowing beads until no threads cross. A crossed thread glows coral with an X where it cuts; a clean one glows cyan \u2014 move the beads until nothing crosses and the web settles green. Every web is guaranteed to have a tangle-free solution, so you are never stuck. Untangle one calm web, race a stream of small webs against a clock, or crack one big tangle on a limited number of moves. Solo, a daily web, or a peer-to-peer race on the same web.",
       "url": "https://skein.benrichardson.dev",
       "repo": "https://github.com/ben-gy/skein",
-      "tags": ["puzzle", "untangle", "logic", "multiplayer", "versus", "mobile"],
+      "tags": [
+        "puzzle",
+        "untangle",
+        "logic",
+        "multiplayer",
+        "versus",
+        "mobile"
+      ],
       "type": "game",
       "date": "2026-07-31"
     },
@@ -30,10 +62,18 @@
       "slug": "warble",
       "icon": "audio-lines",
       "category": "arcade",
-      "description": "Your voice is the controller — hum low to fly low, whistle or sing high to fly high, and keep the glowing mote on a ribbon of light to score. No mic? Slide a finger up and down to fly instead, the same game. Track a forgiving ribbon, hold a staircase of notes, or thread a narrow gauntlet where one missed gap ends the run. Solo, a daily ribbon, or a peer-to-peer race on the same course.",
+      "description": "Your voice is the controller \u2014 hum low to fly low, whistle or sing high to fly high, and keep the glowing mote on a ribbon of light to score. No mic? Slide a finger up and down to fly instead, the same game. Track a forgiving ribbon, hold a staircase of notes, or thread a narrow gauntlet where one missed gap ends the run. Solo, a daily ribbon, or a peer-to-peer race on the same course.",
       "url": "https://warble.benrichardson.dev",
       "repo": "https://github.com/ben-gy/warble",
-      "tags": ["arcade", "voice", "microphone", "rhythm", "multiplayer", "versus", "mobile"],
+      "tags": [
+        "arcade",
+        "voice",
+        "microphone",
+        "rhythm",
+        "multiplayer",
+        "versus",
+        "mobile"
+      ],
       "type": "game",
       "date": "2026-07-30"
     },
@@ -42,10 +82,17 @@
       "slug": "hatch",
       "icon": "grid-3x3",
       "category": "puzzle",
-      "description": "A picross puzzle: the numbers count the filled squares in each row and column, and reading them reveals a hidden picture. Filling a square that's really empty is a mistake, so it rewards deduction over guessing. Play a calm 10×10, a 90-second stream of small pictures, or a three-strikes 8×8 — solo, a daily board, or a peer-to-peer race on the same board.",
+      "description": "A picross puzzle: the numbers count the filled squares in each row and column, and reading them reveals a hidden picture. Filling a square that's really empty is a mistake, so it rewards deduction over guessing. Play a calm 10\u00d710, a 90-second stream of small pictures, or a three-strikes 8\u00d78 \u2014 solo, a daily board, or a peer-to-peer race on the same board.",
       "url": "https://hatch.benrichardson.dev",
       "repo": "https://github.com/ben-gy/hatch",
-      "tags": ["puzzle", "logic", "nonogram", "multiplayer", "versus", "mobile"],
+      "tags": [
+        "puzzle",
+        "logic",
+        "nonogram",
+        "multiplayer",
+        "versus",
+        "mobile"
+      ],
       "type": "game",
       "date": "2026-07-30"
     },
@@ -54,10 +101,17 @@
       "slug": "glint",
       "icon": "sparkles",
       "category": "party",
-      "description": "Two cards always share exactly one symbol — never none, never two. Spot it, tap it, and a fresh card deals the instant you do. Clear the deck, race a 90-second clock, or push a one-life streak. Play solo, chase the daily deck, or race friends peer-to-peer on the very same deck.",
+      "description": "Two cards always share exactly one symbol \u2014 never none, never two. Spot it, tap it, and a fresh card deals the instant you do. Clear the deck, race a 90-second clock, or push a one-life streak. Play solo, chase the daily deck, or race friends peer-to-peer on the very same deck.",
       "url": "https://glint.benrichardson.dev",
       "repo": "https://github.com/ben-gy/glint",
-      "tags": ["party", "reflex", "perception", "multiplayer", "versus", "mobile"],
+      "tags": [
+        "party",
+        "reflex",
+        "perception",
+        "multiplayer",
+        "versus",
+        "mobile"
+      ],
       "type": "game",
       "date": "2026-07-29"
     },
@@ -66,10 +120,17 @@
       "slug": "brim",
       "icon": "flame",
       "category": "party",
-      "description": "Hold the phone dead still while an orb of light swells — the fuller it gets, the more it's worth. Release before it overflows, and don't let a jolt make you flinch and spill it. No motion sensor? Just hold your nerve. Three modes, a daily, and a peer-to-peer race on the very same orbs.",
+      "description": "Hold the phone dead still while an orb of light swells \u2014 the fuller it gets, the more it's worth. Release before it overflows, and don't let a jolt make you flinch and spill it. No motion sensor? Just hold your nerve. Three modes, a daily, and a peer-to-peer race on the very same orbs.",
       "url": "https://brim.benrichardson.dev",
       "repo": "https://github.com/ben-gy/brim",
-      "tags": ["party", "motion", "nerve", "multiplayer", "versus", "mobile"],
+      "tags": [
+        "party",
+        "motion",
+        "nerve",
+        "multiplayer",
+        "versus",
+        "mobile"
+      ],
       "type": "game",
       "date": "2026-07-29"
     },
@@ -81,7 +142,13 @@
       "description": "Roll a die around a grid so the right number lands face-up on each rune, then reach the vault in as few rolls as you can. Opposite faces add up to 7, so the short path is rarely the smart one. Three modes, a daily board, and a peer-to-peer race on the very same board.",
       "url": "https://facet.benrichardson.dev",
       "repo": "https://github.com/ben-gy/facet",
-      "tags": ["puzzle", "logic", "multiplayer", "versus", "mobile"],
+      "tags": [
+        "puzzle",
+        "logic",
+        "multiplayer",
+        "versus",
+        "mobile"
+      ],
       "type": "game",
       "date": "2026-07-29"
     },
@@ -90,10 +157,17 @@
       "slug": "waft",
       "icon": "sparkles",
       "category": "arcade",
-      "description": "Wave your hand in front of the camera to catch drifting fireflies before they fade — clean catches build a combo, wasps break it. No camera? Just tap. Solo, a daily swarm, or race a friend on the very same fireflies peer-to-peer.",
+      "description": "Wave your hand in front of the camera to catch drifting fireflies before they fade \u2014 clean catches build a combo, wasps break it. No camera? Just tap. Solo, a daily swarm, or race a friend on the very same fireflies peer-to-peer.",
       "url": "https://waft.benrichardson.dev",
       "repo": "https://github.com/ben-gy/waft",
-      "tags": ["arcade", "camera", "reflex", "multiplayer", "versus", "mobile"],
+      "tags": [
+        "arcade",
+        "camera",
+        "reflex",
+        "multiplayer",
+        "versus",
+        "mobile"
+      ],
       "type": "game",
       "date": "2026-07-28"
     },
@@ -102,10 +176,16 @@
       "slug": "wordloom",
       "icon": "grid-3x3",
       "category": "word",
-      "description": "Letters arrive one at a time — drop each into a grid, and when it's full every row and column scores its best word. You can't move a letter once it's down, so each square is a bet on two words at once. Solo, a daily grid, or race a friend on the same letters peer-to-peer.",
+      "description": "Letters arrive one at a time \u2014 drop each into a grid, and when it's full every row and column scores its best word. You can't move a letter once it's down, so each square is a bet on two words at once. Solo, a daily grid, or race a friend on the same letters peer-to-peer.",
       "url": "https://wordloom.benrichardson.dev",
       "repo": "https://github.com/ben-gy/wordloom",
-      "tags": ["word", "puzzle", "multiplayer", "versus", "mobile"],
+      "tags": [
+        "word",
+        "puzzle",
+        "multiplayer",
+        "versus",
+        "mobile"
+      ],
       "type": "game",
       "date": "2026-07-28"
     },
@@ -114,10 +194,17 @@
       "slug": "squirm",
       "icon": "bug",
       "category": "card",
-      "description": "Slide a critter face-down, name it — the truth, or a lie. Your rival must believe you, call your bluff, or peek and pass it on with a lie of their own. Collect four of a kind and you're out. Solo vs bots, or peer-to-peer with friends.",
+      "description": "Slide a critter face-down, name it \u2014 the truth, or a lie. Your rival must believe you, call your bluff, or peek and pass it on with a lie of their own. Collect four of a kind and you're out. Solo vs bots, or peer-to-peer with friends.",
       "url": "https://squirm.benrichardson.dev",
       "repo": "https://github.com/ben-gy/squirm",
-      "tags": ["card", "bluffing", "party", "multiplayer", "versus", "mobile"],
+      "tags": [
+        "card",
+        "bluffing",
+        "party",
+        "multiplayer",
+        "versus",
+        "mobile"
+      ],
       "type": "game",
       "date": "2026-07-28"
     },
@@ -126,10 +213,18 @@
       "slug": "teeter",
       "icon": "grid-3x3",
       "category": "arcade",
-      "description": "Tilt your phone to roll a marble through a maze to the exit — dodge the pits, grab the gems, beat the clock. Fastest time wins. No sensor? Drag or use the arrow keys. Solo, a daily, or race a friend on the same maze.",
+      "description": "Tilt your phone to roll a marble through a maze to the exit \u2014 dodge the pits, grab the gems, beat the clock. Fastest time wins. No sensor? Drag or use the arrow keys. Solo, a daily, or race a friend on the same maze.",
       "url": "https://teeter.benrichardson.dev",
       "repo": "https://github.com/ben-gy/teeter",
-      "tags": ["arcade", "tilt", "sensor", "maze", "multiplayer", "versus", "mobile"],
+      "tags": [
+        "arcade",
+        "tilt",
+        "sensor",
+        "maze",
+        "multiplayer",
+        "versus",
+        "mobile"
+      ],
       "type": "game",
       "date": "2026-07-28"
     },
@@ -138,10 +233,18 @@
       "slug": "outsize",
       "icon": "scaling",
       "category": "puzzle",
-      "description": "Which country is bigger? Tap the one with more people, more land, or more crowding — build a streak as the gap between them tightens every round. Solo, a daily, or race a friend.",
+      "description": "Which country is bigger? Tap the one with more people, more land, or more crowding \u2014 build a streak as the gap between them tightens every round. Solo, a daily, or race a friend.",
       "url": "https://outsize.benrichardson.dev",
       "repo": "https://github.com/ben-gy/outsize",
-      "tags": ["puzzle", "geography", "trivia", "multiplayer", "versus", "daily", "mobile"],
+      "tags": [
+        "puzzle",
+        "geography",
+        "trivia",
+        "multiplayer",
+        "versus",
+        "daily",
+        "mobile"
+      ],
       "type": "game",
       "date": "2026-07-27"
     },
@@ -150,10 +253,17 @@
       "slug": "landbridge",
       "icon": "route",
       "category": "puzzle",
-      "description": "Hop country to country along shared land borders — from here to there in the fewest steps. The game knows the shortest route; can you beat it? Solo, a daily, or racing friends.",
+      "description": "Hop country to country along shared land borders \u2014 from here to there in the fewest steps. The game knows the shortest route; can you beat it? Solo, a daily, or racing friends.",
       "url": "https://landbridge.benrichardson.dev",
       "repo": "https://github.com/ben-gy/landbridge",
-      "tags": ["puzzle", "geography", "multiplayer", "versus", "daily", "mobile"],
+      "tags": [
+        "puzzle",
+        "geography",
+        "multiplayer",
+        "versus",
+        "daily",
+        "mobile"
+      ],
       "type": "game",
       "date": "2026-07-27"
     },
@@ -162,10 +272,17 @@
       "slug": "beeline",
       "icon": "globe",
       "category": "puzzle",
-      "description": "Home in on a hidden country. Each guess tells you how far it is, which way it lies and how warm you're getting — solve it in as few as you can, on a shared daily or racing friends.",
+      "description": "Home in on a hidden country. Each guess tells you how far it is, which way it lies and how warm you're getting \u2014 solve it in as few as you can, on a shared daily or racing friends.",
       "url": "https://beeline.benrichardson.dev",
       "repo": "https://github.com/ben-gy/beeline",
-      "tags": ["puzzle", "geography", "multiplayer", "versus", "daily", "mobile"],
+      "tags": [
+        "puzzle",
+        "geography",
+        "multiplayer",
+        "versus",
+        "daily",
+        "mobile"
+      ],
       "type": "game",
       "date": "2026-07-26"
     },
@@ -174,10 +291,16 @@
       "slug": "amble",
       "icon": "footprints",
       "category": "board",
-      "description": "An unhurried journey down one road — but the traveller furthest behind always goes next, so every stop you race to is a turn you hand your rivals. Solo or 2–5 over a link.",
+      "description": "An unhurried journey down one road \u2014 but the traveller furthest behind always goes next, so every stop you race to is a turn you hand your rivals. Solo or 2\u20135 over a link.",
       "url": "https://amble.benrichardson.dev",
       "repo": "https://github.com/ben-gy/amble",
-      "tags": ["board", "multiplayer", "versus", "strategy", "mobile"],
+      "tags": [
+        "board",
+        "multiplayer",
+        "versus",
+        "strategy",
+        "mobile"
+      ],
       "type": "game",
       "date": "2026-07-25"
     },
@@ -186,10 +309,16 @@
       "slug": "kilter",
       "icon": "blocks",
       "category": "arcade",
-      "description": "Stack bricks that really fall — no grid, real physics, so the tower leans and teeters and you lose by toppling. Race a friend to the height line, or balance a spire on a plinth barely a brick wide.",
+      "description": "Stack bricks that really fall \u2014 no grid, real physics, so the tower leans and teeters and you lose by toppling. Race a friend to the height line, or balance a spire on a plinth barely a brick wide.",
       "url": "https://kilter.benrichardson.dev",
       "repo": "https://github.com/ben-gy/kilter",
-      "tags": ["arcade", "multiplayer", "versus", "physics", "mobile"],
+      "tags": [
+        "arcade",
+        "multiplayer",
+        "versus",
+        "physics",
+        "mobile"
+      ],
       "type": "game",
       "date": "2026-07-24"
     },
@@ -198,10 +327,15 @@
       "slug": "uproar",
       "icon": "megaphone",
       "category": "party",
-      "description": "Pass the phone and get louder than the last person — the mic keeps score, the bar keeps climbing, and your nerve runs out first.",
+      "description": "Pass the phone and get louder than the last person \u2014 the mic keeps score, the bar keeps climbing, and your nerve runs out first.",
       "url": "https://uproar.benrichardson.dev",
       "repo": "https://github.com/ben-gy/uproar",
-      "tags": ["party", "microphone", "voice", "mobile"],
+      "tags": [
+        "party",
+        "microphone",
+        "voice",
+        "mobile"
+      ],
       "type": "game",
       "date": "2026-07-23"
     },
@@ -210,10 +344,16 @@
       "slug": "ballast",
       "icon": "scale",
       "category": "puzzle",
-      "description": "Stack the falling pieces and clear rows — but the well hangs from a pivot, so pile up on one side and it lists, pieces slide downhill, and the far side goes out of reach.",
+      "description": "Stack the falling pieces and clear rows \u2014 but the well hangs from a pivot, so pile up on one side and it lists, pieces slide downhill, and the far side goes out of reach.",
       "url": "https://ballast.benrichardson.dev",
       "repo": "https://github.com/ben-gy/ballast",
-      "tags": ["puzzle", "multiplayer", "versus", "stacker", "mobile"],
+      "tags": [
+        "puzzle",
+        "multiplayer",
+        "versus",
+        "stacker",
+        "mobile"
+      ],
       "type": "game",
       "date": "2026-07-22"
     },

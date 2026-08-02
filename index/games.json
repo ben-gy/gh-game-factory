@@ -2,6 +2,18 @@
   "last_updated": "2026-08-02",
   "games": [
     {
+      "name": "Tacit",
+      "slug": "tacit",
+      "icon": "spade",
+      "category": "card",
+      "description": "A co-operative trick-taker: win the right card for the right crewmate, and you are almost never allowed to say which.",
+      "url": "https://tacit.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/tacit",
+      "tags": ["card", "multiplayer", "co-op", "trick-taking", "deduction", "mobile"],
+      "type": "game",
+      "date": "2026-08-02"
+    },
+    {
       "name": "Tithe",
       "slug": "tithe",
       "icon": "repeat",

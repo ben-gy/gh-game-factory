@@ -46,10 +46,6 @@ Format: `- Name or concept — one line of what it is and (if multiplayer) how p
   this exact card / win it in this order" tasks and you must fulfil them together with almost no
   talking (one limited signal token); a 30-mission escalating campaign is the mode ladder. co-op 2-5,
   host-authoritative (hidden hands) + bots for solo; the fleet's first trick-taker.
-- **Dice Genius** (Ganz schön clever / "That's Pretty Clever"-shaped) — on your turn roll six dice,
-  pick one (everything lower goes to the opponents to use), and slot it into one of five interlocking
-  colour tracks that chain-trigger each other into satisfying combo cascades. parallel same-seed race
-  2-6; host rolls; solo daily score-attack.
 - **Hedge & Sprint** (Quoridor-shaped) — race your pawn to the opposite edge while spending a limited
   supply of fences to lengthen the enemy's path (you may never fully wall them off). vs 2-4, lockstep
   + BFS/minimax bot; board size + fence budget = modes.

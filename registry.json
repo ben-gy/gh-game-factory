@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-02",
+  "last_updated": "2026-08-03",
   "description": "Registry of every web game built by gh-game-factory. Never duplicate an entry — check name, description, category, and genre before building.",
   "games": [
     {
@@ -701,6 +701,20 @@
       "status": "verify_production_pending",
       "url": "https://tacit.benrichardson.dev",
       "pr_url": "https://github.com/ben-gy/tacit/pull/1"
+    },
+    {
+      "name": "clatter",
+      "repo": "ben-gy/clatter",
+      "date": "2026-08-03",
+      "description": "THE FLEET'S FIRST DICE GAME and first roll-and-write (50 shipped games, none of either): take one die from a shared pool and EVERY DIE SMALLER THAN IT spills to the other players, so the die you most want is the one that pays the table most. Four interlocking tracks (Ladder/Tally/Run/Weights) chain-trigger free marks into each other. Lockstep over a replicated action log with NO host at all -- the state is a pure function of the log, so host transfer is a non-event and a dropped message is unobservable.",
+      "genre": "card",
+      "stack": "vanilla-ts",
+      "render": "dom",
+      "multiplayer": "p2p",
+      "max_players": 4,
+      "status": "deployed",
+      "url": "https://clatter.benrichardson.dev",
+      "pr_url": "https://github.com/ben-gy/clatter/pull/1"
     }
   ]
 }

@@ -1,6 +1,18 @@
 {
-  "last_updated": "2026-08-02",
+  "last_updated": "2026-08-03",
   "games": [
+    {
+      "name": "Clatter",
+      "slug": "clatter",
+      "icon": "dices",
+      "category": "card",
+      "description": "Take one die from the roll and every smaller die goes to everybody else \u2014 a roll-and-write about generosity you cannot avoid.",
+      "url": "https://clatter.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/clatter",
+      "tags": ["card", "dice", "roll-and-write", "multiplayer", "versus", "mobile"],
+      "type": "game",
+      "date": "2026-08-03"
+    },
     {
       "name": "Tacit",
       "slug": "tacit",

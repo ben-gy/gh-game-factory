@@ -42,10 +42,6 @@ Format: `- Name or concept — one line of what it is and (if multiplayer) how p
 > is **out of scope** — cut it down to its one legible core loop or pick another. Order is roughly
 > best-fit-and-deepest first; the factory still applies the Step-2 criteria and may reorder.
 
-- **Cosmoscrew** (The Crew-shaped) — CO-OP trick-taking in space: each mission assigns hidden "win
-  this exact card / win it in this order" tasks and you must fulfil them together with almost no
-  talking (one limited signal token); a 30-mission escalating campaign is the mode ladder. co-op 2-5,
-  host-authoritative (hidden hands) + bots for solo; the fleet's first trick-taker.
 - **Shunt** (Inglenook/Timesaver-shaped — the classic model-railway shunting puzzle, a mechanic in the
   public domain; original name, original yard layouts, no real railway's livery or branding) — a
   train yard seen from above: a locomotive, a headshunt and a handful of short sidings, and an order
@@ -60,6 +56,10 @@ Format: `- Name or concept — one line of what it is and (if multiplayer) how p
   par-chasing score attack. Modes = yard shape, not just size: a plain three-siding Inglenook, a
   run-round loop that lets you turn the loco, and a hump/kickback yard where one siding can only be
   entered by reversing into it.
+- **Cosmoscrew** (The Crew-shaped) — CO-OP trick-taking in space: each mission assigns hidden "win
+  this exact card / win it in this order" tasks and you must fulfil them together with almost no
+  talking (one limited signal token); a 30-mission escalating campaign is the mode ladder. co-op 2-5,
+  host-authoritative (hidden hands) + bots for solo; the fleet's first trick-taker.
 - **Hedge & Sprint** (Quoridor-shaped) — race your pawn to the opposite edge while spending a limited
   supply of fences to lengthen the enemy's path (you may never fully wall them off). vs 2-4, lockstep
   + BFS/minimax bot; board size + fence budget = modes.

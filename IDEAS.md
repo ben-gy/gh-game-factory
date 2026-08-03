@@ -46,6 +46,20 @@ Format: `- Name or concept — one line of what it is and (if multiplayer) how p
   this exact card / win it in this order" tasks and you must fulfil them together with almost no
   talking (one limited signal token); a 30-mission escalating campaign is the mode ladder. co-op 2-5,
   host-authoritative (hidden hands) + bots for solo; the fleet's first trick-taker.
+- **Shunt** (Inglenook/Timesaver-shaped — the classic model-railway shunting puzzle, a mechanic in the
+  public domain; original name, original yard layouts, no real railway's livery or branding) — a
+  train yard seen from above: a locomotive, a headshunt and a handful of short sidings, and an order
+  slip telling you which wagons to make up into a train and IN WHAT ORDER. The loco can only push and
+  pull from one end, sidings hold only so many wagons, and every wagon you want is behind two you
+  don't — so the whole game is the shunting itself, decoupling and re-coupling and running round,
+  and a clean solve is a route you found rather than a wall you brute-forced. Score is MOVES (a
+  direction change is the expensive one, which is what makes it feel like real yard work). Generate
+  by working a solved yard BACKWARDS so every puzzle is guaranteed solvable and its optimal move
+  count is known — meaning the results screen can say exactly how far off par everyone was. parallel
+  same-seed race 2-6 (everyone shunts an identical yard, fewest moves wins) + a daily yard; solo is a
+  par-chasing score attack. Modes = yard shape, not just size: a plain three-siding Inglenook, a
+  run-round loop that lets you turn the loco, and a hump/kickback yard where one siding can only be
+  entered by reversing into it.
 - **Hedge & Sprint** (Quoridor-shaped) — race your pawn to the opposite edge while spending a limited
   supply of fences to lengthen the enemy's path (you may never fully wall them off). vs 2-4, lockstep
   + BFS/minimax bot; board size + fence budget = modes.

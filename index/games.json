@@ -1,6 +1,24 @@
 {
-  "last_updated": "2026-08-04",
+  "last_updated": "2026-08-05",
   "games": [
+    {
+      "name": "Bracken",
+      "slug": "bracken",
+      "icon": "trees",
+      "category": "board",
+      "description": "Race across the common while you close the ways through it — but you may never seal one off entirely.",
+      "url": "https://bracken.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/bracken",
+      "tags": [
+        "board",
+        "multiplayer",
+        "versus",
+        "abstract",
+        "mobile"
+      ],
+      "type": "game",
+      "date": "2026-08-05"
+    },
     {
       "name": "Shunt",
       "slug": "shunt",

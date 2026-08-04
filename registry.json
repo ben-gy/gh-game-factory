@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-04",
+  "last_updated": "2026-08-05",
   "description": "Registry of every web game built by gh-game-factory. Never duplicate an entry — check name, description, category, and genre before building.",
   "games": [
     {
@@ -729,6 +729,20 @@
       "status": "deployed",
       "url": "https://shunt.benrichardson.dev",
       "pr_url": "https://github.com/ben-gy/shunt/pull/1"
+    },
+    {
+      "name": "bracken",
+      "repo": "ben-gy/bracken",
+      "date": "2026-08-05",
+      "description": "A racing-and-blocking abstract for 2-4 built from the IDEAS.md Quoridor-shaped line (mechanic only: original name, original procedural art, no reference to the source anywhere in the product). On your turn you do exactly one of two things -- walk one square towards the far edge, or plant a hedge to lengthen a rival's route -- and you may never plant one that leaves anybody with NO route, so you shape corridors rather than seal them. THE ONE HARD MOBILE PROBLEM IS THAT A HEDGE LIVES BETWEEN CELLS (~5px of lattice at 375px), solved by hit-testing nothing by its own bounds: every tap resolves to the nearest LEGAL action, so there is no dead zone and an illegal hedge cannot be aimed at at all -- the no-sealing rule is enforced by geometry rather than an error message. Solo is negamax + alpha-beta with iterative deepening against a WALL-CLOCK deadline (cost bounded by time, so a slow phone just searches shallower); candidate hedges are pruned to those severing somebody's current shortest route, cutting branching from ~133 to ~10-25. Multiplayer is LOCKSTEP WITH NO AUTHORITY AT ALL -- nothing random, nothing hidden -- so every peer broadcasts the WHOLE ply log (~246 bytes a game), making a dropped message a non-event, a late joiner instantly in sync, and a divergent build detected rather than silently tolerated; a departing player is retired through an explicit LOGGED ply, never inferred locally. THE SIM OVERRULED THE DESIGN: at n=60 the 7x7 board read 65% first-player and an extra hedge 'fixed' it, but at n=600 across two independent seed families the even game is already fair (51.2% +/-4.0) and that fix measured 41.7% -- it would have handed the game to the second player -- so bracken ships with no compensation rule. Third mode Coppice replaces both private supplies with one shared stack of twelve, so planting is also denying.",
+      "genre": "board",
+      "stack": "vanilla-ts",
+      "render": "dom",
+      "multiplayer": "p2p",
+      "max_players": 4,
+      "status": "deployed",
+      "url": "https://bracken.benrichardson.dev",
+      "pr_url": "https://github.com/ben-gy/bracken/pull/1"
     }
   ]
 }

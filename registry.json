@@ -698,7 +698,7 @@
       "render": "dom",
       "multiplayer": "p2p",
       "max_players": 5,
-      "status": "verify_production_pending",
+      "status": "deployed",
       "url": "https://tacit.benrichardson.dev",
       "pr_url": "https://github.com/ben-gy/tacit/pull/1"
     },

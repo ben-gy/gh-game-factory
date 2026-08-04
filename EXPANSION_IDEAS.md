@@ -156,3 +156,17 @@ existed for is gone, so these stay open until each one is deleted.
   it is a real build, not a dial. Flag: the fill-vs-empty lightness cue that makes the mono game
   colour-blind legible does not survive to a multi-colour board, so shape/pattern fills would be the
   honest accessibility answer.
+- **shunt**: a **hump / classification yard** as a fourth mode — the one genuinely different axis the
+  build's design pass identified and deliberately cut. Wagons are pushed over a hump and roll into
+  roads by gravity, so a road fills **FIFO from the far end** instead of LIFO from the mouth, which
+  inverts the game's central constraint (today, "the order of a rake never reverses" is the whole
+  puzzle). That is the appeal and also why it was cut: it needs a **second rules model, a second
+  solver, a second generator and renderer support**, since `applyMove`'s push/pull inverse pair — the
+  property that makes par provably optimal and the yard un-brickable — does not hold for a
+  gravity-fed road. Two things to settle before building it: (a) is the reverse move still legal, and
+  if not, does the backward Dijkstra still give exact par (it does not, on a directed graph — you'd
+  search forward per yard, or prove a different symmetry); (b) the unanswered playtest critique that
+  at 7 wagons a hump yard is "solve it on paper, then type in 13 confirmations" — i.e. it may be a
+  planning exercise with no moment-to-moment decisions. Prototype the solver and measure branching
+  and optimal-move uniqueness (shunt's shipped modes sit at ~4 legal moves/state) before committing
+  to art.

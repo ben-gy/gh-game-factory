@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-03",
+  "last_updated": "2026-08-04",
   "description": "Registry of every web game built by gh-game-factory. Never duplicate an entry — check name, description, category, and genre before building.",
   "games": [
     {
@@ -715,6 +715,20 @@
       "status": "deployed",
       "url": "https://clatter.benrichardson.dev",
       "pr_url": "https://github.com/ben-gy/clatter/pull/1"
+    },
+    {
+      "name": "shunt",
+      "repo": "ben-gy/shunt",
+      "date": "2026-08-04",
+      "description": "A TRAIN-YARD SHUNTING PUZZLE -- the fleet's first: sort a rake between capacity-limited dead-end roads where the loco only works the near end, so the order of a rake never reverses. Scored in direction changes, against a par that is the PROVEN optimum (Dijkstra outward from every finished position), not an estimate.",
+      "genre": "puzzle",
+      "stack": "vanilla-ts",
+      "render": "dom",
+      "multiplayer": "p2p",
+      "max_players": 6,
+      "status": "deployed",
+      "url": "https://shunt.benrichardson.dev",
+      "pr_url": "https://github.com/ben-gy/shunt/pull/1"
     }
   ]
 }

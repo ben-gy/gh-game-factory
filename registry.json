@@ -41,7 +41,7 @@
       "multiplayer": "p2p",
       "max_players": 6,
       "status": "verify_production_pending",
-      "url": "https://skein.benrichardson.dev",
+      "url": "https://skein-untangle.benrichardson.dev",
       "pr_url": "https://github.com/ben-gy/skein/pull/1"
     },
     {
@@ -112,7 +112,7 @@
       "max_players": 6,
       "status": "verify_production_pending",
       "status_note": "DEPLOYED and byte-verified, but the production IN-BROWSER HTTPS pass could not be completed this run because the GitHub Pages TLS cert never finished issuing (cert_state stayed 'new' -- 'The certificate request process will begin shortly.' -- for ~100 min of polling; https/curl 000 the whole time while http serves 200). The CNAME was cycled ONCE only (re-cycling requeues the cert per the 'cycling requeues the cert' lesson). Nothing more can be done factory-side; it is GitHub-side cert propagation. Deploy workflow GREEN (npm ci + npm test 140/140 + build on the Linux runner, so the lockfile is healthy with all 25 rollup platform binaries). Fully play-verified in a real browser LOCALLY across ALL THREE modes at BOTH 375px AND desktop AND through the COMPLETE two-peer P2P smoke on the real relay (typed lowercase-code join, QR, host stickiness, in-sync same-seed, everyone's-results, live rematch to a fresh par-21 round, host-leave survival). Production serves (HTTP 200) and the DEPLOYED BYTES ARE A BYTE-FOR-BYTE SHA256 MATCH for the exact local build that was fully verified -- all THREE assets: JS 3ac24cadd26c827f9..., CSS 2a95853c68cd5270..., HTML 4425d8cd2b8e225f... So production is serving precisely the verified build. The production IN-BROWSER HTTPS visual pass could NOT be taken this run: the GitHub Pages TLS cert was still issuing after ~50+ min (cert_state='new', description 'This domain was recently added. The certificate request process will begin shortly.'; https/curl 000; the .github.io host 301-redirects to the custom domain so its bytes are gated on the same cert; the browser pane refuses to load http:// and can't load https:// until the cert lands). The CNAME was cycled ONCE only (per the 'cycling requeues the cert' lesson -- not re-cycled). This is GitHub-side cert propagation, NOT a config problem. Re-take a ~375px + desktop per-mode production screenshot once the cert is live to close the loop; the served bytes are already proven identical to the fully-verified build.",
-      "url": "https://facet.benrichardson.dev",
+      "url": "https://facet-dice.benrichardson.dev",
       "pr_url": "https://github.com/ben-gy/facet/pull/1"
     },
     {

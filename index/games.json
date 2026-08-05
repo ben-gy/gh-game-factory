@@ -2,6 +2,18 @@
   "last_updated": "2026-08-05",
   "games": [
     {
+      "name": "Brood",
+      "slug": "brood",
+      "icon": "hexagon",
+      "category": "board",
+      "description": "There is no board — only the cluster you and your rival build, until one Matriarch has all six sides closed.",
+      "url": "https://brood.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/brood",
+      "tags": ["board", "multiplayer", "versus", "abstract", "mobile"],
+      "type": "game",
+      "date": "2026-08-05"
+    },
+    {
       "name": "Bracken",
       "slug": "bracken",
       "icon": "trees",

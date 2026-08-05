@@ -42,13 +42,6 @@ Format: `- Name or concept — one line of what it is and (if multiplayer) how p
 > is **out of scope** — cut it down to its one legible core loop or pick another. Order is roughly
 > best-fit-and-deepest first; the factory still applies the Step-2 criteria and may reorder.
 
-- **Hedge & Sprint** (Quoridor-shaped) — race your pawn to the opposite edge while spending a limited
-  supply of fences to lengthen the enemy's path (you may never fully wall them off). vs 2-4, lockstep
-  + BFS/minimax bot; board size + fence budget = modes.
-- **Swarm** (Hive-shaped) — no board: a growing cluster of tiles, each creature with its own movement
-  (the ant runs the rim, the beetle climbs on top, the grasshopper leaps, the spider takes three),
-  and you win by fully surrounding the enemy queen. vs 2, lockstep + bot; expansion bugs = modes.
-  (Distinct from rootbound: two fixed armies, capture-by-surround, not colony growth.)
 - **Kiln** (Azul-shaped) — draft all tiles of one colour from a factory display (the rest tumble to
   the centre), lay them in your staging rows, then score wall placements by adjacency; leftovers are
   penalties. vs 2-4, host seeds the bag, turn-based; wall-pattern variants = modes.

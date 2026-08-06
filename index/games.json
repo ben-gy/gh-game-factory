@@ -1,6 +1,18 @@
 {
-  "last_updated": "2026-08-05",
+  "last_updated": "2026-08-06",
   "games": [
+    {
+      "name": "Kiln",
+      "slug": "kiln",
+      "icon": "grid-3x3",
+      "category": "board",
+      "description": "Take every tile of one kind from a rack — and whatever you leave behind is what everyone else gets.",
+      "url": "https://kiln.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/kiln",
+      "tags": ["board", "multiplayer", "versus", "drafting", "mobile"],
+      "type": "game",
+      "date": "2026-08-06"
+    },
     {
       "name": "Brood",
       "slug": "brood",

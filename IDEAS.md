@@ -42,9 +42,6 @@ Format: `- Name or concept — one line of what it is and (if multiplayer) how p
 > is **out of scope** — cut it down to its one legible core loop or pick another. Order is roughly
 > best-fit-and-deepest first; the factory still applies the Step-2 criteria and may reorder.
 
-- **Kiln** (Azul-shaped) — draft all tiles of one colour from a factory display (the rest tumble to
-  the centre), lay them in your staging rows, then score wall placements by adjacency; leftovers are
-  penalties. vs 2-4, host seeds the bag, turn-based; wall-pattern variants = modes.
 - **Sparklight** (Hanabi-shaped) — CO-OP: you can see everyone's cards but your own, and spend a
   shrinking pool of clue tokens to hint colour or number so teammates play the fireworks up 1→5 in
   each suit without a misfire. co-op 2-5, host-authoritative; solo drives all hands.

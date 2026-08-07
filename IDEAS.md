@@ -42,9 +42,6 @@ Format: `- Name or concept — one line of what it is and (if multiplayer) how p
 > is **out of scope** — cut it down to its one legible core loop or pick another. Order is roughly
 > best-fit-and-deepest first; the factory still applies the Step-2 criteria and may reorder.
 
-- **Sparklight** (Hanabi-shaped) — CO-OP: you can see everyone's cards but your own, and spend a
-  shrinking pool of clue tokens to hint colour or number so teammates play the fireworks up 1→5 in
-  each suit without a misfire. co-op 2-5, host-authoritative; solo drives all hands.
 - **Bazaari** (Jaipur-shaped) — a two-player market duel: take goods or a camel herd, sell matched
   sets for bonuses that shrink as they're claimed, and race to two of three seals of excellence. vs 2,
   host-authoritative deck + bot.

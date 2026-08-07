@@ -38,11 +38,22 @@ existed for is gone, so these stay open until each one is deleted.
   https://github.com/ben-gy/snake-royale/pull/7). See the engine CHANGELOG for
   the relay measurements.
 
-  **No forked `lobby.ts` survives anywhere in the fleet** — checked across all 45
-  games on 2026-08-01, not inferred from this file. What remains under this
-  heading is the `sound.ts` work (five games: `morsel`, `deepwatch`, `delvepack`,
-  `frostward`, `gloamrun` — four of them blocked on engine synthesis gaps) and
-  the `ballast` `touch.ts` port, whose fork is confirmed still present.
+  **CORRECTION (2026-08-08) — "No forked `lobby.ts` survives anywhere in the
+  fleet" was FLATLY FALSE, and it is the worst kind of error in this file: an
+  open thing recorded as done.** Five live, imported forks exist and were
+  re-measured this run, not inferred:
+
+  ```
+  find games/*/src -iname '*lobby*.ts'      # NOT games/*/src/lobby.ts
+  ```
+
+  `cipher-clash`, `hexbloom`, `rhythm-relay`, `gravity-golf` and `nightwire` each
+  ship `src/engine/lobby.ts`, all pinned at engine `#v1.1.0`. The 2026-08-01
+  check globbed `games/*/src/lobby.ts` and missed the `src/engine/` depth. The
+  same glob error undercounted `sound.ts`: the true fleet count was **13**, not
+  five (add `cipher-clash`, `hexbloom`, `gravity-golf`, `nightwire`, `bidstorm`,
+  `lumenlock`, `emberwake`, `grainfall` under `src/engine/`), and is **12** after
+  deepwatch. Treat every count in this file as re-measurable, not as a fact.
 
 - **Fleet migration: delete the remaining forked `sound.ts`** — the old "each is
   mechanical, just lift the table" claim here was WRONG and it took a run
@@ -60,11 +71,21 @@ existed for is gone, so these stay open until each one is deleted.
     `addPatches`/`has` methods). Went straight to `main` (pure fork-deletion,
     verified green + 375px browser). Its forked `lobby.ts` is a SEPARATE entry and
     was left alone.
-  - **`deepwatch` — near-mechanical, needs a sign-off.** Pitch-only (a `depth`
-    shift, `1 - 0.62*depth`, that moves to `{ pitch }` at the one `surface`
-    caller), BUT its noise gain is `*0.55` where the engine uses `*0.6`, so noise
-    cues (`misplay`/`tank`/`lost`) come out a hair louder after the swap. Cosmetic,
-    but it is NOT "no behaviour change" — decide before shipping.
+  - **`deepwatch` — DONE 2026-08-08.** PR
+    https://github.com/ben-gy/deepwatch/pull/3. Every number in the old entry was
+    right; the word "near-mechanical" was not. Pin `#v1.1.0`→`#v1.3.2`, table
+    lifted to `src/cues.ts`, `src/sound.ts` deleted, depth shift now
+    `play('surface', { pitch: depthPitch(...) })`. Three things the old entry
+    missed, all of which a literal reading would have shipped as regressions:
+    (a) `beat`/`go`/`select` COLLIDE with engine built-ins at different values
+    (`beat` is a sine here, a triangle in the engine), so all 12 patches must be
+    passed explicitly or the countdown quietly changes; (b) the engine IGNORES a
+    `pitch <= 0` rather than clamping, so the depth clamp is load-bearing, not
+    tidiness; (c) **the fork's `try/catch` is not decoration** — the engine has
+    never had one, and `sfx.unlock()` is the first statement in the core tap
+    handler, so a blocked `AudioContext` makes the game UNTAPPABLE, not silent.
+    Kept as a `createGameSfx` wrapper. Accepted behaviour change: noise gain
+    `*0.55`→`*0.6` (+0.79 dB) on `misplay`/`tank`/`lost`.
   - **`gloamrun` — BLOCKED on an engine gap.** Its `sound.ts` carries a per-cue
     throttle (`MIN_GAP = { shot: 60, mhit: 40, hurt: 120 }` + a `lastAt` tracker)
     that debounces rapid fire. The engine has no throttle, so deleting the fork
@@ -85,9 +106,19 @@ existed for is gone, so these stay open until each one is deleted.
 
   So four of the six are really requests for the engine to grow **per-cue
   throttling, a polyphony cap, and a filtered-noise band** — logged as the new
-  Engine entry below. Until those land, only `deepwatch` is close to a drop-in.
-  When migrating any of them: pin `#v1.3.1` and CHECK the installed version (npm
-  serves a stale tarball on a tag bump and says nothing).
+  Engine entry below. With `deepwatch` done, **every remaining `sound.ts` fork is
+  blocked on that engine work**; there is no drop-in left. `gloamrun` is the
+  cheapest next one (throttle only, ~18 bare call sites, no positional args).
+
+  **The migration recipe is now proven twice** (snake-royale, deepwatch) — reuse
+  it rather than rediscovering it: pin `CURRENT_ENGINE_TAG`, re-resolve the
+  SINGLE package (`npm install github:ben-gy/gh-game-engine#vX.Y.Z`) — never
+  `rm package-lock.json && npm install`, which keeps one rollup platform binary
+  of ~25 on macOS and breaks `npm ci` on Linux — then ASSERT the installed
+  version before believing any green build, because npm caches a `github:` dep by
+  tag and will reinstall the previous tarball reporting success. Note also that
+  `tests/*.test.ts` file lists that hard-code `src/sound.ts` go red on the
+  deletion; switch them to `readdirSync('src')`.
 
 - **Engine `sound.ts`: throttle, voice-cap, and a filtered-noise band.** Four
   games (`gloamrun`, `morsel`, `delvepack`, `frostward`) keep a forked `sound.ts`
@@ -97,10 +128,47 @@ existed for is gone, so these stay open until each one is deleted.
   rapid cues (`shot`/`hit`) don't machine-gun, tracked engine-side — what
   `gloamrun` hand-rolls; (b) an optional global polyphony cap (a voice counter
   with an `onended` decrement, dropping a play once over the cap) so a frenzy or
-  wipe can't clip — the shape `morsel`/`delvepack` already hand-roll; (c) an
-  optional bandpass-filtered noise layer per patch (`band?: { freq, q }`) for
-  `frostward`'s texture. Discovered while migrating `snake-royale` 2026-07-25;
-  verified against each game's actual `sound.ts`, not assumed.
+  wipe can't clip — the shape `morsel`/`delvepack` already hand-roll; (c) a
+  filtered-noise layer for `frostward`'s texture. Discovered while migrating
+  `snake-royale` 2026-07-25; verified against each game's actual `sound.ts`.
+
+  **CORRECTION (2026-08-08) — (c) was MISSPECIFIED and must be redesigned before
+  it is built.** This entry proposed `band?: { freq, q }`, a STATIC bandpass.
+  `frostward/src/sound.ts` actually uses a **swept** `noiseBand?: [start, end]`
+  that ramps exponentially and scales with the caller's `rate`, with Q hard-coded
+  at 0.9, over a cached LOOPED buffer — plus `noise?: number` as a per-patch MIX
+  LEVEL replacing the engine's boolean. A static `{ freq, q }` would not
+  reproduce a single one of frostward's six noisy patches, so building to this
+  spec ships a feature its only consumer cannot use. The entry also misses
+  frostward's `fifth?: boolean` second voice (reproducible at the call site — all
+  three `fifth` patches are noiseless). Respec against
+  `frostward/src/sound.ts:39-42,97-106,128-151` first.
+
+  **Prerequisite nobody has paid yet:** the engine's own `tests/sound.test.ts`
+  `FakeCtx` has no `createBiquadFilter`, never fires `onended`, and has no
+  `performance.now` control — so all three features need new fake surface before
+  a single assertion can be written. Budget that, or the tests will be theatre.
+
+  Also worth folding in while touching this file: a per-patch `noiseGain?`, which
+  would have made deepwatch's migration a true no-op instead of a +0.79 dB
+  change (forks sit at `*0.5`/`*0.55` against the engine's `*0.6`).
+
+- **Engine `sound.ts`: make audio incapable of breaking a game.** `createSfx` has
+  no error handling and never has (checked at v1.1.0 and v1.3.2): `ensure()` calls
+  `new AudioContext()` bare, and `play()` builds its node graph bare. Games call
+  `sfx.unlock()` as the FIRST statement of input handlers — in deepwatch it is
+  the first statement of the core tap — so a constructor that throws (a hardened
+  anti-fingerprinting extension does exactly this) aborts the handler before the
+  move runs. The failure mode is not a silent game, it is an **untappable** one.
+  ~6 lines: wrap `ensure()` and the body of `play()` in `try/catch`. Discovered
+  while migrating deepwatch 2026-08-08, which had hand-rolled this armour in its
+  fork; it is now a `createGameSfx` wrapper in `deepwatch/src/cues.ts`, and the
+  wrapper can be deleted once the engine does it. **Not done this run** because
+  an engine feature cannot be tagged, consumed and verified inside one PR — and
+  the whole point of the run was to land a verified fork deletion. Do it with the
+  throttle/voice-cap/band work above, in one engine release. Worth it because it
+  fixes the same latent bug for every game on the engine synth, not just the one
+  that noticed.
 
 - **Engine `lobby.ts`: an optional `shareTitle`.** The Web Share sheet is
   hard-coded to `title: 'Join my game'`, so a game that wants its own name in the
@@ -112,12 +180,69 @@ existed for is gone, so these stay open until each one is deleted.
   fork the lobby, and every game on the engine lobby currently shares an
   anonymous title. Found while doing that migration, not assumed.
 
-- **ballast: delete `src/touch.ts` in favour of `makeRail`** — the engine's
-  `makeRail(el, { stepPx, axis, onStep })` is a direct port of it, with the same
-  net-out semantics and the same thresholds. Also switch its net handlers from
-  rebuilding the lobby to `lobby.repaint()`, which is what the QR-vanishing bug
-  was actually about (though v1.3.1's sticky view state means the QR now survives
-  the rebuild either way).
+  **Refinement (2026-08-08), verified at source** (`gh-game-engine/src/lobby.ts`,
+  the `share()` helper): the hard-coded object is
+  `{ title: 'Join my game', text: 'Room XXXX', url: link }` — **`text` is
+  hard-coded on the same line**, and `rhythm-relay`'s fork customises the text as
+  well as the title. So ship `share?: { title?: string; text?: string }`, not
+  `shareTitle?` alone, or the fork-deletion goal is not actually unblocked. This
+  is now known to be **six** games' problem: all five surviving lobby forks
+  independently rewrite that string, which is about as strong as evidence gets
+  that the option is real rather than speculative. `share()` currently has **zero
+  test coverage**, so this change brings the first test of it. Note it deletes no
+  fork on its own (snake-royale's went on 2026-08-01) — ship it bundled with the
+  first lobby-fork migration so a fork actually dies with it.
+
+- **ballast `touch.ts` → `makeRail` — DO NOT BUILD AS WRITTEN. Verified FALSE on
+  both halves 2026-08-08.** Kept (rather than deleted) because the underlying
+  idea is still worth doing and the next run needs to know why the old wording
+  was a trap.
+
+  The load-bearing sentence — "a direct port, with the same net-out semantics and
+  the same thresholds" — is refuted on ten points. Two are outright gameplay
+  regressions in a live stacker: (1) `classifyRelease` has **no duration bound on
+  a tap**, so every press-and-hold soft-drop would rotate the piece on release,
+  where `touch.ts` requires `dur < 250ms`; (2) the engine's swipe test is **OR**
+  (`speed > v || dist > d`) where ballast's is **AND**, so a slow 60px drag
+  becomes a spurious HARD DROP — a lost game. Also: ballast's rail is TWO-axis
+  with a one-way vertical ratchet that never retracts soft drops, against
+  `makeRail`'s single axis that nets out both ways; the rail origin resets at
+  promotion (first step at ~34px, not 26px); `preventDefault` differs; listeners
+  bind to the element vs `window`; and `touch.ts` QUEUES every intent for the rAF
+  step (with clamps) where `makeRail` calls `onStep` synchronously.
+  **`touch.ts` has ZERO test coverage**, so every one of these ships silently.
+
+  It is also **not executable as written**: `makeRail` first appears in engine
+  **v1.3.0** and ballast is pinned at **`#v1.2.1`**, so this is an engine bump
+  dragging `net`/`lobby`/`qr`/`rematch` under a game with five P2P test files —
+  not a file swap. `lobby.repaint()` likewise does not exist at v1.2.1.
+
+  **The second half is stale outright:** ballast already stopped rebuilding its
+  lobby in net handlers. `src/main.ts:338-363` routes them to a `repaint()` that
+  early-returns on the mounted `.lobby-box`, with a comment saying it exists to
+  stop the QR being yanked off screen — the exact bug this entry wanted fixed.
+
+  Rewritten task, if anyone wants it: *bump ballast to `CURRENT_ENGINE_TAG`,
+  write gesture tests for `touch.ts` FIRST, then port the rail and accept a
+  documented list of behavioural deltas* — or grow `makeRail` a two-axis mode and
+  a tap duration bound. It is a behaviour change either way, never a no-op.
+
+- **Fleet migration: delete the five forked `src/engine/lobby.ts`** — NEW, and
+  the largest single piece of fork debt in the fleet. `cipher-clash` (588 lines),
+  `hexbloom` (645), `rhythm-relay` (597), `gravity-golf` (659) and `nightwire`
+  (642) each ship an imported copy of the engine lobby, all pinned at engine
+  `#v1.1.0`. This was hidden by the false "no forked `lobby.ts` survives" line
+  corrected above. `hexbloom/src/engine/lobby.ts` explicitly names the
+  public-rooms + `modeSlot` surface that engine **v1.3.1 already closed** — i.e.
+  those closures shipped and no game ever consumed them, which is the real reason
+  the debt is still here. Each fork also carries a private/public chooser,
+  a noticeboard browser, `BoardAccess`/`Listing`/`roomAd()` and a host-only
+  `modeSlot`; verify that superset against the current engine per game before
+  deleting anything. Treat each game as its own run — the pin jump is
+  `#v1.1.0` → `CURRENT_ENGINE_TAG` across `net`/`lobby`/`rematch`/`qr`, which is
+  the same jump deepwatch made on 2026-08-08 (recipe above; it was clean there,
+  and the lobby is the surface it moves most). Bundle the `share?: { title, text }`
+  entry below with the first of these so a fork dies with it.
 
 - **unstrung**: a **co-op** shape for the seam mechanic, deliberately not built in the first run
   (versus was chosen because the strand is a shrinking shared resource and *what you leave behind* is

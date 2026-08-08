@@ -42,9 +42,6 @@ Format: `- Name or concept — one line of what it is and (if multiplayer) how p
 > is **out of scope** — cut it down to its one legible core loop or pick another. Order is roughly
 > best-fit-and-deepest first; the factory still applies the Step-2 criteria and may reorder.
 
-- **Bazaari** (Jaipur-shaped) — a two-player market duel: take goods or a camel herd, sell matched
-  sets for bonuses that shrink as they're claimed, and race to two of three seals of excellence. vs 2,
-  host-authoritative deck + bot.
 - **Mapwright** (Cartographers-shaped) — each season, draw the revealed terrain shape anywhere on your
   map to satisfy that season's two scoring edicts; ambush cards force everyone to carve a monster in.
   parallel same-seed 2-6; edict decks = modes.

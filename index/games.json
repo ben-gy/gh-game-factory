@@ -1,6 +1,24 @@
 {
-  "last_updated": "2026-08-07",
+  "last_updated": "2026-08-08",
   "games": [
+    {
+      "name": "Haggle",
+      "slug": "haggle",
+      "icon": "gem",
+      "category": "card",
+      "description": "A two-player market duel where every price only ever falls — sell before your rival does.",
+      "url": "https://haggle.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/haggle",
+      "tags": [
+        "card",
+        "versus",
+        "multiplayer",
+        "economy",
+        "mobile"
+      ],
+      "type": "game",
+      "date": "2026-08-08"
+    },
     {
       "name": "Sparklight",
       "slug": "sparklight",

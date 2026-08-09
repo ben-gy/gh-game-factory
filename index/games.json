@@ -228,7 +228,7 @@
       "icon": "spline",
       "category": "puzzle",
       "description": "Drag the glowing beads until no threads cross. A crossed thread glows coral with an X where it cuts; a clean one glows cyan \u2014 move the beads until nothing crosses and the web settles green. Every web is guaranteed to have a tangle-free solution, so you are never stuck. Untangle one calm web, race a stream of small webs against a clock, or crack one big tangle on a limited number of moves. Solo, a daily web, or a peer-to-peer race on the same web.",
-      "url": "https://skein.benrichardson.dev",
+      "url": "https://skein-untangle.benrichardson.dev",
       "repo": "https://github.com/ben-gy/skein",
       "tags": [
         "puzzle",
@@ -324,7 +324,7 @@
       "icon": "dices",
       "category": "puzzle",
       "description": "Roll a die around a grid so the right number lands face-up on each rune, then reach the vault in as few rolls as you can. Opposite faces add up to 7, so the short path is rarely the smart one. Three modes, a daily board, and a peer-to-peer race on the very same board.",
-      "url": "https://facet.benrichardson.dev",
+      "url": "https://facet-dice.benrichardson.dev",
       "repo": "https://github.com/ben-gy/facet",
       "tags": [
         "puzzle",
@@ -730,7 +730,7 @@
       "icon": "flame",
       "category": "arcade",
       "description": "Outrun a rising wall of dark in a neon lane-runner where your momentum is your speed, your life and your score all at once.",
-      "url": "https://emberwake.benrichardson.dev",
+      "url": "https://emberwake-run.benrichardson.dev",
       "repo": "https://github.com/ben-gy/emberwake",
       "tags": [
         "arcade",

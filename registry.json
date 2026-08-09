@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-08",
+  "last_updated": "2026-08-09",
   "description": "Registry of every web game built by gh-game-factory. Never duplicate an entry \u2014 check name, description, category, and genre before building.",
   "games": [
     {
@@ -799,6 +799,20 @@
       "status": "deployed",
       "url": "https://sparklight.benrichardson.dev",
       "repo_url": "https://github.com/ben-gy/sparklight"
+    },
+    {
+      "name": "weald",
+      "repo": "ben-gy/weald",
+      "date": "2026-08-09",
+      "description": "A MAP-DRAWING RACE for 1-6 and the fleet's first game with FREE POLYOMINO PLACEMENT as the committed action (56 shipped: ballast and kilter have polyominoes but under real-time gravity; kiln, wordloom and hatch place exactly one cell at a time; a prior-art subagent read all 56 registry entries and grepped the fleet). Taken from the top of IDEAS.md's board-game initiative (the Cartographers-shaped entry); MECHANIC ONLY -- original name, original procedural art, no reference to the source anywhere in the product. Renamed from the queue's 'Mapwright', which is a direct English synonym for the source's title and so fails the identity rule. Every player is dealt the IDENTICAL sequence of shapes and draws each one anywhere on their own square map, choosing position, rotation/reflection and usually terrain, and cannot un-draw it. TWO MORE ORGANS THE FLEET DID NOT HAVE: scoring rules REVEALED AS CARDS and varying per run (four edicts drawn from a pool of five and assigned roles, two face up at the start and two turning over mid-run, each scoring TWICE cumulatively over the whole map -- every other shipped game's scoring function is fixed at design time); and a SHARED ADVERSE EVENT every seat absorbs simultaneously (the canker carve -- an identical anchored rot shape, same tick, resolved privately, billed at EVERY watch end, so the entire skill is WHERE you take damage the whole table takes equally). Netcode is PARALLEL SAME-SEED: every peer derives crags, edicts, cards and carves from the frozen seed, so NO game state crosses the wire, nothing can desync, and host transfer is a display concern -- only the finished 81-char grid is sent, once a watch, so every summary can show every player's map. THE THREE MODES SWAP THE SCORING LANGUAGE rather than turning a difficulty dial, and it is MEASURED: a bot optimising the wrong mode's pool loses 48-79%. Solo ships three seeded rival bots that draw the same run and set par, so a dead lobby is never a dead page. BALANCE WAS MEASURED NOT ARGUED -- the first sim run had March's 5th-percentile score NEGATIVE (canker -49.5/run, its own Quarantine counterplay paying 5.4) and edicts 27x apart, which moved the canker rate, eight multipliers and two rule thresholds; the mode blurb still claiming 'bleeds double' was caught by an assertion. THE MECHANISM AUDIT CAUGHT A REAL SHIPPING BUG: after the retune, ELEVEN OF FIFTEEN CARDS PRINTED A NUMBER THEY DID NOT PAY (Quarters said 'Score 3' and paid 8), so in a game that is entirely read-the-rule-and-plan-toward-it the rules were lying; rules.test.ts now parses the printed number back out of the English. Two more caught in a real browser: a `.ghost` CSS class collision that stacked the results-screen Menu button underneath Play again at identical coordinates (renamed .pghost), and a board sized from WIDTH alone that pushed the Place button ~90px below the fold on a 360x553 phone (--cell now takes the min of the width and height budgets; verified the map shrinks to 255px and Place sits at y=550). All three fixes mutation-verified. 459 tests, 17 files. NOT VERIFIED: the two-tab P2P smoke test was not run this session.",
+      "genre": "board",
+      "stack": "vanilla-ts",
+      "render": "dom",
+      "multiplayer": "p2p",
+      "max_players": 6,
+      "status": "deployed",
+      "url": "https://weald.benrichardson.dev",
+      "repo_url": "https://github.com/ben-gy/weald"
     }
   ]
 }

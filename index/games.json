@@ -1,12 +1,30 @@
 {
-  "last_updated": "2026-08-08",
+  "last_updated": "2026-08-09",
   "games": [
+    {
+      "name": "Weald",
+      "slug": "weald",
+      "icon": "map",
+      "category": "board",
+      "description": "Everyone draws the same shape on their own map \u2014 the edicts decide what it was worth.",
+      "url": "https://weald.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/weald",
+      "tags": [
+        "board",
+        "drawing",
+        "versus",
+        "multiplayer",
+        "mobile"
+      ],
+      "type": "game",
+      "date": "2026-08-09"
+    },
     {
       "name": "Haggle",
       "slug": "haggle",
       "icon": "gem",
       "category": "card",
-      "description": "A two-player market duel where every price only ever falls — sell before your rival does.",
+      "description": "A two-player market duel where every price only ever falls \u2014 sell before your rival does.",
       "url": "https://haggle.benrichardson.dev",
       "repo": "https://github.com/ben-gy/haggle",
       "tags": [

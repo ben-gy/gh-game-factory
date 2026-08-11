@@ -42,9 +42,6 @@ Format: `- Name or concept — one line of what it is and (if multiplayer) how p
 > is **out of scope** — cut it down to its one legible core loop or pick another. Order is roughly
 > best-fit-and-deepest first; the factory still applies the Step-2 criteria and may reorder.
 
-- **Huntress** (Amazons / Game of the Amazons-shaped) — each turn a queen slides any distance then
-  fires an arrow that permanently blocks a square; the board keeps shrinking until a player can't
-  move and loses. vs 2, lockstep + bot; board size = modes.
 - **Junction** (Railroad Ink-shaped) — everyone draws the SAME four rolled route symbols onto their
   own grid, splicing roads and rails to connect the twelve board-edge exits into one sprawling
   network. parallel same-seed 2-6; special-die expansions = modes.

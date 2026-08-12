@@ -42,12 +42,6 @@ Format: `- Name or concept — one line of what it is and (if multiplayer) how p
 > is **out of scope** — cut it down to its one legible core loop or pick another. Order is roughly
 > best-fit-and-deepest first; the factory still applies the Step-2 criteria and may reorder.
 
-- **Junction** (Railroad Ink-shaped) — everyone draws the SAME four rolled route symbols onto their
-  own grid, splicing roads and rails to connect the twelve board-edge exits into one sprawling
-  network. parallel same-seed 2-6; special-die expansions = modes.
-  *(Note, 2026-08-04: **shunt** shipped and claimed the rail theme for the fleet first. Junction is
-  still mechanically distinct — drawing a network on your own grid vs. sorting a rake between roads —
-  but give it a visual identity that does not read as a second Shunt.)*
 - **Lustre** (Splendor-shaped) — flip gem-mine cards into an engine of permanent discounts and race to
   a prestige threshold; nobles pay out for owning the right sets. vs 2-4, turn-based, tiny shared
   state, host seeds decks.

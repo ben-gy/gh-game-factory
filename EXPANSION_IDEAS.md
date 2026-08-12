@@ -295,3 +295,30 @@ existed for is gone, so these stay open until each one is deleted.
   planning exercise with no moment-to-moment decisions. Prototype the solver and measure branching
   and optimal-move uniqueness (shunt's shipped modes sit at ~4 legal moves/state) before committing
   to art.
+
+## Fleet-level: the sensor debt is now six runs deep (recorded 2026-08-12, from the conduit run)
+
+Principle #23 asks for roughly one run in three or four to be built around an input that is not a
+finger on glass. Checked at the top of the conduit run: **kiln, sparklight, haggle, weald, huntress
+and conduit are all tap-and-key** — six consecutive builds. Conduit answered "touch, on purpose"
+honestly (a precision placement puzzle cannot be expressed by a tilt or a shout, and the board-game
+initiative is the standing priority), but that is now the sixth consecutive on-purpose "touch".
+
+**The next run that is NOT a board-game-queue entry should be a sensor game**, and the queue's own
+note should not be read as licence to defer it indefinitely. The seeds in the routine's error-handling
+list that fit this fleet best: loudness escalation for one phone in a pub, hold-your-nerve on
+accelerometer variance, and the spirit-level duel (gyro, shared seed, so a P2P race is byte-identical).
+Build the touch fallback first and the sensor path second, as the principle instructs.
+
+## conduit: things measured and deliberately not built
+
+- **A steerable consolidation signal.** NET now pays per network, which is climbable, but the bot's
+  horizon is one round (four marks) and routing to a *distant* third vent is a two-to-three round
+  plan no beam that size can see. A deeper search (or a cross-round planner) would probably lift the
+  largest-network figure from ~2.6 and is the single most interesting open question in the game.
+- **A second positive term for Flume.** Flume's only positive term is length, by design, so its
+  term-share is 1.0 and the balance gate exempts it explicitly. If it ever needs more texture, the
+  lever measured but not taken was paying the top TWO vertex-disjoint paths per gauge at 3 and 1.
+- **Per-seed par for multiplayer.** Solo shows the Steady bot's own score on that seed for free.
+  In a room there is no bot, so there is no par at all — a shared par (e.g. the table's median) would
+  cost nothing and is not built.

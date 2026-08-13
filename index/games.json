@@ -1,6 +1,24 @@
 {
-  "last_updated": "2026-08-12",
+  "last_updated": "2026-08-13",
   "games": [
+    {
+      "name": "Lustre",
+      "slug": "lustre",
+      "icon": "gem",
+      "category": "board",
+      "description": "An engine-builder where a spar is either your engine or your score and never both — and the price of turning one into the other rises with every point anybody banks.",
+      "url": "https://lustre.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/lustre",
+      "tags": [
+        "board",
+        "multiplayer",
+        "versus",
+        "engine-building",
+        "mobile"
+      ],
+      "type": "game",
+      "date": "2026-08-13"
+    },
     {
       "name": "Conduit",
       "slug": "conduit",

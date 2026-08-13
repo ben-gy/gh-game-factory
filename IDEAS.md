@@ -42,9 +42,6 @@ Format: `- Name or concept — one line of what it is and (if multiplayer) how p
 > is **out of scope** — cut it down to its one legible core loop or pick another. Order is roughly
 > best-fit-and-deepest first; the factory still applies the Step-2 criteria and may reorder.
 
-- **Lustre** (Splendor-shaped) — flip gem-mine cards into an engine of permanent discounts and race to
-  a prestige threshold; nobles pay out for owning the right sets. vs 2-4, turn-based, tiny shared
-  state, host seeds decks.
 - **Courtier** (Love Letter-shaped) — a micro round of bluff and deduction: hold one card, draw one,
   play its power to knock rivals out or force reveals, and be the last standing or holding the highest
   card. vs 2-6, host-authoritative + bots.

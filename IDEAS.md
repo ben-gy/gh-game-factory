@@ -42,9 +42,6 @@ Format: `- Name or concept — one line of what it is and (if multiplayer) how p
 > is **out of scope** — cut it down to its one legible core loop or pick another. Order is roughly
 > best-fit-and-deepest first; the factory still applies the Step-2 criteria and may reorder.
 
-- **Courtier** (Love Letter-shaped) — a micro round of bluff and deduction: hold one card, draw one,
-  play its power to knock rivals out or force reveals, and be the last standing or holding the highest
-  card. vs 2-6, host-authoritative + bots.
 - **Ringlord** (Yinsh / GIPF-shaped) — move one of your rings and it flips every marker it jumps;
   complete a five-in-a-row of your markers to remove a ring; claim three rings to win. vs 2, lockstep
   + bot.

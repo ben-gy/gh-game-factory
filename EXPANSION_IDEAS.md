@@ -322,3 +322,33 @@ Build the touch fallback first and the sensor path second, as the principle inst
 - **Per-seed par for multiplayer.** Solo shows the Steady bot's own score on that seed for free.
   In a room there is no bot, so there is no par at all — a shared par (e.g. the table's median) would
   cost nothing and is not built.
+
+## hearsay: things measured and deliberately not built
+
+- **A NEW GAME, not an expansion: "cutline" — a press-your-luck stake laid over the same micro-round
+  skeleton.** The 20-agent design fan-out that produced Hearsay also produced a fully specified
+  alternative whose signature idea is genuinely distinct and worth building on its own: a public,
+  irreversible **LINE** each player may lengthen on their turn, which is simultaneously the multiplier
+  on what they win and the debt they pay if they lose, so the raise threshold falls out as
+  "raise iff you believe you are better than the table's baseline chance" with no per-mode aggression
+  constant to mistune. Its own judges found three blockers worth inheriting: the per-unit bonus must
+  be **capped** (uncapped at six seats one raised round pays out the whole match), the round needs a
+  **fixed circuit count** as well as a sole-survivor ending (4P ran to 15 plies), and an
+  eliminated player's wager must stay **revisable** rather than being taken at the moment of minimum
+  information. It was NOT grafted onto Hearsay because a betting economy is a second subsystem on a
+  ninety-second phone round — the restraint case that the winning design argued and the sim then
+  vindicated — and because it would have invalidated every balance number already measured.
+- **Showing the bot's reasoning.** A strong bot in a hidden-information game is indistinguishable from
+  a cheating one: it names your exact rank on ply six and you have no way to know it deduced it. The
+  code makes cheating structurally impossible (the bot takes `PublicState` + its own `PrivateView` and
+  there is no tier that changes that, pinned by a test), and the docket panel shows the player the
+  same numbers — but neither is *visible* to a suspicious player mid-game. Printing the single
+  highest-weighted public fact behind each bot call ("named you a 3 — your 2 was struck at ply 4")
+  was specced and not built.
+- **A gallery wager worth more than one point.** Backing the winner pays 1 in Inquiry against 2 for
+  taking the hearing, deliberately, and the sim asserts going out early stays strictly worst. A
+  graduated payout (more for backing early, less for backing when two remain) was considered and
+  dropped as a rule nobody would read.
+- **Five and six seats are dealt but never balance-swept.** The WIDE deck exists and the layout was
+  verified at six seats on a phone, but the balance sim sweeps 2-4 only, because match length at six
+  makes the sample expensive. The seat-fairness claim at 5-6 is therefore untested, not proven.

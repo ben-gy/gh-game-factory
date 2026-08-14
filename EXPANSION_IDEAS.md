@@ -23,9 +23,12 @@ Format: `- **existing-repo-name**: Description of the enhancement or new mode. I
 Gaps in `@ben-gy/game-engine` that forced a game to keep a local fork. Closing one
 means the fork can be deleted and that game rejoins the shared engine.
 
-**All six gaps logged here were closed in engine v1.3.1 (2026-07-23).** What is
-left is the migration work — and a gap is not actually closed until the fork it
-existed for is gone, so these stay open until each one is deleted.
+**All six gaps logged here were closed in engine v1.3.1 (2026-07-23); two more
+— the lobby's share-sheet wording and its action labels — closed in v1.4.0
+(2026-08-15).** What is left is the migration work — and a gap is not actually
+closed until the fork it existed for is gone, so these stay open until each one
+is deleted. Fork tally at 2026-08-15: **4 forked `src/engine/lobby.ts`** (was 5)
+and **12 forked `src/engine/sound.ts`**.
 
 - **DONE v1.3.1** — `sound.ts` game patches + pitch; `DEFAULT_RELAYS` refresh
   with runtime write-health detection and demotion; `lobby.ts` `repaint()` +
@@ -170,28 +173,20 @@ existed for is gone, so these stay open until each one is deleted.
   fixes the same latent bug for every game on the engine synth, not just the one
   that noticed.
 
-- **Engine `lobby.ts`: an optional `shareTitle`.** The Web Share sheet is
-  hard-coded to `title: 'Join my game'`, so a game that wants its own name in the
-  share sheet has to fork the whole lobby for one string — which is exactly what
-  `snake-royale` was doing ("Join my Snake Royale game"), and what its migration
-  on 2026-08-01 had to give up to delete the fork. Add
-  `shareTitle?: string` to `LobbyConfig`, defaulting to the current wording, and
-  re-point snake-royale at it. Small, but it removes the only real reason left to
-  fork the lobby, and every game on the engine lobby currently shares an
-  anonymous title. Found while doing that migration, not assumed.
-
-  **Refinement (2026-08-08), verified at source** (`gh-game-engine/src/lobby.ts`,
-  the `share()` helper): the hard-coded object is
-  `{ title: 'Join my game', text: 'Room XXXX', url: link }` — **`text` is
-  hard-coded on the same line**, and `rhythm-relay`'s fork customises the text as
-  well as the title. So ship `share?: { title?: string; text?: string }`, not
-  `shareTitle?` alone, or the fork-deletion goal is not actually unblocked. This
-  is now known to be **six** games' problem: all five surviving lobby forks
-  independently rewrite that string, which is about as strong as evidence gets
-  that the option is real rather than speculative. `share()` currently has **zero
-  test coverage**, so this change brings the first test of it. Note it deletes no
-  fork on its own (snake-royale's went on 2026-08-01) — ship it bundled with the
-  first lobby-fork migration so a fork actually dies with it.
+- **DONE — engine v1.4.0 (2026-08-15).** The share-sheet option shipped, with two
+  corrections to the spec above that were found by checking it at source before
+  building. (1) `text` could NOT be a plain string: the default interpolates the
+  room code, and a game builds its lobby config before `getOrCreateRoomCode()`
+  has necessarily run, so `share?: { text?: string }` as specced would have
+  shipped the literal **"Room undefined"** to every invite. It is
+  `text?: (roomCode: string) => string`. (2) The share title was never the whole
+  blocker — re-reading all five forks, **`'Start now'` is rewritten by 4 of 5**
+  (`'Start game'`, `'Start race'`) and `'Leave room'` by 1, so shipping the share
+  option alone would have deleted no fork at all. v1.4.0 therefore ships
+  `share?: { title?, text? }` AND `labels?: { start?, cancel? }`, both defaulting
+  to the current copy. `tests/lobby-wording.test.ts` is 12 tests and includes the
+  first coverage `share()` has ever had. Consumed by hexbloom the same day; see
+  the fleet-migration entry below.
 
 - **ballast `touch.ts` → `makeRail` — DO NOT BUILD AS WRITTEN. Verified FALSE on
   both halves 2026-08-08.** Kept (rather than deleted) because the underlying
@@ -227,22 +222,63 @@ existed for is gone, so these stay open until each one is deleted.
   documented list of behavioural deltas* — or grow `makeRail` a two-axis mode and
   a tap duration bound. It is a behaviour change either way, never a no-op.
 
-- **Fleet migration: delete the five forked `src/engine/lobby.ts`** — NEW, and
-  the largest single piece of fork debt in the fleet. `cipher-clash` (588 lines),
-  `hexbloom` (645), `rhythm-relay` (597), `gravity-golf` (659) and `nightwire`
-  (642) each ship an imported copy of the engine lobby, all pinned at engine
-  `#v1.1.0`. This was hidden by the false "no forked `lobby.ts` survives" line
-  corrected above. `hexbloom/src/engine/lobby.ts` explicitly names the
-  public-rooms + `modeSlot` surface that engine **v1.3.1 already closed** — i.e.
-  those closures shipped and no game ever consumed them, which is the real reason
-  the debt is still here. Each fork also carries a private/public chooser,
-  a noticeboard browser, `BoardAccess`/`Listing`/`roomAd()` and a host-only
-  `modeSlot`; verify that superset against the current engine per game before
-  deleting anything. Treat each game as its own run — the pin jump is
-  `#v1.1.0` → `CURRENT_ENGINE_TAG` across `net`/`lobby`/`rematch`/`qr`, which is
-  the same jump deepwatch made on 2026-08-08 (recipe above; it was clean there,
-  and the lobby is the surface it moves most). Bundle the `share?: { title, text }`
-  entry below with the first of these so a fork dies with it.
+- **Fleet migration: delete the forked `src/engine/lobby.ts` — 1 of 5 done,
+  FOUR REMAIN.** The largest single piece of fork debt in the fleet.
+  `cipher-clash` (588 lines), `hexbloom` (645), `rhythm-relay` (597),
+  `gravity-golf` (659) and `nightwire` (642) each shipped an imported copy of the
+  engine lobby, all pinned at engine `#v1.1.0`. This was hidden by the false "no
+  forked `lobby.ts` survives" line corrected above.
+
+  **`hexbloom` — DONE 2026-08-15.** PR https://github.com/ben-gy/hexbloom/pull/8.
+  Pin `#v1.1.0`→`#v1.4.0`, fork deleted, four importers re-pointed. Verified with
+  two live P2P peers in a browser at 375×812. It also **gained** five things the
+  fork never had: join-by-QR, the spectator screen for a peer that arrives
+  mid-round, the 15s takeover offer, the `?netdebug=1` overlay and sticky view
+  state. The `.lobby-modeslot` wrapper the engine adds around the mode slot was
+  inert here (hexbloom's `.lobby` is block flow, `gap: normal`) — **check that
+  per game, it is not inert everywhere** (see cipher-clash below).
+
+  All five forks were read end-to-end on 2026-08-15 and the remaining blockers
+  are now measured, not assumed. The old "verify that superset against the
+  current engine" instruction is discharged: the public-rooms surface,
+  `BoardAccess`/`Listing`/`roomAd()`, the private/public chooser, the noticeboard
+  browser and the host-only `modeSlot` are all present in the engine and
+  byte-equivalent — **no fork carries a named export the engine lacks.** What is
+  left, per game:
+
+  - **`cipher-clash` — UNBLOCKED, and the cheapest next one.** Its only
+    divergence from the engine was `title: 'Join my Cipher Clash game'`, which
+    v1.4.0's `share` now covers. Two things to handle that hexbloom did not have:
+    its `.lobby` is `display:flex; gap:16px`, so the engine's `.lobby-modeslot`
+    wrapper **does** collapse the gaps between its three slot children (and
+    `.re-note`'s `margin:-6px 0 0` then pulls the IP note up over the visibility
+    chips) — needs one CSS rule; and `main.ts:569` mounts into a container it
+    calls `.lobby-host`, which is also the class of the engine's takeover button,
+    so the mount selector needs renaming.
+  - **`rhythm-relay` — UNBLOCKED.** Needs `share` (title AND text — it is the one
+    fork that rewrites both: `'Take a lane — room XXXX'`) plus `labels.start`
+    (`'Start game'`) and `labels.cancel` (`'Back to menu'`). All three now exist.
+  - **`nightwire` — BLOCKED on one engine field.** Needs `note?: string`, a
+    styled `.lobby-note` line under the room code carrying a trust disclosure
+    ("The host's browser deals the roles — play with people you'd hand a deck of
+    cards"), actually passed at its `main.ts:605`. The engine has no seam for it
+    and zero occurrences of `lobby-note`. Everything else about nightwire is
+    covered; migrating it also fixes a live bug, since its fork returns early on
+    `phase === 'playing'` and strands a mid-deal joiner on a blank screen where
+    the engine now renders the spectator view.
+  - **`gravity-golf` — BLOCKED, and not by wording.** Needs `roomCodeFromUrl()`
+    (fork:54 — reads `?room=` or returns null, where the engine's
+    `getOrCreateRoomCode()` MINTS a code, which is unusable here), a
+    `setRoomInUrl` that also strips `?seed=` (fork:72 — a seed link and a room
+    are different ways to play and must never both be live), and it has a genuine
+    **behavioural** fork no config can close: its own `canStart()` in which the
+    host abstains from the ready vote (`p.ready || p.isHost`) with matching
+    ready-dot rendering. Do this one last, or decide the host-abstain rule is a
+    bug and drop it.
+
+  Recipe, now proven three times (snake-royale, deepwatch, hexbloom): pin
+  `CURRENT_ENGINE_TAG`, re-resolve the SINGLE package, ASSERT the installed
+  version, and treat each game as its own run.
 
 - **unstrung**: a **co-op** shape for the seam mechanic, deliberately not built in the first run
   (versus was chosen because the strand is a shrinking shared resource and *what you leave behind* is

@@ -388,3 +388,31 @@ Build the touch fallback first and the sensor path second, as the principle inst
 - **Five and six seats are dealt but never balance-swept.** The WIDE deck exists and the layout was
   verified at six seats on a phone, but the balance sim sweeps 2-4 only, because match length at six
   makes the sample expensive. The seat-fairness claim at 5-6 is therefore untested, not proven.
+
+## torc (2026-08-15)
+
+- **"The Forfeit" — the torc you give up is the one you just rode.** Proposed by the design panel and
+  picked by both judges as the highest-value graft, and it is genuinely good: it stops the cost of
+  scoring being a low-stakes epilogue ("which piece can I spare?") and folds it into move selection
+  several turns earlier ("build with this one so that one can close"). It also removes a tap from the
+  commonest path. **Not shipped, for two reasons.** First, it is undefined for a case that is
+  first-class in this game: the OPPONENT can be forced to claim on your turn, when your jump flips
+  their studs into a line, and they did not ride anything — so the rule needs a scoping clause ("your
+  own claim is forced to the torc you rode; a claim handed to you keeps the free choice"), which is
+  more rules to teach, not fewer. Second, it arrived after the shape had been balance-validated, and
+  adopting it would have meant shipping a ruleset whose jam rate, blowout rate and first-scorer curve
+  were all unmeasured. If it is ever tried, re-run the whole sweep — it changes what a claim costs and
+  therefore everything the sim measures.
+- **A line of five on the 55-point field, made viable.** The obvious shape clogs (18–32% jams, 13%
+  draws) because studs accumulate faster than claims clear them. Something that removes studs without
+  a claim — a rule that retires a stud stranded against the rim, say — might make a line of five
+  playable there and would be a genuinely different game from the shipped line of four. Would need the
+  full sweep again, at the DEEP budget, since the failure is invisible to a cheap search.
+- **A third player.** The rules generalise (three colours of stud, three-way flipping) but the flip is
+  a two-sided operation and "turn over" would have to become "advance to the next colour", which is a
+  different and much less legible game. Seat fairness at 3P is completely unmeasured.
+- **Engine: a lattice-aware touch-target rule.** `mobile.css` gives every `button` a 44px min-size,
+  which is right everywhere except a lattice, where it silently makes adjacent points OVERLAP once the
+  pitch drops below 44px (Torc's 85-point field is 37px). Every future lattice/hex game will hit this.
+  A `.no-touch-floor` opt-out class in the engine, or scoping the rule to exclude elements with an
+  explicit `width`, would stop each game rediscovering it in a browser.

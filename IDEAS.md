@@ -42,9 +42,6 @@ Format: `- Name or concept — one line of what it is and (if multiplayer) how p
 > is **out of scope** — cut it down to its one legible core loop or pick another. Order is roughly
 > best-fit-and-deepest first; the factory still applies the Step-2 criteria and may reorder.
 
-- **Ringlord** (Yinsh / GIPF-shaped) — move one of your rings and it flips every marker it jumps;
-  complete a five-in-a-row of your markers to remove a ring; claim three rings to win. vs 2, lockstep
-  + bot.
 - **Realmfold** (Kingdomino-shaped) — draft numbered dominoes in a turn order set by the tiles
   themselves (grab a strong tile, pick later next round), connecting matching terrain into a tidy 5×5
   kingdom with crown multipliers. vs 2-4, host shuffles; grid size = modes.

@@ -9,38 +9,96 @@ Format: `- Name or concept — one line of what it is and (if multiplayer) how p
 > names. Generic open-wheel racing with original naming and liveries only — the mechanics are free,
 > the branding is not.
 
-> **Ideas "like <published board game>": take the MECHANIC, never the identity.** Game mechanics are
-> not copyrightable and reimplementing one is completely legitimate. The title, the box art, the
-> character names, the illustrations, the card text and the component design all are protected. So:
-> original name, original procedural art, original flavour text, and no visual quotation of the
-> physical product. Naming the source game in this file is fine — it is shorthand for the mechanic —
-> but the shipped game must never reference it, and the registry/README must describe the mechanic on
-> its own terms rather than as "a clone of X".
+> **Ideas "like <published game>": take the MECHANIC, never the identity.** Game mechanics are not
+> copyrightable and reimplementing one is completely legitimate. The title, the box art, the character
+> names, the illustrations, the sprites, the level designs, the card text and the component design all
+> are protected. So: original name, original procedural art, original flavour text, and no visual
+> quotation of the product. Naming the source game in this file is fine — it is shorthand for the
+> mechanic — but the shipped game must never reference it, and the registry/README must describe the
+> mechanic on its own terms rather than as "a clone of X".
 
-> **BOARD-GAME INITIATIVE (priority — work through these first).** The 60 ideas below are our own
-> take on popular multiplayer online board games (the kind that dominate Board Game Arena and
-> similar), both **co-op** and **versus** — deliberately deeper and more replayable than a
-> single-mechanic arcade toy. All are chosen to fit this factory's hard constraints (static site,
-> **no backend**, P2P over WebRTC) and each names the **netcode shape** that makes it tractable:
-> • **Perfect-information 2-player abstracts** (Santorini, Onitama, …) are the easiest and deepest
->   fit — deterministic, so run them **lockstep** (both peers step the same seeded state from
->   exchanged moves), ship a **minimax/MCTS bot** for instant solo play, and the art is procedural
->   geometry. These are the crown jewels; front-loaded here.
-> • **Roll-/flip-and-write** (That's Pretty Clever, Qwixx, Cartographers, …) natively ARE the
->   factory's most-proven multiplayer shape — a **parallel same-seed race** for 2-6 where the host
->   deals the shared dice/cards from the seed and everyone marks their own sheet; nothing but a tiny
->   status crosses the wire. Solo is a score-attack against the same daily seed.
-> • **Hidden-information card games and most co-ops** (The Crew, Hanabi, Jaipur, …) are
->   **host-authoritative** (the host owns the shuffled deck/hands and adjudicates), with a bot for
->   solo. **Real-time co-ops** (Magic Maze, Kites) are host-authoritative on a shared clock.
-> Still non-negotiable for every one: **take the MECHANIC, never the identity** (original name,
-> procedural/CC0 art, original copy — the source in parentheses is shorthand only, never shipped);
-> **instantly playable solo first** (a competent bot, or a same-seed score-attack, is mandatory —
-> a dead lobby is never a dead page); three modes with real spread; the balance/mechanism/contrast
-> gates; every-mode phone+desktop verification; and the full P2P contract (host transfer, rematch,
-> no-deadlock). A game whose depth needs a whole rulebook (Ark Nova, Terraforming Mars, full Catan)
-> is **out of scope** — cut it down to its one legible core loop or pick another. Order is roughly
-> best-fit-and-deepest first; the factory still applies the Step-2 criteria and may reorder.
+> **BIG-GAME INITIATIVE (priority — work through these first). THE BOARD-GAME INITIATIVE IS OVER.**
+> Player verdict on the catalogue as it stands: the games are *too basic* and *too abstract* — a long
+> shelf of card and board games, all roughly the same size. The new bar is **a game somebody would
+> have bought on a PC, rebuilt for a phone browser**: the named references are DOOM, SimTower and
+> Frozen Synapse. The entries below are that, and each one names the **netcode shape** that makes it
+> possible with no backend:
+> • **Simultaneous-turn and turn-based** (tactics, strategy, async raiding) are the BEST P2P shapes
+>   this factory has — orders are a few bytes and latency is free. Reach for them first when a genre
+>   could go either way.
+> • **Host-authoritative with client prediction** at 15–30Hz is the shape for real-time action. Keep
+>   the authoritative state small. If it cannot be made to feel good, change the GAME (round-based
+>   arenas, simultaneous turns, asymmetric roles) rather than shipping a laggy shooter.
+> • **Solo-deep with async sharing** (a seed, a ghost, a replay, a raid snapshot) is a first-class
+>   answer for sims and roguelikes. A sim does not need live multiplayer to be a great entry.
+> Non-negotiable for every one: **ambition is spent on SYSTEMS, not surface** — a genre label with one
+> room and three enemies underneath is the failure mode, and depth means systems that interact to
+> produce situations nobody enumerated, never more menus or more screens. Plus every standing gate:
+> **the mandatory interactive tutorial**, three modes with real spread, the balance / mechanism /
+> contrast sims, every-mode phone+desktop verification, a **measured frame budget** for anything
+> real-time, and the full P2P contract. Take the MECHANIC, never the identity.
+
+- **Deepshaft** (Doom-shaped) — a 2.5D raycast first-person crawl through a procedurally generated
+  mine: hitscan and projectile weapons, enemies with real chase/flank/retreat states, keycards, and
+  a floor that gets worse as you descend. Floating stick + auto-fire, one-handed. Solo campaign;
+  host-authoritative co-op or deathmatch at 20Hz with client prediction. Raycasting is a few hundred
+  lines and holds 60fps on a phone — measure it and say the number.
+- **Highrise** (SimTower-shaped) — build floors, place tenants, run the lifts, and watch rent,
+  footfall, upkeep and lift queues interact until something cascades. The whole design problem is
+  information density at 375px (a real pan/pinch camera, and a HUD that survives it), and the balance
+  sim is an economy sim: does one build order dominate every seed? Solo + async seed sharing.
+- **Standoff** (Frozen Synapse-shaped) — both sides issue orders for the same five seconds, both
+  resolve simultaneously, and you watch the replay together. Sight lines, cover, and guessing what
+  they guessed. The ideal P2P shape: orders are a few bytes, latency is irrelevant, and the replay is
+  a shareable link. vs 2, simultaneous-turn; a real opponent bot for solo.
+- **Bloomfront** (RTS, small) — a dozen units, three build options, one map, real unit interaction
+  (counters, positioning, control groups by drag). Lockstep on a fixed timestep so no state crosses
+  the wire, only commands. Depth from how units interact, never from unit count. vs 2 + bot.
+- **Wintering** (colony sim) — settlers with needs, weather, and a supply chain that can fail in ways
+  nobody wrote down: a blocked path starves a wing, an illness takes the only cook. Solo, deep, with a
+  run summary worth reading and a shared daily seed to compare against. Pause-and-issue-orders rather
+  than twitch, which is also what makes it work on a phone.
+- **Nightshift** (systemic stealth) — one building, guards with vision cones and hearing, distractions,
+  and an alarm state that escalates rather than instantly failing you. Every system readable at a
+  glance on a grid. Solo; async "beat my route" ghosts, or an asymmetric 2P mode where one player is
+  the building's security.
+- **Grist** (automation/factory-shaped) — place extractors, belts and assemblers; the game is the
+  bottleneck you did not see coming. Systems-dense, entirely solo-viable, and a natural fit for a
+  phone because it is placement rather than reflexes. Async factory-snapshot sharing; a throughput par
+  per seed. The balance gate is the production curve.
+- **Overpressure** (crew co-op, FTL/Barotrauma-shaped) — 2-4 players keep one failing vessel alive:
+  power routing, hull breaches, fires, and a reactor that will not tolerate everyone doing the obvious
+  thing at once. Host-authoritative on a shared clock; roles that see different information, so
+  talking is the game. Solo plays as a single operator with the same failures.
+- **Apex Line** (racing, handling-first) — grip, weight transfer and a racing line worth learning, on
+  procedural circuits from a seed. Not a runner: braking points are the skill. One-thumb steering that
+  respects principle #19. Ghost-replay versus over a link (async), live 2-4 host-authoritative if the
+  feel survives it.
+- **Salvage Run** (roguelike, combining items) — the point is not more items, it is items whose
+  interactions produce builds nobody wrote down: a magnet plus a shock coil is a different game from
+  either. Turn-based on a grid so it is exact and phone-friendly. Solo + daily seed; async run
+  comparison. The mechanism audit belongs on the item-interaction rules.
+- **Siegeworks** (base-vs-base, async) — build a compound, then raid a snapshot of somebody else's;
+  they replay your attack later and rebuild. Entirely asynchronous, so no live connection is ever
+  needed and a shared link is the whole multiplayer story. The design risk is the attack/defence
+  balance curve — simulate it before shipping it.
+- **Fault Line** (physics sandbox with a goal) — destructible structures, soft joints, and a par:
+  bring the tower down with the least charge. Deterministic fixed-step physics from a seed so a
+  solution is a shareable replay. Solo + async; the fun is the emergent collapse, so the sim gate is
+  "do different seeds actually collapse differently?".
+- **Cinder** (twin-stick survivor) — one stick, auto-fire, and a build that assembles itself out of
+  interacting upgrades over fifteen minutes. Real-time and dense, so the frame budget is a hard gate
+  and the entity cap is a design constraint. Solo-first; host-authoritative 2P co-op with prediction.
+- **Signal Lost** (immersive-sim-ish) — one station, several ways through every obstacle (power, vents,
+  credentials, force), and systems that do not care which one you pick. Small in area, deep in
+  interaction — the opposite of a big empty map. Solo; async route sharing.
+
+## PARKED — board-game initiative
+
+These are the remaining entries from the previous initiative, kept verbatim so nothing is lost. **Do
+not take one while the big-game queue above has anything in it**, and if the queue ever empties and
+you take one anyway, say why in the build log. Most would now be better as an *expansion* to a shipped
+game than as a new one.
 
 - **Expedition** (Lost Cities-shaped) — a two-player push-your-luck of commitment: lay cards in
   ascending value onto expedition columns you can never take back, and every expedition you open owes
@@ -237,4 +295,3 @@ Format: `- Name or concept — one line of what it is and (if multiplayer) how p
   globally spread (not 60% Europe) or it rewards guessing the same continent every time — measure the
   answer-location distribution and cap per-country; and every photo needs a verifiable PD/CC0 source
   recorded in the generator.
-

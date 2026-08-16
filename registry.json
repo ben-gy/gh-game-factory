@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-15",
+  "last_updated": "2026-08-16",
   "description": "Registry of every web game built by gh-game-factory. Never duplicate an entry \u2014 check name, description, category, and genre before building.",
   "games": [
     {
@@ -883,6 +883,20 @@
       "status": "deployed",
       "url": "https://torc.benrichardson.dev",
       "repo_url": "https://github.com/ben-gy/torc"
+    },
+    {
+      "name": "realmfold",
+      "repo": "ben-gy/realmfold",
+      "date": "2026-08-16",
+      "description": "A tile-drafting board game for 1-4 built on one trade: the best doublet in the row costs you next round's first pick, because next round's order IS this round's claims sorted lowest-first. Regions score cells x coronets, so a big region with no coronets is worth nothing and the same tile is worth 8 to one player and 2 to everyone else -- which is where denial lives. THE SIMULATION OVERRULED THE DESIGN TWICE. Shire was specced at 16 doublets: at that density everything is placeable everywhere, the draft collapses to grabbing coronets, and a tempo-blind control arm scored -0.04 -- the game's CENTRAL MECHANIC was inert in that mode -- while the first-slot player finished 3.4 ahead. 18 doublets gives +2.02 +/- 0.84 and a 1.6 edge; removing the colony rule, the obvious fix, moved the GAP to only +0.74 and made the bias WORSE. holt was built so that going last (which buys a burn) would be worth paying for: the veto sweep peaks at weight 0 and goes NEGATIVE above 1, so it ships at 0 and the mode earns its place on measured effect (margin 5.5 vs croft's 8.9, no blowouts, 12 points lower) rather than the story. Also measured and dropped: a pool-foresight bot term (worth 0) and a higher denial weight (worth -1.3); the order weight has an optimum near 0.75 and at 2.2 the bot loses by TWELVE points. Leader-after-r3 wins 33% at 4P (chance 25%), rising to 75% by r11. TWO BROWSER-ONLY LAYOUT BUGS: a board cell inherited the engine's 44px button floor so grid rows were 44px against 36px cells and Shire's bottom row went off a LANDSCAPE phone -- one cell of the modes x viewports matrix and none of the others; and --cell sized from dvh builds a board for a hidden URL bar.",
+      "genre": "board",
+      "stack": "vanilla-ts",
+      "render": "dom",
+      "multiplayer": "p2p",
+      "max_players": 4,
+      "status": "deployed",
+      "url": "https://realmfold.benrichardson.dev",
+      "repo_url": "https://github.com/ben-gy/realmfold"
     }
   ]
 }

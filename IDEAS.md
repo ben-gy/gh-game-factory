@@ -42,9 +42,6 @@ Format: `- Name or concept — one line of what it is and (if multiplayer) how p
 > is **out of scope** — cut it down to its one legible core loop or pick another. Order is roughly
 > best-fit-and-deepest first; the factory still applies the Step-2 criteria and may reorder.
 
-- **Realmfold** (Kingdomino-shaped) — draft numbered dominoes in a turn order set by the tiles
-  themselves (grab a strong tile, pick later next round), connecting matching terrain into a tidy 5×5
-  kingdom with crown multipliers. vs 2-4, host shuffles; grid size = modes.
 - **Expedition** (Lost Cities-shaped) — a two-player push-your-luck of commitment: lay cards in
   ascending value onto expedition columns you can never take back, and every expedition you open owes
   a −20 you must climb out of. vs 2, host deck + bot.

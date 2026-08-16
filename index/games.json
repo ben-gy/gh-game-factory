@@ -1,6 +1,25 @@
 {
-  "last_updated": "2026-08-15",
+  "last_updated": "2026-08-16",
   "games": [
+    {
+      "name": "Realmfold",
+      "slug": "realmfold",
+      "icon": "grid-3x3",
+      "category": "board",
+      "description": "A tile-drafting game where the best tile on the table costs you next round's first pick.",
+      "url": "https://realmfold.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/realmfold",
+      "tags": [
+        "board",
+        "drafting",
+        "tile-laying",
+        "versus",
+        "multiplayer",
+        "mobile"
+      ],
+      "type": "game",
+      "date": "2026-08-16"
+    },
     {
       "name": "Torc",
       "slug": "torc",

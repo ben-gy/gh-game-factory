@@ -38,11 +38,6 @@ Format: `- Name or concept — one line of what it is and (if multiplayer) how p
 > contrast sims, every-mode phone+desktop verification, a **measured frame budget** for anything
 > real-time, and the full P2P contract. Take the MECHANIC, never the identity.
 
-- **Deepshaft** (Doom-shaped) — a 2.5D raycast first-person crawl through a procedurally generated
-  mine: hitscan and projectile weapons, enemies with real chase/flank/retreat states, keycards, and
-  a floor that gets worse as you descend. Floating stick + auto-fire, one-handed. Solo campaign;
-  host-authoritative co-op or deathmatch at 20Hz with client prediction. Raycasting is a few hundred
-  lines and holds 60fps on a phone — measure it and say the number.
 - **Highrise** (SimTower-shaped) — build floors, place tenants, run the lifts, and watch rent,
   footfall, upkeep and lift queues interact until something cascades. The whole design problem is
   information density at 375px (a real pan/pinch camera, and a HUD that survives it), and the balance

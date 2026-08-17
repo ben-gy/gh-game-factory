@@ -1,6 +1,26 @@
 {
-  "last_updated": "2026-08-16",
+  "last_updated": "2026-08-17",
   "games": [
+    {
+      "name": "Deepshaft",
+      "slug": "deepshaft",
+      "icon": "flame",
+      "category": "arcade",
+      "description": "A first-person raycast descent into a mine that is closing behind you — one thumb, auto-fire, and gas that does not care whose side you are on.",
+      "url": "https://deepshaft.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/deepshaft",
+      "tags": [
+        "arcade",
+        "multiplayer",
+        "co-op",
+        "first-person",
+        "shooter",
+        "roguelike",
+        "mobile"
+      ],
+      "type": "game",
+      "date": "2026-08-17"
+    },
     {
       "name": "Realmfold",
       "slug": "realmfold",
@@ -61,7 +81,7 @@
       "slug": "lustre",
       "icon": "gem",
       "category": "board",
-      "description": "An engine-builder where a spar is either your engine or your score and never both \u2014 and the price of turning one into the other rises with every point anybody banks.",
+      "description": "An engine-builder where a spar is either your engine or your score and never both — and the price of turning one into the other rises with every point anybody banks.",
       "url": "https://lustre.benrichardson.dev",
       "repo": "https://github.com/ben-gy/lustre",
       "tags": [
@@ -79,7 +99,7 @@
       "slug": "conduit",
       "icon": "git-fork",
       "category": "puzzle",
-      "description": "Everyone is dealt the same four fittings \u2014 splice them into the network only you can see.",
+      "description": "Everyone is dealt the same four fittings — splice them into the network only you can see.",
       "url": "https://conduit.benrichardson.dev",
       "repo": "https://github.com/ben-gy/conduit",
       "tags": [
@@ -97,7 +117,7 @@
       "slug": "huntress",
       "icon": "target",
       "category": "board",
-      "description": "Move like a queen, then burn a square \u2014 the last one who can still move wins.",
+      "description": "Move like a queen, then burn a square — the last one who can still move wins.",
       "url": "https://ben-gy.github.io/huntress",
       "repo": "https://github.com/ben-gy/huntress",
       "tags": [
@@ -115,7 +135,7 @@
       "slug": "weald",
       "icon": "map",
       "category": "board",
-      "description": "Everyone draws the same shape on their own map \u2014 the edicts decide what it was worth.",
+      "description": "Everyone draws the same shape on their own map — the edicts decide what it was worth.",
       "url": "https://weald.benrichardson.dev",
       "repo": "https://github.com/ben-gy/weald",
       "tags": [
@@ -133,7 +153,7 @@
       "slug": "haggle",
       "icon": "gem",
       "category": "card",
-      "description": "A two-player market duel where every price only ever falls \u2014 sell before your rival does.",
+      "description": "A two-player market duel where every price only ever falls — sell before your rival does.",
       "url": "https://haggle.benrichardson.dev",
       "repo": "https://github.com/ben-gy/haggle",
       "tags": [
@@ -169,7 +189,7 @@
       "slug": "kiln",
       "icon": "grid-3x3",
       "category": "board",
-      "description": "Take every tile of one kind from a rack \u2014 and whatever you leave behind is what everyone else gets.",
+      "description": "Take every tile of one kind from a rack — and whatever you leave behind is what everyone else gets.",
       "url": "https://kiln.benrichardson.dev",
       "repo": "https://github.com/ben-gy/kiln",
       "tags": [
@@ -187,7 +207,7 @@
       "slug": "brood",
       "icon": "hexagon",
       "category": "board",
-      "description": "There is no board \u2014 only the cluster you and your rival build, until one Matriarch has all six sides closed.",
+      "description": "There is no board — only the cluster you and your rival build, until one Matriarch has all six sides closed.",
       "url": "https://brood.benrichardson.dev",
       "repo": "https://github.com/ben-gy/brood",
       "tags": [
@@ -205,7 +225,7 @@
       "slug": "bracken",
       "icon": "trees",
       "category": "board",
-      "description": "Race across the common while you close the ways through it \u2014 but you may never seal one off entirely.",
+      "description": "Race across the common while you close the ways through it — but you may never seal one off entirely.",
       "url": "https://bracken.benrichardson.dev",
       "repo": "https://github.com/ben-gy/bracken",
       "tags": [
@@ -223,7 +243,7 @@
       "slug": "shunt",
       "icon": "train-front",
       "category": "puzzle",
-      "description": "Make up the train in the fewest moves \u2014 a yard puzzle where the loco only works one end, so the order of a rake never reverses.",
+      "description": "Make up the train in the fewest moves — a yard puzzle where the loco only works one end, so the order of a rake never reverses.",
       "url": "https://shunt.benrichardson.dev",
       "repo": "https://github.com/ben-gy/shunt",
       "tags": [
@@ -242,7 +262,7 @@
       "slug": "clatter",
       "icon": "dices",
       "category": "card",
-      "description": "Take one die from the roll and every smaller die goes to everybody else \u2014 a roll-and-write about generosity you cannot avoid.",
+      "description": "Take one die from the roll and every smaller die goes to everybody else — a roll-and-write about generosity you cannot avoid.",
       "url": "https://clatter.benrichardson.dev",
       "repo": "https://github.com/ben-gy/clatter",
       "tags": [
@@ -280,7 +300,7 @@
       "slug": "tithe",
       "icon": "repeat",
       "category": "board",
-      "description": "A 5\u00d75 duel where the only moves that exist are the two tolls in your hand \u2014 and the one you spend is handed straight to your opponent.",
+      "description": "A 5×5 duel where the only moves that exist are the two tolls in your hand — and the one you spend is handed straight to your opponent.",
       "url": "https://tithe.benrichardson.dev",
       "repo": "https://github.com/ben-gy/tithe",
       "tags": [
@@ -299,7 +319,7 @@
       "slug": "skyhold",
       "icon": "layers",
       "category": "board",
-      "description": "Move one builder, raise one block \u2014 first to stand three storeys high wins the sky.",
+      "description": "Move one builder, raise one block — first to stand three storeys high wins the sky.",
       "url": "https://skyhold.benrichardson.dev",
       "repo": "https://github.com/ben-gy/skyhold",
       "tags": [
@@ -317,7 +337,7 @@
       "slug": "cairn",
       "icon": "layers",
       "category": "card",
-      "description": "A chain-clearing solitaire: a cairn is a pyramid of runed stones (a full A\u2013K ladder). Take any exposed stone one rune above or below your hand \u2014 aces wrap to kings \u2014 and it becomes your new hand, uncovering the stones beneath. Long unbroken chains build a heat multiplier; when stuck, draw from the scree, which resets your heat and spends one of a limited number of draws. Every cairn is guaranteed to have a full-clear solution, so you are never dealt an impossible board. Clear one cairn at your pace, bank a stream of small cairns against a clock, or survive a big cairn on a hard draw budget. Solo, a daily cairn, or a peer-to-peer race on the same deal.",
+      "description": "A chain-clearing solitaire: a cairn is a pyramid of runed stones (a full A–K ladder). Take any exposed stone one rune above or below your hand — aces wrap to kings — and it becomes your new hand, uncovering the stones beneath. Long unbroken chains build a heat multiplier; when stuck, draw from the scree, which resets your heat and spends one of a limited number of draws. Every cairn is guaranteed to have a full-clear solution, so you are never dealt an impossible board. Clear one cairn at your pace, bank a stream of small cairns against a clock, or survive a big cairn on a hard draw budget. Solo, a daily cairn, or a peer-to-peer race on the same deal.",
       "url": "https://cairn.benrichardson.dev",
       "repo": "https://github.com/ben-gy/cairn",
       "tags": [
@@ -336,7 +356,7 @@
       "slug": "skein",
       "icon": "spline",
       "category": "puzzle",
-      "description": "Drag the glowing beads until no threads cross. A crossed thread glows coral with an X where it cuts; a clean one glows cyan \u2014 move the beads until nothing crosses and the web settles green. Every web is guaranteed to have a tangle-free solution, so you are never stuck. Untangle one calm web, race a stream of small webs against a clock, or crack one big tangle on a limited number of moves. Solo, a daily web, or a peer-to-peer race on the same web.",
+      "description": "Drag the glowing beads until no threads cross. A crossed thread glows coral with an X where it cuts; a clean one glows cyan — move the beads until nothing crosses and the web settles green. Every web is guaranteed to have a tangle-free solution, so you are never stuck. Untangle one calm web, race a stream of small webs against a clock, or crack one big tangle on a limited number of moves. Solo, a daily web, or a peer-to-peer race on the same web.",
       "url": "https://skein-untangle.benrichardson.dev",
       "repo": "https://github.com/ben-gy/skein",
       "tags": [
@@ -355,7 +375,7 @@
       "slug": "warble",
       "icon": "audio-lines",
       "category": "arcade",
-      "description": "Your voice is the controller \u2014 hum low to fly low, whistle or sing high to fly high, and keep the glowing mote on a ribbon of light to score. No mic? Slide a finger up and down to fly instead, the same game. Track a forgiving ribbon, hold a staircase of notes, or thread a narrow gauntlet where one missed gap ends the run. Solo, a daily ribbon, or a peer-to-peer race on the same course.",
+      "description": "Your voice is the controller — hum low to fly low, whistle or sing high to fly high, and keep the glowing mote on a ribbon of light to score. No mic? Slide a finger up and down to fly instead, the same game. Track a forgiving ribbon, hold a staircase of notes, or thread a narrow gauntlet where one missed gap ends the run. Solo, a daily ribbon, or a peer-to-peer race on the same course.",
       "url": "https://warble.benrichardson.dev",
       "repo": "https://github.com/ben-gy/warble",
       "tags": [
@@ -375,7 +395,7 @@
       "slug": "hatch",
       "icon": "grid-3x3",
       "category": "puzzle",
-      "description": "A picross puzzle: the numbers count the filled squares in each row and column, and reading them reveals a hidden picture. Filling a square that's really empty is a mistake, so it rewards deduction over guessing. Play a calm 10\u00d710, a 90-second stream of small pictures, or a three-strikes 8\u00d78 \u2014 solo, a daily board, or a peer-to-peer race on the same board.",
+      "description": "A picross puzzle: the numbers count the filled squares in each row and column, and reading them reveals a hidden picture. Filling a square that's really empty is a mistake, so it rewards deduction over guessing. Play a calm 10×10, a 90-second stream of small pictures, or a three-strikes 8×8 — solo, a daily board, or a peer-to-peer race on the same board.",
       "url": "https://hatch.benrichardson.dev",
       "repo": "https://github.com/ben-gy/hatch",
       "tags": [
@@ -394,7 +414,7 @@
       "slug": "glint",
       "icon": "sparkles",
       "category": "party",
-      "description": "Two cards always share exactly one symbol \u2014 never none, never two. Spot it, tap it, and a fresh card deals the instant you do. Clear the deck, race a 90-second clock, or push a one-life streak. Play solo, chase the daily deck, or race friends peer-to-peer on the very same deck.",
+      "description": "Two cards always share exactly one symbol — never none, never two. Spot it, tap it, and a fresh card deals the instant you do. Clear the deck, race a 90-second clock, or push a one-life streak. Play solo, chase the daily deck, or race friends peer-to-peer on the very same deck.",
       "url": "https://glint.benrichardson.dev",
       "repo": "https://github.com/ben-gy/glint",
       "tags": [
@@ -413,7 +433,7 @@
       "slug": "brim",
       "icon": "flame",
       "category": "party",
-      "description": "Hold the phone dead still while an orb of light swells \u2014 the fuller it gets, the more it's worth. Release before it overflows, and don't let a jolt make you flinch and spill it. No motion sensor? Just hold your nerve. Three modes, a daily, and a peer-to-peer race on the very same orbs.",
+      "description": "Hold the phone dead still while an orb of light swells — the fuller it gets, the more it's worth. Release before it overflows, and don't let a jolt make you flinch and spill it. No motion sensor? Just hold your nerve. Three modes, a daily, and a peer-to-peer race on the very same orbs.",
       "url": "https://brim.benrichardson.dev",
       "repo": "https://github.com/ben-gy/brim",
       "tags": [
@@ -450,7 +470,7 @@
       "slug": "waft",
       "icon": "sparkles",
       "category": "arcade",
-      "description": "Wave your hand in front of the camera to catch drifting fireflies before they fade \u2014 clean catches build a combo, wasps break it. No camera? Just tap. Solo, a daily swarm, or race a friend on the very same fireflies peer-to-peer.",
+      "description": "Wave your hand in front of the camera to catch drifting fireflies before they fade — clean catches build a combo, wasps break it. No camera? Just tap. Solo, a daily swarm, or race a friend on the very same fireflies peer-to-peer.",
       "url": "https://waft.benrichardson.dev",
       "repo": "https://github.com/ben-gy/waft",
       "tags": [
@@ -469,7 +489,7 @@
       "slug": "wordloom",
       "icon": "grid-3x3",
       "category": "word",
-      "description": "Letters arrive one at a time \u2014 drop each into a grid, and when it's full every row and column scores its best word. You can't move a letter once it's down, so each square is a bet on two words at once. Solo, a daily grid, or race a friend on the same letters peer-to-peer.",
+      "description": "Letters arrive one at a time — drop each into a grid, and when it's full every row and column scores its best word. You can't move a letter once it's down, so each square is a bet on two words at once. Solo, a daily grid, or race a friend on the same letters peer-to-peer.",
       "url": "https://wordloom.benrichardson.dev",
       "repo": "https://github.com/ben-gy/wordloom",
       "tags": [
@@ -487,7 +507,7 @@
       "slug": "squirm",
       "icon": "bug",
       "category": "card",
-      "description": "Slide a critter face-down, name it \u2014 the truth, or a lie. Your rival must believe you, call your bluff, or peek and pass it on with a lie of their own. Collect four of a kind and you're out. Solo vs bots, or peer-to-peer with friends.",
+      "description": "Slide a critter face-down, name it — the truth, or a lie. Your rival must believe you, call your bluff, or peek and pass it on with a lie of their own. Collect four of a kind and you're out. Solo vs bots, or peer-to-peer with friends.",
       "url": "https://squirm.benrichardson.dev",
       "repo": "https://github.com/ben-gy/squirm",
       "tags": [
@@ -506,7 +526,7 @@
       "slug": "teeter",
       "icon": "grid-3x3",
       "category": "arcade",
-      "description": "Tilt your phone to roll a marble through a maze to the exit \u2014 dodge the pits, grab the gems, beat the clock. Fastest time wins. No sensor? Drag or use the arrow keys. Solo, a daily, or race a friend on the same maze.",
+      "description": "Tilt your phone to roll a marble through a maze to the exit — dodge the pits, grab the gems, beat the clock. Fastest time wins. No sensor? Drag or use the arrow keys. Solo, a daily, or race a friend on the same maze.",
       "url": "https://teeter.benrichardson.dev",
       "repo": "https://github.com/ben-gy/teeter",
       "tags": [
@@ -526,7 +546,7 @@
       "slug": "outsize",
       "icon": "scaling",
       "category": "puzzle",
-      "description": "Which country is bigger? Tap the one with more people, more land, or more crowding \u2014 build a streak as the gap between them tightens every round. Solo, a daily, or race a friend.",
+      "description": "Which country is bigger? Tap the one with more people, more land, or more crowding — build a streak as the gap between them tightens every round. Solo, a daily, or race a friend.",
       "url": "https://outsize.benrichardson.dev",
       "repo": "https://github.com/ben-gy/outsize",
       "tags": [
@@ -546,7 +566,7 @@
       "slug": "landbridge",
       "icon": "route",
       "category": "puzzle",
-      "description": "Hop country to country along shared land borders \u2014 from here to there in the fewest steps. The game knows the shortest route; can you beat it? Solo, a daily, or racing friends.",
+      "description": "Hop country to country along shared land borders — from here to there in the fewest steps. The game knows the shortest route; can you beat it? Solo, a daily, or racing friends.",
       "url": "https://landbridge.benrichardson.dev",
       "repo": "https://github.com/ben-gy/landbridge",
       "tags": [
@@ -565,7 +585,7 @@
       "slug": "beeline",
       "icon": "globe",
       "category": "puzzle",
-      "description": "Home in on a hidden country. Each guess tells you how far it is, which way it lies and how warm you're getting \u2014 solve it in as few as you can, on a shared daily or racing friends.",
+      "description": "Home in on a hidden country. Each guess tells you how far it is, which way it lies and how warm you're getting — solve it in as few as you can, on a shared daily or racing friends.",
       "url": "https://beeline.benrichardson.dev",
       "repo": "https://github.com/ben-gy/beeline",
       "tags": [
@@ -584,7 +604,7 @@
       "slug": "amble",
       "icon": "footprints",
       "category": "board",
-      "description": "An unhurried journey down one road \u2014 but the traveller furthest behind always goes next, so every stop you race to is a turn you hand your rivals. Solo or 2\u20135 over a link.",
+      "description": "An unhurried journey down one road — but the traveller furthest behind always goes next, so every stop you race to is a turn you hand your rivals. Solo or 2–5 over a link.",
       "url": "https://amble.benrichardson.dev",
       "repo": "https://github.com/ben-gy/amble",
       "tags": [
@@ -602,7 +622,7 @@
       "slug": "kilter",
       "icon": "blocks",
       "category": "arcade",
-      "description": "Stack bricks that really fall \u2014 no grid, real physics, so the tower leans and teeters and you lose by toppling. Race a friend to the height line, or balance a spire on a plinth barely a brick wide.",
+      "description": "Stack bricks that really fall — no grid, real physics, so the tower leans and teeters and you lose by toppling. Race a friend to the height line, or balance a spire on a plinth barely a brick wide.",
       "url": "https://kilter.benrichardson.dev",
       "repo": "https://github.com/ben-gy/kilter",
       "tags": [
@@ -620,7 +640,7 @@
       "slug": "uproar",
       "icon": "megaphone",
       "category": "party",
-      "description": "Pass the phone and get louder than the last person \u2014 the mic keeps score, the bar keeps climbing, and your nerve runs out first.",
+      "description": "Pass the phone and get louder than the last person — the mic keeps score, the bar keeps climbing, and your nerve runs out first.",
       "url": "https://uproar.benrichardson.dev",
       "repo": "https://github.com/ben-gy/uproar",
       "tags": [
@@ -637,7 +657,7 @@
       "slug": "ballast",
       "icon": "scale",
       "category": "puzzle",
-      "description": "Stack the falling pieces and clear rows \u2014 but the well hangs from a pivot, so pile up on one side and it lists, pieces slide downhill, and the far side goes out of reach.",
+      "description": "Stack the falling pieces and clear rows — but the well hangs from a pivot, so pile up on one side and it lists, pieces slide downhill, and the far side goes out of reach.",
       "url": "https://ballast.benrichardson.dev",
       "repo": "https://github.com/ben-gy/ballast",
       "tags": [
@@ -655,7 +675,7 @@
       "slug": "unstrung",
       "icon": "scissors",
       "category": "word",
-      "description": "Cut words out of one long strand of letters \u2014 every cut splices in fresh thread, and a word that spans the seam scores triple.",
+      "description": "Cut words out of one long strand of letters — every cut splices in fresh thread, and a word that spans the seam scores triple.",
       "url": "https://unstrung.benrichardson.dev",
       "repo": "https://github.com/ben-gy/unstrung",
       "tags": [
@@ -673,7 +693,7 @@
       "slug": "undercut",
       "icon": "timer",
       "category": "strategy",
-      "description": "Race strategy with no driving \u2014 call the pit windows, read the weather, and beat the field on a decision.",
+      "description": "Race strategy with no driving — call the pit windows, read the weather, and beat the field on a decision.",
       "url": "https://undercut.benrichardson.dev",
       "repo": "https://github.com/ben-gy/undercut",
       "tags": [
@@ -692,7 +712,7 @@
       "slug": "boxbox",
       "icon": "gauge",
       "category": "strategy",
-      "description": "Call the pit stop \u2014 read the telemetry and the driver's radio, fix what's broken, skip what isn't, and beat the clock.",
+      "description": "Call the pit stop — read the telemetry and the driver's radio, fix what's broken, skip what isn't, and beat the clock.",
       "url": "https://boxbox.benrichardson.dev",
       "repo": "https://github.com/ben-gy/boxbox",
       "tags": [
@@ -730,7 +750,7 @@
       "slug": "sporeline",
       "icon": "git-branch",
       "category": "strategy",
-      "description": "Maze tower-defence where your towers are the walls \u2014 fold the road longer to kill more, then send spores into a rival's field.",
+      "description": "Maze tower-defence where your towers are the walls — fold the road longer to kill more, then send spores into a rival's field.",
       "url": "https://sporeline.benrichardson.dev",
       "repo": "https://github.com/ben-gy/sporeline",
       "tags": [
@@ -749,7 +769,7 @@
       "slug": "lastlight",
       "icon": "flame",
       "category": "strategy",
-      "description": "One generator holds back the cold \u2014 every building only works inside its shrinking ring of warmth.",
+      "description": "One generator holds back the cold — every building only works inside its shrinking ring of warmth.",
       "url": "https://lastlight.benrichardson.dev",
       "repo": "https://github.com/ben-gy/lastlight",
       "tags": [
@@ -767,7 +787,7 @@
       "slug": "turntide",
       "icon": "refresh-cw",
       "category": "board",
-      "description": "Draughts where a jump never kills \u2014 leap an enemy and it flips to your colour, so all 24 stones stay on the board.",
+      "description": "Draughts where a jump never kills — leap an enemy and it flips to your colour, so all 24 stones stay on the board.",
       "url": "https://turntide.benrichardson.dev",
       "repo": "https://github.com/ben-gy/turntide",
       "tags": [
@@ -803,7 +823,7 @@
       "slug": "frostward",
       "icon": "snowflake",
       "category": "board",
-      "description": "A cone of frost sweeps the board like a searchlight \u2014 bend the wind away from your hearths and it points at someone else.",
+      "description": "A cone of frost sweeps the board like a searchlight — bend the wind away from your hearths and it points at someone else.",
       "url": "https://frostward.benrichardson.dev",
       "repo": "https://github.com/ben-gy/frostward",
       "tags": [
@@ -821,7 +841,7 @@
       "slug": "deepwatch",
       "icon": "waves",
       "category": "card",
-      "description": "A silent co-op dive: surface a hand of deep-sea creatures in order with no numbers and no talking \u2014 all you know is who hasn't played yet.",
+      "description": "A silent co-op dive: surface a hand of deep-sea creatures in order with no numbers and no talking — all you know is who hasn't played yet.",
       "url": "https://deepwatch.benrichardson.dev",
       "repo": "https://github.com/ben-gy/deepwatch",
       "tags": [
@@ -855,7 +875,7 @@
       "slug": "scrapwall",
       "icon": "castle",
       "category": "strategy",
-      "description": "Build a fort from scrap, then hold it \u2014 a co-op siege where the horde digs toward whatever wall you left weakest.",
+      "description": "Build a fort from scrap, then hold it — a co-op siege where the horde digs toward whatever wall you left weakest.",
       "url": "https://scrapwall.benrichardson.dev",
       "repo": "https://github.com/ben-gy/scrapwall",
       "tags": [
@@ -873,7 +893,7 @@
       "slug": "tiny-tanks",
       "icon": "crosshair",
       "category": "arcade",
-      "description": "Bank ricochet shots around the walls, steal the enemy flag, and race it home \u2014 a top-down capture-the-flag tank duel. Solo with bots or peer-to-peer with friends.",
+      "description": "Bank ricochet shots around the walls, steal the enemy flag, and race it home — a top-down capture-the-flag tank duel. Solo with bots or peer-to-peer with friends.",
       "url": "https://tiny-tanks.benrichardson.dev",
       "repo": "https://github.com/ben-gy/tiny-tanks",
       "tags": [
@@ -891,7 +911,7 @@
       "slug": "grainfall",
       "icon": "wheat",
       "category": "strategy",
-      "description": "Rule a city-state one year at a time \u2014 split the grain, sow the fields, feed your people, and survive the harvests, rats and plagues that decide your reign.",
+      "description": "Rule a city-state one year at a time — split the grain, sow the fields, feed your people, and survive the harvests, rats and plagues that decide your reign.",
       "url": "https://grainfall.benrichardson.dev",
       "repo": "https://github.com/ben-gy/grainfall",
       "tags": [
@@ -909,7 +929,7 @@
       "slug": "delvepack",
       "icon": "flame",
       "category": "arcade",
-      "description": "Descend a monster-choked dungeon \u2014 clear each floor, grab an upgrade, dash to dodge, go deeper. Solo, or drop in a friend and revive each other.",
+      "description": "Descend a monster-choked dungeon — clear each floor, grab an upgrade, dash to dodge, go deeper. Solo, or drop in a friend and revive each other.",
       "url": "https://delvepack.benrichardson.dev",
       "repo": "https://github.com/ben-gy/delvepack",
       "tags": [
@@ -927,7 +947,7 @@
       "slug": "gloamrun",
       "icon": "skull",
       "category": "arcade",
-      "description": "Descend the gloam together \u2014 a co-op dungeon crawl where you fight deeper floor by floor, revive each other, and see how far the dark lets you go.",
+      "description": "Descend the gloam together — a co-op dungeon crawl where you fight deeper floor by floor, revive each other, and see how far the dark lets you go.",
       "url": "https://gloamrun.benrichardson.dev",
       "repo": "https://github.com/ben-gy/gloamrun",
       "tags": [
@@ -945,7 +965,7 @@
       "slug": "morsel",
       "icon": "circle",
       "category": "arcade",
-      "description": "Eat the small ones, outrun the big ones \u2014 but catching anyone costs you the very mass you were winning with.",
+      "description": "Eat the small ones, outrun the big ones — but catching anyone costs you the very mass you were winning with.",
       "url": "https://morsel.benrichardson.dev",
       "repo": "https://github.com/ben-gy/morsel",
       "tags": [
@@ -963,7 +983,7 @@
       "slug": "driftlock",
       "icon": "grid-3x3",
       "category": "board",
-      "description": "You never move a stone \u2014 you shift the row it stands on, and whatever slides into the rising Well is yours.",
+      "description": "You never move a stone — you shift the row it stands on, and whatever slides into the rising Well is yours.",
       "url": "https://driftlock.benrichardson.dev",
       "repo": "https://github.com/ben-gy/driftlock",
       "tags": [
@@ -999,7 +1019,7 @@
       "slug": "bidstorm",
       "icon": "gem",
       "category": "card",
-      "description": "Everyone holds the same thirteen cards \u2014 outbid your rivals for each prize, and never spend more than you had to.",
+      "description": "Everyone holds the same thirteen cards — outbid your rivals for each prize, and never spend more than you had to.",
       "url": "https://bidstorm.benrichardson.dev",
       "repo": "https://github.com/ben-gy/bidstorm",
       "tags": [
@@ -1052,7 +1072,7 @@
       "slug": "orbital-skirmish",
       "icon": "rocket",
       "category": "arcade",
-      "description": "Thrust and slingshot around a lethal star that pulls ships, bullets and rocks alike, and be the last ship flying \u2014 solo against waves, or live with 2\u20134 friends.",
+      "description": "Thrust and slingshot around a lethal star that pulls ships, bullets and rocks alike, and be the last ship flying — solo against waves, or live with 2–4 friends.",
       "url": "https://orbital-skirmish.benrichardson.dev",
       "repo": "https://github.com/ben-gy/orbital-skirmish",
       "tags": [
@@ -1088,7 +1108,7 @@
       "slug": "snake-royale",
       "icon": "worm",
       "category": "arcade",
-      "description": "Classic snake in a shared arena \u2014 eat, grow and cut your rivals off; last snake slithering wins.",
+      "description": "Classic snake in a shared arena — eat, grow and cut your rivals off; last snake slithering wins.",
       "url": "https://snake-royale.benrichardson.dev",
       "repo": "https://github.com/ben-gy/snake-royale",
       "tags": [

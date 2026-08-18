@@ -38,10 +38,6 @@ Format: `- Name or concept — one line of what it is and (if multiplayer) how p
 > contrast sims, every-mode phone+desktop verification, a **measured frame budget** for anything
 > real-time, and the full P2P contract. Take the MECHANIC, never the identity.
 
-- **Highrise** (SimTower-shaped) — build floors, place tenants, run the lifts, and watch rent,
-  footfall, upkeep and lift queues interact until something cascades. The whole design problem is
-  information density at 375px (a real pan/pinch camera, and a HUD that survives it), and the balance
-  sim is an economy sim: does one build order dominate every seed? Solo + async seed sharing.
 - **Standoff** (Frozen Synapse-shaped) — both sides issue orders for the same five seconds, both
   resolve simultaneously, and you watch the replay together. Sight lines, cover, and guessing what
   they guessed. The ideal P2P shape: orders are a few bytes, latency is irrelevant, and the replay is

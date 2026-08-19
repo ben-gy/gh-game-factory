@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-18",
+  "last_updated": "2026-08-19",
   "description": "Registry of every web game built by gh-game-factory. Never duplicate an entry \u2014 check name, description, category, and genre before building.",
   "games": [
     {
@@ -925,6 +925,20 @@
       "status": "deployed",
       "url": "https://riser.benrichardson.dev",
       "repo_url": "https://github.com/ben-gy/riser"
+    },
+    {
+      "name": "standoff",
+      "repo": "ben-gy/standoff",
+      "date": "2026-08-19",
+      "description": "SIMULTANEOUS-TURN TACTICS with sight lines and cover \u2014 the fleet's first (windup and frostward already own blind-commit-and-reveal; this adds units, watch wedges, continuous-time resolution and a bot that solves a SIMULTANEOUS-MOVE game to a mixed policy rather than searching a move tree). Both sides order the same five seconds in secret and watch them resolve at once.",
+      "genre": "strategy",
+      "stack": "vanilla-ts",
+      "render": "canvas",
+      "multiplayer": "async-seed",
+      "max_players": 1,
+      "status": "deployed",
+      "url": "https://standoff.benrichardson.dev",
+      "repo_url": "https://github.com/ben-gy/standoff"
     }
   ]
 }

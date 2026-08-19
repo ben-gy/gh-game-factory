@@ -1,6 +1,23 @@
 {
-  "last_updated": "2026-08-18",
+  "last_updated": "2026-08-19",
   "games": [
+    {
+      "name": "Standoff",
+      "slug": "standoff",
+      "icon": "crosshair",
+      "category": "strategy",
+      "description": "Both sides plan the same five seconds in secret, then watch them happen at once.",
+      "url": "https://standoff.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/standoff",
+      "tags": [
+        "strategy",
+        "tactics",
+        "simultaneous-turn",
+        "mobile"
+      ],
+      "type": "game",
+      "date": "2026-08-19"
+    },
     {
       "name": "Riser",
       "slug": "riser",

@@ -38,10 +38,6 @@ Format: `- Name or concept — one line of what it is and (if multiplayer) how p
 > contrast sims, every-mode phone+desktop verification, a **measured frame budget** for anything
 > real-time, and the full P2P contract. Take the MECHANIC, never the identity.
 
-- **Standoff** (Frozen Synapse-shaped) — both sides issue orders for the same five seconds, both
-  resolve simultaneously, and you watch the replay together. Sight lines, cover, and guessing what
-  they guessed. The ideal P2P shape: orders are a few bytes, latency is irrelevant, and the replay is
-  a shareable link. vs 2, simultaneous-turn; a real opponent bot for solo.
 - **Bloomfront** (RTS, small) — a dozen units, three build options, one map, real unit interaction
   (counters, positioning, control groups by drag). Lockstep on a fixed timestep so no state crosses
   the wire, only commands. Depth from how units interact, never from unit count. vs 2 + bot.

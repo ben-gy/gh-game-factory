@@ -1,6 +1,24 @@
 {
-  "last_updated": "2026-08-19",
+  "last_updated": "2026-08-20",
   "games": [
+    {
+      "name": "Salient",
+      "slug": "salient",
+      "icon": "swords",
+      "category": "strategy",
+      "description": "Pocket real-time strategy: three units, one screen, and an economy made of your own casualties.",
+      "url": "https://salient.benrichardson.dev",
+      "repo": "https://github.com/ben-gy/salient",
+      "tags": [
+        "strategy",
+        "multiplayer",
+        "versus",
+        "rts",
+        "mobile"
+      ],
+      "type": "game",
+      "date": "2026-08-20"
+    },
     {
       "name": "Standoff",
       "slug": "standoff",

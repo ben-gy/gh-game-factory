@@ -38,9 +38,6 @@ Format: `- Name or concept — one line of what it is and (if multiplayer) how p
 > contrast sims, every-mode phone+desktop verification, a **measured frame budget** for anything
 > real-time, and the full P2P contract. Take the MECHANIC, never the identity.
 
-- **Bloomfront** (RTS, small) — a dozen units, three build options, one map, real unit interaction
-  (counters, positioning, control groups by drag). Lockstep on a fixed timestep so no state crosses
-  the wire, only commands. Depth from how units interact, never from unit count. vs 2 + bot.
 - **Wintering** (colony sim) — settlers with needs, weather, and a supply chain that can fail in ways
   nobody wrote down: a blocked path starves a wing, an illness takes the only cook. Solo, deep, with a
   run summary worth reading and a shared daily seed to compare against. Pause-and-issue-orders rather

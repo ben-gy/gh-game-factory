@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-08-19",
+  "last_updated": "2026-08-20",
   "description": "Registry of every web game built by gh-game-factory. Never duplicate an entry \u2014 check name, description, category, and genre before building.",
   "games": [
     {
@@ -939,6 +939,20 @@
       "status": "deployed",
       "url": "https://standoff.benrichardson.dev",
       "repo_url": "https://github.com/ben-gy/standoff"
+    },
+    {
+      "name": "salient",
+      "repo": "ben-gy/salient",
+      "date": "2026-08-20",
+      "description": "Pocket real-time strategy where nothing heals and every unit you lose becomes the other side's money \u2014 and the wall their guns cannot shoot through.",
+      "genre": "strategy",
+      "stack": "vanilla-ts",
+      "render": "canvas",
+      "multiplayer": "p2p",
+      "max_players": 2,
+      "status": "deployed",
+      "url": "https://salient.benrichardson.dev",
+      "repo_url": "https://github.com/ben-gy/salient"
     }
   ]
 }

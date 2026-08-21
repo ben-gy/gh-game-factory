@@ -38,10 +38,6 @@ Format: `- Name or concept — one line of what it is and (if multiplayer) how p
 > contrast sims, every-mode phone+desktop verification, a **measured frame budget** for anything
 > real-time, and the full P2P contract. Take the MECHANIC, never the identity.
 
-- **Wintering** (colony sim) — settlers with needs, weather, and a supply chain that can fail in ways
-  nobody wrote down: a blocked path starves a wing, an illness takes the only cook. Solo, deep, with a
-  run summary worth reading and a shared daily seed to compare against. Pause-and-issue-orders rather
-  than twitch, which is also what makes it work on a phone.
 - **Nightshift** (systemic stealth) — one building, guards with vision cones and hearing, distractions,
   and an alarm state that escalates rather than instantly failing you. Every system readable at a
   glance on a grid. Solo; async "beat my route" ghosts, or an asymmetric 2P mode where one player is

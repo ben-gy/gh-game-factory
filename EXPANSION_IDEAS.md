@@ -222,14 +222,24 @@ and **12 forked `src/engine/sound.ts`**.
   documented list of behavioural deltas* — or grow `makeRail` a two-axis mode and
   a tap duration bound. It is a behaviour change either way, never a no-op.
 
-- **Fleet migration: delete the forked `src/engine/lobby.ts` — 1 of 5 done,
-  FOUR REMAIN.** The largest single piece of fork debt in the fleet.
+- **Fleet migration: delete the forked `src/engine/lobby.ts` — 2 of 5 have a PR,
+  THREE REMAIN.** The largest single piece of fork debt in the fleet.
   `cipher-clash` (588 lines), `hexbloom` (645), `rhythm-relay` (597),
   `gravity-golf` (659) and `nightwire` (642) each shipped an imported copy of the
   engine lobby, all pinned at engine `#v1.1.0`. This was hidden by the false "no
   forked `lobby.ts` survives" line corrected above.
 
-  **`hexbloom` — DONE 2026-08-15.** PR https://github.com/ben-gy/hexbloom/pull/8.
+  **COUNTING RULE, learned 2026-08-22 — "DONE" below means A PR IS OPEN, not that
+  the fork is gone.** Neither hexbloom#8 nor cipher-clash#7 is merged, so **both
+  forks are still on `main` and still receiving no upstream fixes.** Two further
+  traps this created: (a) a local `find games/*/src -iname '*lobby*.ts'` UNDER-counts,
+  because a migrated checkout is sitting on its unmerged branch with the fork
+  already deleted — measure against `gh api repos/ben-gy/<slug>/contents/src/engine`,
+  not the working tree; (b) the routine cannot merge its own PRs, so this entry
+  cannot reach zero without the user. **The remaining count is a user-decision
+  blocker, not a work blocker.**
+
+  **`hexbloom` — PR OPEN (not merged) since 2026-08-15.** https://github.com/ben-gy/hexbloom/pull/8.
   Pin `#v1.1.0`→`#v1.4.0`, fork deleted, four importers re-pointed. Verified with
   two live P2P peers in a browser at 375×812. It also **gained** five things the
   fork never had: join-by-QR, the spectator screen for a peer that arrives
@@ -246,16 +256,28 @@ and **12 forked `src/engine/sound.ts`**.
   byte-equivalent — **no fork carries a named export the engine lacks.** What is
   left, per game:
 
-  - **`cipher-clash` — UNBLOCKED, and the cheapest next one.** Its only
-    divergence from the engine was `title: 'Join my Cipher Clash game'`, which
-    v1.4.0's `share` now covers. Two things to handle that hexbloom did not have:
-    its `.lobby` is `display:flex; gap:16px`, so the engine's `.lobby-modeslot`
-    wrapper **does** collapse the gaps between its three slot children (and
-    `.re-note`'s `margin:-6px 0 0` then pulls the IP note up over the visibility
-    chips) — needs one CSS rule; and `main.ts:569` mounts into a container it
-    calls `.lobby-host`, which is also the class of the engine's takeover button,
-    so the mount selector needs renaming.
-  - **`rhythm-relay` — UNBLOCKED.** Needs `share` (title AND text — it is the one
+  - **`cipher-clash` — DONE 2026-08-22, PR OPEN.** https://github.com/ben-gy/cipher-clash/pull/7.
+    Pin `#v1.1.0`→`#v1.4.0`, fork deleted, `main.ts` + 2 test importers re-pointed,
+    `share.title` passed. **`labels` was NOT needed** — this fork's `'Start now'` /
+    `'Leave room'` are byte-identical to the engine defaults, so only `rhythm-relay`
+    actually needs the `labels` half of v1.4.0. Tests 143→155, every new assertion
+    mutation-verified. Three findings worth carrying to the remaining three:
+    - The `.lobby-modeslot` warning was **right, and it is worth measuring rather
+      than eyeballing**: toggling only that rule at 375px moved `.modes`→`.vis`
+      from 0px to 16px and `.vis`→`.re-note` from **−6px (a real overlap)** to 10px.
+      The fix is `.lobby-modeslot { display:flex; flex-direction:column; gap:16px;
+      min-width:0 }` — the gap must equal the game's own `.lobby` gap.
+    - **The `.lobby-host` collision claim (from hexbloom#8) is FALSE — do not
+      repeat it.** The engine does `container.querySelector('.lobby-host')` and
+      `container` IS the game's mount, so a mount can never match its own root.
+      Renaming is still worth doing (free, removes a footgun) but it is not a blocker
+      for any remaining fork.
+    - Two engine surfaces need CSS in any game whose `.lobby` is a flex column:
+      the QR toggle/panel carry INLINE top margins (10px/14px) that stack on the
+      flex gap, and the takeover offer (`.lobby-searching lobby-offer`) is a nowrap
+      row — without `flex-wrap:wrap` its button is squeezed to 92×75 with a
+      two-line label (nothing overflows, so a screenshot alone will not catch it).
+  - **`rhythm-relay` — UNBLOCKED, and now the cheapest next one.** Needs `share` (title AND text — it is the one
     fork that rewrites both: `'Take a lane — room XXXX'`) plus `labels.start`
     (`'Start game'`) and `labels.cancel` (`'Back to menu'`). All three now exist.
   - **`nightwire` — BLOCKED on one engine field.** Needs `note?: string`, a
@@ -276,9 +298,20 @@ and **12 forked `src/engine/sound.ts`**.
     ready-dot rendering. Do this one last, or decide the host-abstain rule is a
     bug and drop it.
 
-  Recipe, now proven three times (snake-royale, deepwatch, hexbloom): pin
-  `CURRENT_ENGINE_TAG`, re-resolve the SINGLE package, ASSERT the installed
+  Recipe, now proven four times (snake-royale, deepwatch, hexbloom, cipher-clash):
+  pin `CURRENT_ENGINE_TAG`, re-resolve the SINGLE package, ASSERT the installed
   version, and treat each game as its own run.
+
+  **Two process notes from the 2026-08-22 run, both of which cost real time:**
+  (a) `git pull --ff-only` FIRST — cipher-clash's local checkout was 4 commits
+  behind `origin/main` and those commits added an AGPL header to every source
+  file, so every line number recorded in this file was stale by +3.
+  (b) **Host transfer is NOT verifiable in the browser pane.** Closing the host
+  tab leaves a stale roster with no promotion — but the *unmodified* build does
+  exactly the same thing (verified by stashing, re-pinning `#v1.1.0`, rebuilding
+  and repeating the test). Every pane tab reports `visibilityState: hidden`,
+  which throttles the timers peer-leave detection needs. Do not report it as a
+  migration regression, and do not claim it as a pass; run the control.
 
 - **unstrung**: a **co-op** shape for the seam mechanic, deliberately not built in the first run
   (versus was chosen because the strand is a shrinking shared resource and *what you leave behind* is
